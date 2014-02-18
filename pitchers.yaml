@@ -1,0 +1,116 @@
+---
+- header: Season
+  type: int
+  default: 2013
+- header: Name
+- header: Team
+  none: "- - -"
+- header: Age
+  type: int
+- header: G
+  name: games
+  type: int
+- header: IP
+  name: inn_pitch
+  type: float
+- header: TBF
+  name: tb_faced
+  type: int
+- header: H
+  name: hits
+  type: int
+- header: R
+  name: runs
+  type: int
+- header: ER
+  name: earn_runs
+  type: int
+- header: HR
+  name: home_runs
+  type: int
+- header: BB
+  name: walks
+  type: int
+- header: IBB
+  name: int_walks
+  type: int
+- header: HBP
+  name: hitby_ptch
+  type: int
+- header: SO
+  name: strikeouts
+  type: int
+- header: GB
+  name: grnd_balls
+  type: int
+- header: FB
+  name: fly_balls
+  type: int
+- header: LD
+  name: line_drvs
+  type: int
+- header: IFFB
+  name: infld_fly
+  type: int
+- header: IFH
+  name: infld_hit
+  type: int
+- header: BU
+  name: bunts
+  type: int
+- header: BUH
+  name: bunt_hits
+  type: int
+- header: F-Strike%
+  name: f_strike
+  type: float
+  rstrip: " %"
+  none: " "
+- header: SwStr%
+  name: sw_strike
+  type: float
+  rstrip: " %"
+  none: " "
+- header: O-Swing% (pfx)
+  name: o_swing
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Z-Swing% (pfx)
+  name: z_swing
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Swing% (pfx)
+  name: swing
+  type: float
+  rstrip: " %"
+  none: " "
+- header: O-Contact% (pfx)
+  name: o_contact
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Z-Contact% (pfx)
+  name: z_contact
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Contact% (pfx)
+  name: contact
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Zone% (pfx)
+  name: zone
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Balls
+  type: int
+- header: Strikes
+  type: int
+- header: Pitches
+  type: int
+- header: playerid
+  name: fg_id
