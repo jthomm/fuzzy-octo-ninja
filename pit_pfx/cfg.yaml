@@ -1,0 +1,453 @@
+---
+- header: Year
+  type: int
+  default: 2013
+- header: playerid
+  name: fg_id
+- header: Name
+- header: Team
+  none: "- - -"
+- header: Age
+  type: int
+- header: G
+  type: int
+- header: IP
+  type: float
+- header: TBF
+  type: int
+- header: Balls
+  type: int
+- header: Strikes
+  type: int
+- header: Pitches
+  type: int
+- header: O-Swing% (pfx)
+  name: o_swing
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Z-Swing% (pfx)
+  name: z_swing
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Swing% (pfx)
+  name: swing
+  type: float
+  rstrip: " %"
+  none: " "
+- header: O-Contact% (pfx)
+  name: o_contact
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Z-Contact% (pfx)
+  name: z_contact
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Contact% (pfx)
+  name: contact
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Zone% (pfx)
+  name: zone
+  type: float
+  rstrip: " %"
+  none: " "
+- header: FA% (pfx)
+  name: fa_pct
+  type: float
+  rstrip: " %"
+  none: " "
+- header: FT% (pfx)
+  name: ft_pct
+  type: float
+  rstrip: " %"
+  none: " "
+- header: FC% (pfx)
+  name: fc_pct
+  type: float
+  rstrip: " %"
+  none: " "
+- header: FS% (pfx)
+  name: fs_pct
+  type: float
+  rstrip: " %"
+  none: " "
+- header: FO% (pfx)
+  name: fo_pct
+  type: float
+  rstrip: " %"
+  none: " "
+- header: SI% (pfx)
+  name: si_pct
+  type: float
+  rstrip: " %"
+  none: " "
+- header: SL% (pfx)
+  name: sl_pct
+  type: float
+  rstrip: " %"
+  none: " "
+- header: CU% (pfx)
+  name: cu_pct
+  type: float
+  rstrip: " %"
+  none: " "
+- header: KC% (pfx)
+  name: kc_pct
+  type: float
+  rstrip: " %"
+  none: " "
+- header: EP% (pfx)
+  name: ep_pct
+  type: float
+  rstrip: " %"
+  none: " "
+- header: CH% (pfx)
+  name: ch_pct
+  type: float
+  rstrip: " %"
+  none: " "
+- header: SC% (pfx)
+  name: sc_pct
+  type: float
+  rstrip: " %"
+  none: " "
+- header: KN% (pfx)
+  name: kn_pct
+  type: float
+  rstrip: " %"
+  none: " "
+- header: UN% (pfx)
+  name: un_pct
+  type: float
+  rstrip: " %"
+  none: " "
+- header: vFA (pfx)
+  name: fa_vel
+  type: float
+  rstrip: " %"
+  none: " "
+- header: vFT (pfx)
+  name: ft_vel
+  type: float
+  rstrip: " %"
+  none: " "
+- header: vFC (pfx)
+  name: fc_vel
+  type: float
+  rstrip: " %"
+  none: " "
+- header: vFS (pfx)
+  name: fs_vel
+  type: float
+  rstrip: " %"
+  none: " "
+- header: vFO (pfx)
+  name: fo_vel
+  type: float
+  rstrip: " %"
+  none: " "
+- header: vSI (pfx)
+  name: si_vel
+  type: float
+  rstrip: " %"
+  none: " "
+- header: vSL (pfx)
+  name: sl_vel
+  type: float
+  rstrip: " %"
+  none: " "
+- header: vCU (pfx)
+  name: cu_vel
+  type: float
+  rstrip: " %"
+  none: " "
+- header: vKC (pfx)
+  name: kc_vel
+  type: float
+  rstrip: " %"
+  none: " "
+- header: vEP (pfx)
+  name: ep_vel
+  type: float
+  rstrip: " %"
+  none: " "
+- header: vCH (pfx)
+  name: ch_vel
+  type: float
+  rstrip: " %"
+  none: " "
+- header: vSC (pfx)
+  name: sc_vel
+  type: float
+  rstrip: " %"
+  none: " "
+- header: vKN (pfx)
+  name: kn_vel
+  type: float
+  rstrip: " %"
+  none: " "
+- header: FA-X (pfx)
+  name: fa_x
+  type: float
+  rstrip: " %"
+  none: " "
+- header: FT-X (pfx)
+  name: ft_x
+  type: float
+  rstrip: " %"
+  none: " "
+- header: FC-X (pfx)
+  name: fc_x
+  type: float
+  rstrip: " %"
+  none: " "
+- header: FS-X (pfx)
+  name: fs_x
+  type: float
+  rstrip: " %"
+  none: " "
+- header: FO-X (pfx)
+  name: fo_x
+  type: float
+  rstrip: " %"
+  none: " "
+- header: SI-X (pfx)
+  name: si_x
+  type: float
+  rstrip: " %"
+  none: " "
+- header: SL-X (pfx)
+  name: sl_x
+  type: float
+  rstrip: " %"
+  none: " "
+- header: CU-X (pfx)
+  name: cu_x
+  type: float
+  rstrip: " %"
+  none: " "
+- header: KC-X (pfx)
+  name: kc_x
+  type: float
+  rstrip: " %"
+  none: " "
+- header: EP-X (pfx)
+  name: ep_x
+  type: float
+  rstrip: " %"
+  none: " "
+- header: CH-X (pfx)
+  name: ch_x
+  type: float
+  rstrip: " %"
+  none: " "
+- header: SC-X (pfx)
+  name: sc_x
+  type: float
+  rstrip: " %"
+  none: " "
+- header: KN-X (pfx)
+  name: kn_x
+  type: float
+  rstrip: " %"
+  none: " "
+- header: FA-Z (pfx)
+  name: fa_z
+  type: float
+  rstrip: " %"
+  none: " "
+- header: FT-Z (pfx)
+  name: ft_z
+  type: float
+  rstrip: " %"
+  none: " "
+- header: FC-Z (pfx)
+  name: fc_z
+  type: float
+  rstrip: " %"
+  none: " "
+- header: FS-Z (pfx)
+  name: fs_z
+  type: float
+  rstrip: " %"
+  none: " "
+- header: FO-Z (pfx)
+  name: fo_z
+  type: float
+  rstrip: " %"
+  none: " "
+- header: SI-Z (pfx)
+  name: si_z
+  type: float
+  rstrip: " %"
+  none: " "
+- header: SL-Z (pfx)
+  name: sl_z
+  type: float
+  rstrip: " %"
+  none: " "
+- header: CU-Z (pfx)
+  name: cu_z
+  type: float
+  rstrip: " %"
+  none: " "
+- header: KC-Z (pfx)
+  name: kc_z
+  type: float
+  rstrip: " %"
+  none: " "
+- header: EP-Z (pfx)
+  name: ep_z
+  type: float
+  rstrip: " %"
+  none: " "
+- header: CH-Z (pfx)
+  name: ch_z
+  type: float
+  rstrip: " %"
+  none: " "
+- header: SC-Z (pfx)
+  name: sc_z
+  type: float
+  rstrip: " %"
+  none: " "
+- header: KN-Z (pfx)
+  name: kn_z
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wFA (pfx)
+  name: fa_win
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wFT (pfx)
+  name: ft_win
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wFC (pfx)
+  name: fc_win
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wFS (pfx)
+  name: fs_win
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wFO (pfx)
+  name: fo_win
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wSI (pfx)
+  name: si_win
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wSL (pfx)
+  name: sl_win
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wCU (pfx)
+  name: cu_win
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wKC (pfx)
+  name: kc_win
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wEP (pfx)
+  name: ep_win
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wCH (pfx)
+  name: ch_win
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wSC (pfx)
+  name: sc_win
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wKN (pfx)
+  name: kn_win
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wFA/C (pfx)
+  name: fa_wpc
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wFT/C (pfx)
+  name: ft_wpc
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wFC/C (pfx)
+  name: fc_wpc
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wFS/C (pfx)
+  name: fs_wpc
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wFO/C (pfx)
+  name: fo_wpc
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wSI/C (pfx)
+  name: si_wpc
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wSL/C (pfx)
+  name: sl_wpc
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wCU/C (pfx)
+  name: cu_wpc
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wKC/C (pfx)
+  name: kc_wpc
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wEP/C (pfx)
+  name: ep_wpc
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wCH/C (pfx)
+  name: ch_wpc
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wSC/C (pfx)
+  name: sc_wpc
+  type: float
+  rstrip: " %"
+  none: " "
+- header: wKN/C (pfx)
+  name: kn_wpc
+  type: float
+  rstrip: " %"
+  none: " "

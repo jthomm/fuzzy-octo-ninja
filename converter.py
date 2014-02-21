@@ -154,29 +154,43 @@ from converter import Config
 import yaml
 import csv
 
-for year in range(2004, 2007):
-    config_yaml = yaml.load(open('batters.yaml', 'rb'))
-    config_yaml[0]['default'] = year
-    config = Config(config_yaml)
-    insert_sql = config.sqlite3_insert('fg_bat')
-    csv_file_name = str(year) + '.csv'
+folder = 'pit_pfx'
+
+cfg_yaml = yaml.load(open('./' + folder + '/cfg.yaml', 'rb'))
+cfg = Config(cfg_yaml)
+ddl = cfg.sqlite3_ddl(folder)
+c.execute(ddl)
+
+for year in range(2007, 2014):
+    cfg_yaml = yaml.load(open('./' + folder + '/cfg.yaml', 'rb'))
+    cfg_yaml[0]['default'] = year
+    cfg = Config(cfg_yaml)
+    insert_sql = cfg.sqlite3_insert(folder)
+    csv_file_name = './' + folder + '/' + str(year) + '.csv'
     reader = csv.DictReader(open(csv_file_name, 'rb'))
     for row in reader:
-        new_row = config(row)
+        new_row = cfg(row)
         _ = c.execute(insert_sql, new_row.values())
     n.commit()
 
-for year in range(2005, 2014):
-    config_yaml = yaml.load(open('pitchers.yaml', 'rb'))
-    config_yaml[0]['default'] = year
-    config = Config(config_yaml)
-    insert_sql = config.sqlite3_insert('fg_pit')
-    csv_file_name = './fg_pit/' + str(year) + '.csv'
+
+cfg_yaml = yaml.load(open('./cor/cfg.yaml', 'rb'))
+cfg = Config(cfg_yaml)
+ddl = cfg.sqlite3_ddl('cor')
+c.execute(ddl)
+
+for side in ('pit', 'bat',):
+    cfg_yaml = yaml.load(open('./cor/cfg.yaml', 'rb'))
+    cfg_yaml[0]['default'] = side
+    cfg = Config(cfg_yaml)
+    insert_sql = cfg.sqlite3_insert('cor')
+    csv_file_name = './cor/' + side + '_cor.csv'
     reader = csv.DictReader(open(csv_file_name, 'rb'))
     for row in reader:
-        new_row = config(row)
+        new_row = cfg(row)
         _ = c.execute(insert_sql, new_row.values())
     n.commit()
+
 
 '''
 

@@ -1,0 +1,7 @@
+---
+- header: side
+  default: pit
+- header: Y1
+- header: Y2
+- header: R
+  type: float

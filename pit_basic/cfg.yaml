@@ -1,0 +1,71 @@
+---
+- header: Year
+  type: int
+  default: 2013
+- header: playerid
+  name: fg_id
+- header: Name
+- header: Team
+  none: "- - -"
+- header: Age
+  type: int
+- header: G
+  type: int
+- header: IP
+  type: float
+- header: TBF
+  type: int
+- header: H
+  type: int
+- header: R
+  type: int
+- header: ER
+  type: int
+- header: HR
+  type: int
+- header: BB
+  type: int
+- header: IBB
+  type: int
+- header: HBP
+  type: int
+- header: WP
+  type: int
+- header: BK
+  type: int
+- header: SO
+  type: int
+- header: GB
+  type: int
+- header: LD
+  type: int
+- header: FB
+  type: int
+- header: IFFB
+  type: int
+- header: IFH
+  type: int
+- header: BU
+  name: bunts
+  type: int
+- header: BUH
+  name: bunt_hits
+  type: int
+- header: Pulls
+  type: int
+- header: F-Strike%
+  name: fp_str
+  type: float
+  rstrip: " %"
+  none: " "
+- header: SwStr%
+  name: sw_str
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Balls
+  type: int
+- header: Strikes
+  type: int
+- header: Pitches
+  type: int

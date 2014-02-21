@@ -1,86 +1,84 @@
 ---
-- header: Season
+- header: Year
   type: int
   default: 2013
+- header: playerid
+  name: fg_id
 - header: Name
 - header: Team
   none: "- - -"
 - header: Age
   type: int
 - header: G
-  name: games
   type: int
 - header: AB
-  name: at_bats
   type: int
 - header: PA
-  name: plate_app
   type: int
 - header: H
-  name: hits
   type: int
 - header: 1B
-  name: singles
+  name: b1
   type: int
 - header: 2B
-  name: doubles
+  name: b2
   type: int
 - header: 3B
-  name: triples
+  name: b3
   type: int
 - header: HR
-  name: home_runs
+  type: int
+- header: R
+  type: int
+- header: RBI
   type: int
 - header: BB
-  name: walks
   type: int
 - header: IBB
-  name: int_walks
   type: int
 - header: SO
-  name: struckout
   type: int
 - header: HBP
-  name: hitby_ptch
   type: int
 - header: SF
-  name: sac_flys
   type: int
 - header: SH
-  name: sac_hits
   type: int
 - header: GDP
-  name: gidp
   type: int
 - header: SB
-  name: stln_bases
   type: int
 - header: CS
-  name: caught_stl
   type: int
 - header: GB
-  name: grnd_balls
-  type: int
-- header: FB
-  name: fly_balls
   type: int
 - header: LD
-  name: line_drvs
+  type: int
+- header: FB
   type: int
 - header: IFFB
-  name: infld_fly
   type: int
 - header: IFH
-  name: infld_hit
   type: int
 - header: BU
-  name: bunts
   type: int
 - header: BUH
-  name: bunt_hits
   type: int
 - header: Spd
-  name: speed
   type: float
-- header: playerid
-  name: fg_id
+- header: F-Strike%
+  name: fp_str
+  type: float
+  rstrip: " %"
+  none: " "
+- header: SwStr%
+  name: sw_str
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Balls
+  type: int
+- header: Strikes
+  type: int
+- header: Pitches
+  type: int
