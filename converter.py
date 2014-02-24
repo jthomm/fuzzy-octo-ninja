@@ -1,3 +1,5 @@
+from __future__ import division
+
 import yaml
 from collections import OrderedDict
 
@@ -134,7 +136,7 @@ class Config(object):
 
 
 
-
+'''
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description='Convert CSV files')
@@ -143,6 +145,7 @@ if __name__ == '__main__':
     parser.add_argument('--csv')
     args = parser.parse_args()
     ### Ok ###
+'''
 
 '''
 import sqlite3
@@ -154,7 +157,7 @@ from converter import Config
 import yaml
 import csv
 
-folder = 'pit_pfx'
+folder = 'bat_pfx'
 
 cfg_yaml = yaml.load(open('./' + folder + '/cfg.yaml', 'rb'))
 cfg = Config(cfg_yaml)
@@ -194,4 +197,583 @@ for side in ('pit', 'bat',):
 
 '''
 
+
+import sqlite3
+from collections import OrderedDict
+
+def unique_key(dct, key):
+    if key in dct:
+        return unique_key(dct, '_{0}'.format(key))
+    else:
+        return key
+
+def ordered_dict_factory(cursor, row):
+    dct = OrderedDict()
+    for i, column_name in enumerate(cursor.description):
+        key = unique_key(dct, column_name[0])
+        dct[key] = row[i]
+    return dct
+
+n = sqlite3.connect('fbb')
+n.row_factory = ordered_dict_factory
+
+c = n.cursor()
+
+c.execute('''
+  SELECT t.*,
+         u.g + v.g g,
+         u.ab + v.ab ab,
+         u.pa + v.pa pa,
+         u.h + v.h h,
+         u.b1 + v.b1 b1,
+         u.b2 + v.b2 b2,
+         u.b3 + v.b3 b3,
+         u.hr + v.hr hr,
+         u.r + v.r r,
+         u.rbi + v.rbi rbi,
+         u.bb + v.bb bb,
+         u.ibb + v.ibb ibb,
+         u.so + v.so so,
+         u.hbp + v.hbp hbp,
+         u.sf + v.sf sf,
+         u.sh + v.sh sh,
+         u.gdp + v.gdp gdp,
+         u.sb + v.sb sb,
+         u.cs + v.cs cs,
+         u.gb + v.gb gb,
+         u.ld + v.ld ld,
+         u.fb + v.fb fb,
+         u.iffb + v.iffb iffb,
+         u.ifh + v.ifh ifh,
+         u.bu + v.bu bu,
+         u.buh + v.buh buh,
+         u.balls + v.balls balls,
+         u.strikes + v.strikes strikes,
+         u.pitches + v.pitches pitches,
+         u.o_sw_miss + v.o_sw_miss o_sw_miss,
+         u.o_sw_cont + v.o_sw_cont o_sw_cont,
+         u.o_look + v.o_look o_look,
+         u.z_sw_miss + v.z_sw_miss z_sw_miss,
+         u.z_sw_cont + v.z_sw_cont z_sw_cont,
+         u.z_look + v.z_look z_look
+    FROM bat_basic_ext t,
+         bat_basic_ext u,
+         bat_basic_ext v
+   WHERE     1 = 1
+         AND t.fg_id = u.fg_id
+         AND u.fg_id = v.fg_id
+         AND t.year - 1 = u.year
+         AND u.year - 1 = v.year
+         AND t.pa >= 250
+         AND u.pa >= 250
+         AND v.pa >= 250
+''')
+
+data = c.fetchall()
+
+
+
+from scipy.stats.stats import pearsonr
+from scipy.special import logit
+from math import sqrt, exp
+
+
+def correlate(x, y):
+    # Ensure equal length iterables
+    if not len(x) == len(y):
+        raise ValueError('Unequal lengths')
+    # Initialize values
+    n = len(x)
+    sx = sum(x)
+    sy = sum(y)
+    sxx = sum(val**2 for val in x)
+    sxy = sum(x_val*y_val for x_val, y_val in zip(x, y))
+    det = sxx*n - sx**2
+    # Calculate m, b
+    m = (sxy*n - sy*sx)/det
+    b = (sxx*sy - sx*sxy)/det
+    # Calculate r squared
+    err = sum((val - sy/n)**2 for val in y)
+    res = sum((y_val - m*x_val - b)**2 for x_val, y_val in zip(x, y))
+    r = sqrt(1 - res/err)
+    # Return parameters and correlation
+    return dict(m=m, b=b, r=r)
+
+
+
+so = {
+
+    'x': lambda d: (
+        d['_so']
+        ) / (
+        d['_so'] + d['_bb'] - d['_ibb'] + d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d: (
+        d['so']
+        ) / (
+        d['so'] + d['bb'] - d['ibb'] + d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+
+ubb = {
+
+    'x': lambda d: (
+        d['_bb'] - d['_ibb']
+        ) / (
+        d['_so'] + d['_bb'] - d['_ibb'] + d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['bb'] - d['ibb']
+        ) / (
+        d['so'] + d['bb'] - d['ibb'] + d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+
+gb = {
+
+    'x': lambda d: (
+        d['_gb']
+        ) / (
+        d['_so'] + d['_bb'] - d['_ibb'] + d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['gb']
+        ) / (
+        d['so'] + d['bb'] - d['ibb'] + d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+
+ld = {
+
+    'x': lambda d: (
+        d['_ld']
+        ) / (
+        d['_so'] + d['_bb'] - d['_ibb'] + d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['ld']
+        ) / (
+        d['so'] + d['bb'] - d['ibb'] + d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+
+offb = {
+
+    'x': lambda d: (
+        d['_fb'] - d['_iffb'] - d['_sf']
+        ) / (
+        d['_so'] + d['_bb'] - d['_ibb'] + d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['fb'] - d['iffb'] - d['sf']
+        ) / (
+        d['so'] + d['bb'] - d['ibb'] + d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+
+iffb = {
+
+    'x': lambda d: (
+        d['_iffb'] + 0.001
+        ) / (
+        d['_so'] + d['_bb'] - d['_ibb'] + d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['iffb'] + 0.001
+        ) / (
+        d['so'] + d['bb'] - d['ibb'] + d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+for f in (so, ubb, gb, ld, offb, iffb,):
+    c = correlate(map(logit, map(f['x'], data)), map(logit, map(f['y'], data)))
+    print u','.join(map(str, [c['m'], c['b'], c['r']]))
+
+print ''
+
+
+
+batted = {
+
+    'x': lambda d: (
+        d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+        ) / (
+        d['_so'] + d['_bb'] - d['_ibb'] + d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['gb'] + d['ld'] + d['fb'] - d['sf']
+        ) / (
+        d['so'] + d['bb'] - d['ibb'] + d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+for f in (batted,):
+    c = correlate(map(logit, map(f['x'], data)), map(logit, map(f['y'], data)))
+    print u','.join(map(str, [c['m'], c['b'], c['r']]))
+
+print ''
+
+
+
+gb_batted = {
+
+    'x': lambda d: (
+        d['_gb']
+        ) / (
+        d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['gb']
+        ) / (
+        d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+ld_batted = {
+
+    'x': lambda d: (
+        d['_ld']
+        ) / (
+        d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['ld']
+        ) / (
+        d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+offb_batted = {
+
+    'x': lambda d: (
+        d['_fb'] - d['_sf'] - d['_iffb']
+        ) / (
+        d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['fb'] - d['sf'] - d['iffb']
+        ) / (
+        d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+iffb_batted = {
+
+    'x': lambda d: (
+        d['_iffb'] + 0.001
+        ) / (
+        d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['iffb'] + 0.001
+        ) / (
+        d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+for f in (gb_batted, ld_batted, offb_batted, iffb_batted,):
+    c = correlate(map(logit, map(f['x'], data)), map(logit, map(f['y'], data)))
+    print u','.join(map(str, [c['m'], c['b'], c['r']]))
+
+print ''
+
+
+
+nonbatted = {
+
+    'x': lambda d: (
+        d['_so'] + d['_bb'] - d['_ibb']
+        ) / (
+        d['_so'] + d['_bb'] - d['_ibb'] + d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['so'] + d['bb'] - d['ibb']
+        ) / (
+        d['so'] + d['bb'] - d['ibb'] + d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+for f in (nonbatted,):
+    c = correlate(map(logit, map(f['x'], data)), map(logit, map(f['y'], data)))
+    print u','.join(map(str, [c['m'], c['b'], c['r']]))
+
+print ''
+
+
+
+so_nonbatted = {
+
+    'x': lambda d: (
+        d['_so']
+        ) / (
+        d['_so'] + d['_bb'] - d['_ibb']
+    ),
+
+    'y': lambda d:  (
+        d['so']
+        ) / (
+        d['so'] + d['bb'] - d['ibb']
+    ),
+
+}
+
+ubb_nonbatted = {
+
+    'x': lambda d: (
+        d['_bb'] - d['_ibb']
+        ) / (
+        d['_so'] + d['_bb'] - d['_ibb']
+    ),
+
+    'y': lambda d:  (
+        d['bb'] - d['ibb']
+        ) / (
+        d['so'] + d['bb'] - d['ibb']
+    ),
+
+}
+
+for f in (so_nonbatted, ubb_nonbatted,):
+    c = correlate(map(logit, map(f['x'], data)), map(logit, map(f['y'], data)))
+    print u','.join(map(str, [c['m'], c['b'], c['r']]))
+
+print ''
+
+
+
+nongb = {
+
+    'x': lambda d: (
+        d['_ld'] + d['_fb'] - d['_sf']
+        ) / (
+        d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['ld'] + d['fb'] - d['sf']
+        ) / (
+        d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+for f in (nongb,):
+    c = correlate(map(logit, map(f['x'], data)), map(logit, map(f['y'], data)))
+    print u','.join(map(str, [c['m'], c['b'], c['r']]))
+
+print ''
+
+
+
+ld_nongb = {
+
+    'x': lambda d: (
+        d['_ld']
+        ) / (
+        d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['ld']
+        ) / (
+        d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+offb_nongb = {
+
+    'x': lambda d: (
+        d['_fb'] - d['_iffb'] - d['_sf']
+        ) / (
+        d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['fb'] - d['iffb'] - d['sf']
+        ) / (
+        d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+iffb_nongb = {
+
+    'x': lambda d: (
+        d['_iffb'] + 0.001
+        ) / (
+        d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['iffb'] + 0.001
+        ) / (
+        d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+
+for f in (ld_nongb, offb_nongb, iffb_nongb,):
+    c = correlate(map(logit, map(f['x'], data)), map(logit, map(f['y'], data)))
+    print u','.join(map(str, [c['m'], c['b'], c['r']]))
+
+print ''
+
+
+
+hr_rpa = {
+
+    'x': lambda d: (
+        d['_hr']
+        ) / (
+        d['_so'] + d['_bb'] - d['_ibb'] + d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d: (
+        d['hr']
+        ) / (
+        d['so'] + d['bb'] - d['ibb'] + d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+hr_batted = {
+
+    'x': lambda d: (
+        d['_hr']
+        ) / (
+        d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['hr']
+        ) / (
+        d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+
+hr_nongb = {
+
+    'x': lambda d: (
+        d['_hr']
+        ) / (
+        d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['hr']
+        ) / (
+        d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+hr_ldoffb = {
+
+    'x': lambda d: (
+        d['_hr']
+        ) / (
+        d['_ld'] + d['_fb'] - d['_sf'] - d['_iffb']
+    ),
+
+    'y': lambda d:  (
+        d['hr']
+        ) / (
+        d['ld'] + d['fb'] - d['sf'] - d['iffb']
+    ),
+
+}
+
+hr_offb = {
+
+    'x': lambda d: (
+        d['_hr']
+        ) / (
+        d['_fb'] - d['_sf'] - d['_iffb']
+    ),
+
+    'y': lambda d:  (
+        d['hr']
+        ) / (
+        d['fb'] - d['sf'] - d['iffb']
+    ),
+
+}
+
+
+for f in (hr_rpa, hr_batted, hr_nongb, hr_ldoffb, hr_offb):
+    c = correlate(map(logit, map(f['x'], data)), map(logit, map(f['y'], data)))
+    print u','.join(map(str, [c['m'], c['b'], c['r']]))
+
+print ''
+
+batted_cont = {
+
+    'x': lambda d: (
+        d['_gb'] + d['_ld'] + d['_fb'] + d['_bu']
+        ) / (
+        d['_o_sw_cont'] + d['_z_sw_cont']
+    ),
+
+    'y': lambda d:  (
+        d['gb'] + d['ld'] + d['fb'] + d['bu']
+        ) / (
+        d['o_sw_cont'] + d['z_sw_cont']
+    ),
+
+}
+
+batted_rpa = {
+
+    'x': lambda d: (
+        d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+        ) / (
+        d['_so'] + d['_bb'] - d['_ibb'] + d['_gb'] + d['_ld'] + d['_fb'] - d['_sf']
+    ),
+
+    'y': lambda d:  (
+        d['gb'] + d['ld'] + d['fb'] - d['sf']
+        ) / (
+        d['so'] + d['bb'] - d['ibb'] + d['gb'] + d['ld'] + d['fb'] - d['sf']
+    ),
+
+}
+
+for f in (batted_cont, batted_rpa):
+    c = correlate(map(logit, map(f['x'], data)), map(logit, map(f['y'], data)))
+    print u','.join(map(str, [c['m'], c['b'], c['r']]))
+
+print ''
 
