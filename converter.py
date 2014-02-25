@@ -157,7 +157,7 @@ from converter import Config
 import yaml
 import csv
 
-folder = 'bat_pfx'
+folder = 'pit_stmr'
 
 cfg_yaml = yaml.load(open('./' + folder + '/cfg.yaml', 'rb'))
 cfg = Config(cfg_yaml)
@@ -197,7 +197,7 @@ for side in ('pit', 'bat',):
 
 '''
 
-
+"""
 import sqlite3
 from collections import OrderedDict
 
@@ -776,4 +776,4 @@ for f in (batted_cont, batted_rpa):
     print u','.join(map(str, [c['m'], c['b'], c['r']]))
 
 print ''
-
+"""
