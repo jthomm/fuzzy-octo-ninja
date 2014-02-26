@@ -3,12 +3,12 @@
   name: mlb_id
 - header: Last
 - header: First
-- header: Tm
-  name: team
 - header: Age
   type: int
+- header: Tm
+  name: team
 - header: Lg
-- header: Role
+- header: Pos
 - header: G
   type: float
 - header: PA
@@ -62,7 +62,7 @@
   type: float
 - header: BRAA
   type: float
-- header: Pos
+- header: Pos_Adj
   type: float
 - header: Repl
   type: float
