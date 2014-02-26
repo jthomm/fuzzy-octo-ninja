@@ -3,11 +3,12 @@
   name: mlb_id
 - header: Last
 - header: First
-- header: Team
 - header: Age
   type: int
+- header: Team
 - header: Lg
 - header: Role
+  name: pos
 - header: G
   type: float
 - header: GS
