@@ -6,6 +6,8 @@
   type: int
 - header: L
   type: int
+- header: SV
+  type: int
 - header: ERA
   type: float
 - header: GS

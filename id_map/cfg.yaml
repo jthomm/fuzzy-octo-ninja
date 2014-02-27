@@ -1,0 +1,15 @@
+---
+- header: fg_id
+- header: fg_last
+- header: fg_first
+- header: fg_name
+- header: role
+- header: bbm_id
+- header: bbm_last
+- header: bbm_first
+- header: yh_id
+- header: yh_last
+- header: yh_first
+- header: yh_team
+- header: yh_pos
+- header: mlb_id

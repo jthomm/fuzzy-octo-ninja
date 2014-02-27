@@ -408,3 +408,154 @@ AS
          AND t.year > 2007
          AND t.pitches > 200
 ;
+
+
+  SELECT v.mlb_id,
+         t.fg_id,
+         t.name,
+         1.0*u.pa/u.g cair_pag,
+         t.pa stmr_pa,
+         u.pa cair_pa,
+         t.avg stmr_avg,
+         u.avg cair_avg,
+         1.0*t.r/t.pa stmr_rpa,
+         1.0*u.r/u.pa cair_rpa,
+         1.0*t.hr/t.pa stmr_hrpa,
+         1.0*u.hr/u.pa cair_hrpa,
+         1.0*t.rbi/t.pa stmr_rbipa,
+         1.0*u.rbi/u.pa cair_rbipa,
+         1.0*t.sb/t.pa stmr_sbpa,
+         1.0*u.sb/u.pa cair_sbpa
+    FROM bat_stmr t,
+         bat_cairo u,
+         id_map v
+   WHERE     1 = 1
+         AND t.fg_id = v.fg_id
+         AND u.mlb_id = v.mlb_id
+         AND t.pa + t.ab > 2
+;
+
+  SELECT v.bbm_id player_id,
+         v.fg_last last_name,
+         v.fg_first first_name,
+         (1.0*(t.pa + u.pa)/2)/u.pa_g games,
+         (1.0*(t.pa + u.pa)/2)*(t.ab + u.ab)/2 at_bats,
+         (1.0*(t.pa + u.pa)/2)*(t.b1 + u.b1)/2 singles,
+         (1.0*(t.pa + u.pa)/2)*(t.b2 + u.b2)/2 doubles,
+         (1.0*(t.pa + u.pa)/2)*(t.b3 + u.b3)/2 triples,
+         (1.0*(t.pa + u.pa)/2)*(t.hr + u.hr)/2 home_runs,
+         (1.0*(t.pa + u.pa)/2)*(t.r + u.r)/2 runs_scored,
+         (1.0*(t.pa + u.pa)/2)*(t.rbi + u.rbi)/2 rbi,
+         (1.0*(t.pa + u.pa)/2)*(t.bb + u.bb)/2 bases_on_balls,
+         (1.0*(t.pa + u.pa)/2)*(t.so + u.so)/2 strikeouts,
+         (1.0*(t.pa + u.pa)/2)*(t.sb + u.sb)/2 stolen_bases,
+         (1.0*(t.pa + u.pa)/2)*(t.cs + u.cs)/2 stolen_bases_caught
+    FROM (SELECT fg_id,
+                 pa,
+                 1.0*ab/pa ab,
+                 1.0*(h - b2 - b3 - hr)/pa b1,
+                 1.0*b2/pa b2,
+                 1.0*b3/pa b3,
+                 1.0*hr/pa hr,
+                 1.0*r/pa r,
+                 1.0*rbi/pa rbi,
+                 1.0*bb/pa bb,
+                 1.0*so/pa so,
+                 1.0*sb/pa sb,
+                 1.0*cs/pa cs
+            FROM bat_stmr
+           WHERE     1 = 1
+                 AND pa + ab > 2) t,
+         (SELECT mlb_id,
+                 g,
+                 pa,
+                 1.0*pa/g pa_g,
+                 1.0*ab/pa ab,
+                 1.0*(h - b2 - b3 - hr)/pa b1,
+                 1.0*b2/pa b2,
+                 1.0*b3/pa b3,
+                 1.0*hr/pa hr,
+                 1.0*r/pa r,
+                 1.0*rbi/pa rbi,
+                 1.0*bb/pa bb,
+                 1.0*so/pa so,
+                 1.0*sb/pa sb,
+                 1.0*cs/pa cs
+            FROM bat_cairo) u,
+         id_map v
+   WHERE     1 = 1
+         AND t.fg_id = v.fg_id
+         AND u.mlb_id = v.mlb_id
+;
+
+
+  SELECT v.bbm_id player_id,
+         v.fg_last last_name,
+         v.fg_first first_name,
+         1.0*(t.g + u.g)/2 games,
+         1.0*(t.gs + u.gs)/2 starts,
+         (1.0*(t.g + u.g)/2)*(t.ip + u.ip)/2 innings,
+         (1.0*(t.g + u.g)/2)*((t.ip + u.ip)/2)*((t.h + u.h)/2) hits_allowed,
+         (1.0*(t.g + u.g)/2)*((t.ip + u.ip)/2)*((t.er + u.er)/2) runs_earned,
+         (1.0*(t.g + u.g)/2)*((t.ip + u.ip)/2)*((t.bb + u.bb)/2) bases_on_balls,
+         (1.0*(t.g + u.g)/2)*((t.ip + u.ip)/2)*((t.so + u.so)/2) so_pitched,
+         (1.0*(t.g + u.g)/2)*((t.ip + u.ip)/2)*((t.hr + u.hr)/2) hr_allowed,
+         (1.0*(t.g + u.g)/2)*(t.w + u.w)/2 wins,
+         (1.0*(t.g + u.g)/2)*(t.l + u.l)/2 losses,
+         (1.0*(t.g + u.g)/2)*(t.sv + u.sv)/2 saves,
+         NULL saves_blown,
+         NULL holds,
+         NULL quality_starts
+    FROM (SELECT fg_id,
+                 g,
+                 gs,
+                 1.0*ip/g ip,
+                 1.0*h/ip h,
+                 1.0*er/ip er,
+                 1.0*bb/ip bb,
+                 1.0*so/ip so,
+                 1.0*hr/ip hr,
+                 1.0*w/g w,
+                 1.0*l/g l,
+                 1.0*sv/g sv
+            FROM pit_stmr) t,
+         (SELECT mlb_id,
+                 g,
+                 gs,
+                 1.0*ip/g ip,
+                 1.0*h/ip h,
+                 1.0*er/ip er,
+                 1.0*bb/ip bb,
+                 1.0*so/ip so,
+                 1.0*hr/ip hr,
+                 1.0*w/g w,
+                 1.0*l/g l,
+                 1.0*sv/g sv
+            FROM pit_cairo) u,
+         id_map v
+   WHERE     1 = 1
+         AND t.fg_id = v.fg_id
+         AND u.mlb_id = v.mlb_id
+;
+
+
+  SELECT v.bbm_id player_id,
+         v.fg_last last_name,
+         v.fg_first first_name,
+         t.g games,
+         t.gs starts,
+         t.ip innings,
+         t.h hits_allowed,
+         t.er runs_earned,
+         t.bb bases_on_balls,
+         t.so strikeouts_pitched,
+         t.hr home_runs_allowed,
+         t.w wins,
+         t.l losses,
+         t.sv saves,
+         NULL saves_blown,
+         NULL holds,
+         NULL quality_starts
+    FROM pit_stmr t LEFT OUTER JOIN id_map v ON t.fg_id = v.fg_id
+   WHERE t.h > 1
+;
