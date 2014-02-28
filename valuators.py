@@ -174,7 +174,7 @@ class PitBbm(object):
 
 class PitTotal(object):
 
-    W_M = 0.1132
+    W_M = 0.2056
     W_B = -2.0082
 
     SV_M = 0.0623
@@ -184,7 +184,7 @@ class PitTotal(object):
     ERA_Q = 3.2
 
     WHIP_P = 1/18.0
-    WHIP_Q = 1.447
+    WHIP_Q = 1.1447
 
     SO_M = 0.0178
     SO_B = -2.4163
@@ -212,20 +212,20 @@ class PitTotal(object):
 
 class PitPerGame(object):
 
-    W_M = 0.1132
-    W_B = -2.0082
+    W_M = 5.6022
+    W_B = -1.9762
 
-    SV_M = 0.0623
-    SV_B = -0.6037
+    SV_M = 4.214
+    SV_B = -0.4692
 
-    ERA_P = 1/87.0
-    ERA_Q = 3.2
+    ERA_P = 1/3.73
+    ERA_Q = 3.07
 
-    WHIP_P = 1/18.0
-    WHIP_Q = 1.447
+    WHIP_P = 1.656
+    WHIP_Q = 1.14
 
-    SO_M = 0.0178
-    SO_B = -2.4163
+    SO_M = 0.5047
+    SO_B = -2.336
 
     @property
     def w_v(self):
