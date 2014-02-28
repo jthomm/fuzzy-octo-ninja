@@ -1,4 +1,3 @@
-
   SELECT t.*,
          u.g + v.g g,
          u.ab + v.ab ab,
@@ -559,3 +558,13 @@ AS
     FROM pit_stmr t LEFT OUTER JOIN id_map v ON t.fg_id = v.fg_id
    WHERE t.h > 1
 ;
+
+
+CREATE UNIQUE INDEX id_map_bbm_id_uidx ON id_map (bbm_id)
+CREATE UNIQUE INDEX id_map_fg_id_uidx ON id_map (fg_id)
+CREATE UNIQUE INDEX id_map_mlb_id_uidx ON id_map (mlb_id)
+CREATE UNIQUE INDEX id_map_yh_id_uidx ON id_map (yh_id)
+CREATE UNIQUE INDEX bat_stmr_fg_id_uidx ON bat_stmr (fg_id)
+CREATE UNIQUE INDEX bat_cairo_mlb_id_uidx ON bat_cairo (mlb_id)
+CREATE UNIQUE INDEX pit_stmr_fg_id_uidx ON pit_stmr (fg_id)
+CREATE UNIQUE INDEX pit_cairo_mlb_id_uidx ON pit_cairo (mlb_id)
