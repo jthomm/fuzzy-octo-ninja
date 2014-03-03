@@ -157,12 +157,21 @@ from converter import Config
 import yaml
 import csv
 
-folder = 'pit_stmr'
+folder = 'bat_stmr'
 
 cfg_yaml = yaml.load(open('./' + folder + '/cfg.yaml', 'rb'))
 cfg = Config(cfg_yaml)
 ddl = cfg.sqlite3_ddl(folder)
 c.execute(ddl)
+
+insert_sql = cfg.sqlite3_insert(folder)
+csv_file_name = './' + folder + '/' + folder + '.csv'
+reader = csv.DictReader(open(csv_file_name, 'rb'))
+for row in reader:
+    new_row = cfg(row)
+    c.execute(insert_sql, new_row.values())
+
+n.commit()
 
 for year in range(2007, 2014):
     cfg_yaml = yaml.load(open('./' + folder + '/cfg.yaml', 'rb'))

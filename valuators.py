@@ -174,7 +174,7 @@ class PitBbm(object):
 
 class PitTotal(object):
 
-    W_M = 0.1132
+    W_M = 0.2056
     W_B = -2.0082
 
     SV_M = 0.0623
@@ -286,8 +286,8 @@ c = n.cursor()
 
 c.execute('''
   SELECT v.bbm_id player_id,
-         v.fg_last last_name,
-         v.fg_first first_name,
+         v.fg_name name,
+         v.yh_pos pos,
          (1.0*(t.pa + u.pa)/2)/u.pa_g games,
          (1.0*(t.pa + u.pa)/2)*(t.ab + u.ab)/2 at_bats,
          (1.0*(t.pa + u.pa)/2)*(t.b1 + u.b1)/2 singles,
@@ -363,7 +363,6 @@ file_name = 'bat_value.csv'
 with open(file_name, 'wb') as tgt_file:
     w = csv.writer(tgt_file, quoting=csv.QUOTE_MINIMAL, delimiter=',')
     headers = data[0].keys()
-    w.writerow(headers)
     for row in data:
         w.writerow(row.values())
 
