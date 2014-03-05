@@ -56,8 +56,10 @@ class BatTotal(object):
     R_M = 0.065
     R_B = -4.7858
 
-    BA_P = 1/13.0
-    BA_Q = 0.278
+    #BA_P = 1/13.0
+    #BA_Q = 0.278
+    BA_P = 14/183.0
+    BA_Q = 0.2778
 
     @property
     def hr_v(self):
@@ -94,8 +96,10 @@ class BatPerGame(object):
     R_M = 9.495
     R_B = -5.1474
 
-    BA_P = 1/0.093
-    BA_Q = 0.283
+    #BA_P = 1/0.093
+    #BA_Q = 0.283
+    BA_P = 10.65
+    BA_Q = 0.2818
 
     @property
     def hr_v(self):
