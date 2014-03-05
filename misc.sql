@@ -1,3 +1,4 @@
+
   SELECT t.*,
          u.g + v.g g,
          u.ab + v.ab ab,
@@ -437,19 +438,24 @@ AS
   SELECT v.bbm_id player_id,
          v.fg_last last_name,
          v.fg_first first_name,
-         (1.0*(t.pa + u.pa)/2)/u.pa_g games,
-         (1.0*(t.pa + u.pa)/2)*(t.ab + u.ab)/2 at_bats,
-         (1.0*(t.pa + u.pa)/2)*(t.b1 + u.b1)/2 singles,
-         (1.0*(t.pa + u.pa)/2)*(t.b2 + u.b2)/2 doubles,
-         (1.0*(t.pa + u.pa)/2)*(t.b3 + u.b3)/2 triples,
-         (1.0*(t.pa + u.pa)/2)*(t.hr + u.hr)/2 home_runs,
-         (1.0*(t.pa + u.pa)/2)*(t.r + u.r)/2 runs_scored,
-         (1.0*(t.pa + u.pa)/2)*(t.rbi + u.rbi)/2 rbi,
-         (1.0*(t.pa + u.pa)/2)*(t.bb + u.bb)/2 bases_on_balls,
-         (1.0*(t.pa + u.pa)/2)*(t.so + u.so)/2 strikeouts,
-         (1.0*(t.pa + u.pa)/2)*(t.sb + u.sb)/2 stolen_bases,
-         (1.0*(t.pa + u.pa)/2)*(t.cs + u.cs)/2 stolen_bases_caught
+         (1.0*(s.pa + t.pa)/2)/s.pa_g games,
+         (1.0*(s.pa + t.pa)/2)*(t.ab + u.ab)/2 at_bats,
+         (1.0*(s.pa + t.pa)/2)*(t.b1 + u.b1)/2 singles,
+         (1.0*(s.pa + t.pa)/2)*(t.b2 + u.b2)/2 doubles,
+         (1.0*(s.pa + t.pa)/2)*(t.b3 + u.b3)/2 triples,
+         (1.0*(s.pa + t.pa)/2)*(t.hr + u.hr)/2 home_runs,
+         (1.0*(s.pa + t.pa)/2)*(t.r + u.r)/2 runs_scored,
+         (1.0*(s.pa + t.pa)/2)*(t.rbi + u.rbi)/2 rbi,
+         (1.0*(s.pa + t.pa)/2)*(t.bb + u.bb)/2 bases_on_balls,
+         (1.0*(s.pa + t.pa)/2)*(t.so + u.so)/2 strikeouts,
+         (1.0*(s.pa + t.pa)/2)*(t.sb + u.sb)/2 stolen_bases,
+         (1.0*(s.pa + t.pa)/2)*(t.cs + u.cs)/2 stolen_bases_caught
     FROM (SELECT fg_id,
+                 g,
+                 pa,
+                 1.0*pa/g pa_g
+            FROM bat_fans) s,
+         (SELECT fg_id,
                  pa,
                  1.0*ab/pa ab,
                  1.0*(h - b2 - b3 - hr)/pa b1,
@@ -483,6 +489,7 @@ AS
             FROM bat_cairo) u,
          id_map v
    WHERE     1 = 1
+         AND s.fg_id = v.fg_id
          AND t.fg_id = v.fg_id
          AND u.mlb_id = v.mlb_id
 ;
@@ -558,13 +565,3 @@ AS
     FROM pit_stmr t LEFT OUTER JOIN id_map v ON t.fg_id = v.fg_id
    WHERE t.h > 1
 ;
-
-
-CREATE UNIQUE INDEX id_map_bbm_id_uidx ON id_map (bbm_id)
-CREATE UNIQUE INDEX id_map_fg_id_uidx ON id_map (fg_id)
-CREATE UNIQUE INDEX id_map_mlb_id_uidx ON id_map (mlb_id)
-CREATE UNIQUE INDEX id_map_yh_id_uidx ON id_map (yh_id)
-CREATE UNIQUE INDEX bat_stmr_fg_id_uidx ON bat_stmr (fg_id)
-CREATE UNIQUE INDEX bat_cairo_mlb_id_uidx ON bat_cairo (mlb_id)
-CREATE UNIQUE INDEX pit_stmr_fg_id_uidx ON pit_stmr (fg_id)
-CREATE UNIQUE INDEX pit_cairo_mlb_id_uidx ON pit_cairo (mlb_id)
