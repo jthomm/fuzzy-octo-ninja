@@ -1,4 +1,3 @@
-
   SELECT t.*,
          u.g + v.g g,
          u.ab + v.ab ab,
@@ -574,3 +573,126 @@ AS
 --CREATE UNIQUE INDEX bat_cairo_mlb_id_uidx ON bat_cairo (mlb_id)
 --CREATE UNIQUE INDEX pit_stmr_fg_id_uidx ON pit_stmr (fg_id)
 --CREATE UNIQUE INDEX pit_cairo_mlb_id_uidx ON pit_cairo (mlb_id)
+
+
+
+CREATE VIEW v_bat_pa AS
+   SELECT t.fg_id,
+          CASE WHEN u.fg_id IS NULL
+               THEN t.pa
+               ELSE 1.0*(t.pa + u.pa)/2
+          END pa
+     FROM bat_stmr t
+LEFT JOIN bat_fans u ON t.fg_id = u.fg_id
+    WHERE t.pa > 1
+;
+
+CREATE VIEW v_bat_stmr_pa AS
+  SELECT fg_id,
+         1.0*ab/pa ab,
+         1.0*(h - b2 - b3 - hr)/pa b1,
+         1.0*b2/pa b2,
+         1.0*b3/pa b3,
+         1.0*hr/pa hr,
+         1.0*r/pa r,
+         1.0*rbi/pa rbi,
+         1.0*bb/pa bb,
+         1.0*so/pa so,
+         1.0*sb/pa sb,
+         1.0*cs/pa cs
+    FROM bat_stmr
+;
+
+CREATE VIEW v_bat_cairo_pa AS
+  SELECT mlb_id,
+         1.0*g/pa g,
+         1.0*ab/pa ab,
+         1.0*(h - b2 - b3 - hr)/pa b1,
+         1.0*b2/pa b2,
+         1.0*b3/pa b3,
+         1.0*hr/pa hr,
+         1.0*r/pa r,
+         1.0*rbi/pa rbi,
+         1.0*bb/pa bb,
+         1.0*so/pa so,
+         1.0*sb/pa sb,
+         1.0*cs/pa cs
+    FROM bat_cairo
+;
+
+CREATE VIEW v_bat_fans_pa AS
+  SELECT fg_id,
+         1.0*g/pa g
+    FROM bat_fans
+;
+
+CREATE VIEW v_bat_composite_pa AS
+   SELECT t.fg_id,
+          CASE WHEN w.g IS NULL
+               THEN u.g
+               ELSE 1.0*(w.g + u.g)/2
+          END g,
+          1.0*(t.ab + u.ab)/2 ab,
+          1.0*(t.b1 + u.b1)/2 b1,
+          1.0*(t.b2 + u.b2)/2 b2,
+          1.0*(t.b3 + u.b3)/2 b3,
+          1.0*(t.hr + u.hr)/2 hr,
+          1.0*(t.r + u.r)/2 r,
+          1.0*(t.rbi + u.rbi)/2 rbi,
+          1.0*(t.bb + u.bb)/2 bb,
+          1.0*(t.so + u.so)/2 so,
+          1.0*(t.sb + u.sb)/2 sb,
+          1.0*(t.cs + u.cs)/2 cs
+     FROM v_bat_stmr_pa t,
+          v_bat_cairo_pa u,
+          id_map v
+LEFT JOIN v_bat_fans_pa w ON v.fg_id = w.fg_id
+    WHERE     1 = 1
+          AND t.fg_id = v.fg_id
+          AND u.mlb_id = v.mlb_id
+;
+
+CREATE VIEW v_bat_composite AS
+  SELECT t.fg_id,
+         v.fg_last,
+         v.fg_first,
+         u.pa*t.g g,
+         u.pa*t.ab ab,
+         u.pa*t.b1 b1,
+         u.pa*t.b2 b2,
+         u.pa*t.b3 b3,
+         u.pa*t.hr hr,
+         u.pa*t.r r,
+         u.pa*t.rbi rbi,
+         u.pa*t.bb bb,
+         u.pa*t.so so,
+         u.pa*t.sb sb,
+         u.pa*t.cs cs
+    FROM v_bat_composite_pa t,
+         v_bat_pa u,
+         id_map v
+    WHERE     1 = 1
+          AND t.fg_id = u.fg_id
+          AND t.fg_id = v.fg_id
+;
+
+  SELECT u.bbm_id player_id,
+         u.fg_last last_name,
+         u.fg_first first_name,
+         t.g games,
+         t.ab at_bats,
+         t.b1 singles,
+         t.b2 doubles,
+         t.b3 triples,
+         t.hr home_runs,
+         t.r runs_scored,
+         t.rbi rbi,
+         t.bb bases_on_balls,
+         t.so strikeouts,
+         t.sb stolen_bases,
+         t.cs stolen_bases_caught
+    FROM v_bat_composite t,
+         id_map u
+    WHERE     1 = 1
+          AND t.fg_id = u.fg_id
+;
