@@ -157,10 +157,14 @@ from converter import Config
 import yaml
 import csv
 
-folder = 'bat_stmr'
+folder = 'pit_fans'
 
 cfg_yaml = yaml.load(open('./' + folder + '/cfg.yaml', 'rb'))
 cfg = Config(cfg_yaml)
+
+c.execute('DELETE FROM ' + folder)
+n.commit()
+
 ddl = cfg.sqlite3_ddl(folder)
 c.execute(ddl)
 
