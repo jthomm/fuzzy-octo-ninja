@@ -289,63 +289,25 @@ c = n.cursor()
 
 
 c.execute('''
-  SELECT v.bbm_id player_id,
-         v.fg_last last_name,
-         v.fg_first first_name,
-         (1.0*(s.pa + t.pa)/2)/s.pa_g games,
-         (1.0*(s.pa + t.pa)/2)*(t.ab + u.ab)/2 at_bats,
-         (1.0*(s.pa + t.pa)/2)*(t.b1 + u.b1)/2 singles,
-         (1.0*(s.pa + t.pa)/2)*(t.b2 + u.b2)/2 doubles,
-         (1.0*(s.pa + t.pa)/2)*(t.b3 + u.b3)/2 triples,
-         (1.0*(s.pa + t.pa)/2)*(t.hr + u.hr)/2 home_runs,
-         (1.0*(s.pa + t.pa)/2)*(t.r + u.r)/2 runs_scored,
-         (1.0*(s.pa + t.pa)/2)*(t.rbi + u.rbi)/2 rbi,
-         (1.0*(s.pa + t.pa)/2)*(t.bb + u.bb)/2 bases_on_balls,
-         (1.0*(s.pa + t.pa)/2)*(t.so + u.so)/2 strikeouts,
-         (1.0*(s.pa + t.pa)/2)*(t.sb + u.sb)/2 stolen_bases,
-         (1.0*(s.pa + t.pa)/2)*(t.cs + u.cs)/2 stolen_bases_caught
-    FROM (SELECT fg_id,
-                 g,
-                 pa,
-                 1.0*pa/g pa_g
-            FROM bat_fans) s,
-         (SELECT fg_id,
-                 pa,
-                 1.0*ab/pa ab,
-                 1.0*(h - b2 - b3 - hr)/pa b1,
-                 1.0*b2/pa b2,
-                 1.0*b3/pa b3,
-                 1.0*hr/pa hr,
-                 1.0*r/pa r,
-                 1.0*rbi/pa rbi,
-                 1.0*bb/pa bb,
-                 1.0*so/pa so,
-                 1.0*sb/pa sb,
-                 1.0*cs/pa cs
-            FROM bat_stmr
-           WHERE     1 = 1
-                 AND pa + ab > 2) t,
-         (SELECT mlb_id,
-                 g,
-                 pa,
-                 1.0*pa/g pa_g,
-                 1.0*ab/pa ab,
-                 1.0*(h - b2 - b3 - hr)/pa b1,
-                 1.0*b2/pa b2,
-                 1.0*b3/pa b3,
-                 1.0*hr/pa hr,
-                 1.0*r/pa r,
-                 1.0*rbi/pa rbi,
-                 1.0*bb/pa bb,
-                 1.0*so/pa so,
-                 1.0*sb/pa sb,
-                 1.0*cs/pa cs
-            FROM bat_cairo) u,
-         id_map v
-   WHERE     1 = 1
-         AND s.fg_id = v.fg_id
-         AND t.fg_id = v.fg_id
-         AND u.mlb_id = v.mlb_id
+  SELECT u.bbm_id player_id,
+         u.fg_last last_name,
+         u.fg_first first_name,
+         t.g games,
+         t.ab at_bats,
+         t.b1 singles,
+         t.b2 doubles,
+         t.b3 triples,
+         t.hr home_runs,
+         t.r runs_scored,
+         t.rbi rbi,
+         t.bb bases_on_balls,
+         t.so strikeouts,
+         t.sb stolen_bases,
+         t.cs stolen_bases_caught
+    FROM v_bat_composite t,
+         id_map u
+    WHERE     1 = 1
+          AND t.fg_id = u.fg_id
 ''')
 
 data = c.fetchall()
