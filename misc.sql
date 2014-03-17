@@ -560,7 +560,8 @@ AS
          t.sv saves,
          NULL saves_blown,
          NULL holds,
-         NULL quality_starts
+         NULL quality_starts,
+         NULL comment
     FROM pit_stmr t LEFT OUTER JOIN id_map v ON t.fg_id = v.fg_id
    WHERE t.h > 1
 ;
@@ -695,4 +696,157 @@ CREATE VIEW v_bat_composite AS
          id_map u
     WHERE     1 = 1
           AND t.fg_id = u.fg_id
+;
+
+
+CREATE VIEW v2_bat_fans_stmr_f411 AS
+  SELECT t.fg_id,
+         v.fg_last,
+         v.fg_first,
+
+         1.0*w.g/w.pa fans_g,
+         1.0*w.pa fans_pa,
+         1.0*w.ab/w.pa fans_ab,
+         1.0*(w.h - w.b2 - w.b3 - w.hr)/w.pa fans_b1,
+         1.0*w.b2/w.pa fans_b2,
+         1.0*w.b3/w.pa fans_b3,
+         1.0*w.hr/w.pa fans_hr,
+         1.0*w.r/w.pa fans_r,
+         1.0*w.rbi/w.pa fans_rbi,
+         1.0*w.bb/w.pa fans_bb,
+         1.0*w.so/w.pa fans_so,
+         1.0*w.sb/w.pa fans_sb,
+         1.0*w.cs/w.pa fans_cs,
+
+         --1.0*u.g/pa stmr_g,
+         1.0*t.pa stmr_pa,
+         1.0*t.ab/t.pa stmr_ab,
+         1.0*(t.h - t.b2 - t.b3 - t.hr)/t.pa stmr_b1,
+         1.0*t.b2/t.pa stmr_b2,
+         1.0*t.b3/t.pa stmr_b3,
+         1.0*t.hr/t.pa stmr_hr,
+         1.0*t.r/t.pa stmr_r,
+         1.0*t.rbi/t.pa stmr_rbi,
+         1.0*t.bb/t.pa stmr_bb,
+         1.0*t.so/t.pa stmr_so,
+         1.0*t.sb/t.pa stmr_sb,
+         1.0*t.cs/t.pa stmr_cs,
+
+         1.0*u.g/u.pa f411_g,
+         1.0*u.pa f411_pa,
+         1.0*u.ab/u.pa f411_ab,
+         1.0*(u.h - u.b2 - u.b3 - u.hr)/u.pa f411_b1,
+         1.0*u.b2/u.pa f411_b2,
+         1.0*u.b3/u.pa f411_b3,
+         1.0*u.hr/u.pa f411_hr,
+         1.0*u.r/u.pa f411_r,
+         1.0*u.rbi/u.pa f411_rbi,
+         1.0*u.bb/u.pa f411_bb,
+         1.0*u.so/u.pa f411_so,
+         1.0*u.sb/u.pa f411_sb,
+         1.0*u.cs/u.pa f411_cs
+
+    FROM bat_stmr t,
+         bat_f411o u,
+         id_map v
+  LEFT OUTER JOIN bat_fans w ON v.fg_id = w.fg_id
+
+   WHERE     1 = 1
+         AND t.fg_id = v.fg_id
+         AND u.mlb_id = v.mlb_id
+         AND t.pa > 1
+;
+
+
+
+CREATE VIEW v2_bat_composite AS
+  SELECT fg_id,
+         fg_last,
+         fg_first,
+
+         CASE WHEN fans_g IS NULL
+              THEN f411_g
+              ELSE 0.1*fans_g + 0.9*f411_g
+         END g,
+
+         1.0*(stmr_pa + f411_pa)/2 pa,
+
+         CASE WHEN fans_ab IS NULL
+              THEN 1.0*(stmr_ab + f411_ab)/2
+              ELSE 1.0*(fans_ab + stmr_ab + f411_ab)/3
+         END ab,
+
+         CASE WHEN fans_b1 IS NULL
+              THEN 1.0*(stmr_b1 + f411_b1)/2
+              ELSE 1.0*(fans_b1 + stmr_b1 + f411_b1)/3
+         END b1,
+
+         CASE WHEN fans_b2 IS NULL
+              THEN 1.0*(stmr_b2 + f411_b2)/2
+              ELSE 1.0*(fans_b2 + stmr_b2 + f411_b2)/3
+         END b2,
+
+         CASE WHEN fans_b3 IS NULL
+              THEN 1.0*(stmr_b3 + f411_b3)/2
+              ELSE 1.0*(fans_b3 + stmr_b3 + f411_b3)/3
+         END b3,
+
+         CASE WHEN fans_hr IS NULL
+              THEN 1.0*(stmr_hr + f411_hr)/2
+              ELSE 1.0*(fans_hr + stmr_hr + f411_hr)/3
+         END hr,
+
+         CASE WHEN fans_r IS NULL
+              THEN 1.0*(stmr_r + f411_r)/2
+              ELSE 1.0*(fans_r + stmr_r + f411_r)/3
+         END r,
+
+         CASE WHEN fans_rbi IS NULL
+              THEN 1.0*(stmr_rbi + f411_rbi)/2
+              ELSE 1.0*(fans_rbi + stmr_rbi + f411_rbi)/3
+         END rbi,
+        
+         CASE WHEN fans_bb IS NULL
+              THEN 1.0*(stmr_bb + f411_bb)/2
+              ELSE 1.0*(fans_bb + stmr_bb + f411_bb)/3
+         END bb,
+
+         CASE WHEN fans_so IS NULL
+              THEN 1.0*(stmr_so + f411_so)/2
+              ELSE 1.0*(fans_so + stmr_so + f411_so)/3
+         END so,
+
+         CASE WHEN fans_sb IS NULL
+              THEN 1.0*(stmr_sb + f411_sb)/2
+              ELSE 1.0*(fans_sb + stmr_sb + f411_sb)/3
+         END sb,
+
+         CASE WHEN fans_cs IS NULL
+              THEN 1.0*(stmr_cs + f411_cs)/2
+              ELSE 1.0*(fans_cs + stmr_cs + f411_cs)/3
+         END cs
+    FROM v2_bat_fans_stmr_f411
+;
+
+
+  SELECT u.bbm_id player_id,
+         t.fg_last last_name,
+         t.fg_first first_name,
+         t.g*t.pa games,
+         t.ab*t.pa at_bats,
+         t.b1*t.pa singles,
+         t.b2*t.pa doubles,
+         t.b3*t.pa triples,
+         t.hr*t.pa home_runs,
+         t.r*t.pa runs_scored,
+         t.rbi*t.pa rbi,
+         t.bb*t.pa bases_on_balls,
+         t.so*t.pa strikeouts,
+         t.sb*t.pa stolen_bases,
+         t.cs*t.pa stolen_bases_caught,
+         NULL comment
+    FROM v2_bat_composite t,
+         id_map u
+   WHERE     1 = 1
+         AND t.fg_id = u.fg_id
 ;
