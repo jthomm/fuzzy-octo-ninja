@@ -850,3 +850,120 @@ CREATE VIEW v2_bat_composite AS
    WHERE     1 = 1
          AND t.fg_id = u.fg_id
 ;
+
+/*** Fangraphs FANs + Steamer for games/innings, Steamer for rate stats ***/
+
+CREATE VIEW v_pit_stmr_per_g AS
+  SELECT fg_id,
+         g g,
+         1.0*gs/g gs_g,
+         1.0*w/g w_g,
+         1.0*l/g l_g,
+         1.0*sv/g sv_g,
+         1.0*ip/g ip_g
+    FROM pit_stmr t
+   WHERE ip > 1
+;
+
+CREATE VIEW v_pit_fans_per_g AS
+  SELECT fg_id,
+         g g,
+         1.0*gs/g gs_g,
+         1.0*w/g w_g,
+         1.0*l/g l_g,
+         1.0*sv/g sv_g,
+         1.0*ip/g ip_g
+    FROM pit_fans t
+;
+
+CREATE VIEW v_pit_stmr_fans_per_g AS
+  SELECT t.fg_id,
+         CASE WHEN u.fg_id IS NULL
+              THEN t.g
+              ELSE 1.0*(t.g + u.g)/2
+         END g,
+         CASE WHEN u.fg_id IS NULL
+              THEN t.gs_g
+              ELSE 1.0*(t.gs_g + u.gs_g)/2
+         END gs_g,
+         CASE WHEN u.fg_id IS NULL
+              THEN t.w_g
+              ELSE 1.0*(t.w_g + u.w_g)/2
+         END w_g,
+         CASE WHEN u.fg_id IS NULL
+              THEN t.l_g
+              ELSE 1.0*(t.l_g + u.l_g)/2
+         END l_g,
+         CASE WHEN u.fg_id IS NULL
+              THEN t.sv_g
+              ELSE 1.0*(t.sv_g + u.sv_g)/2
+         END sv_g,
+         CASE WHEN u.fg_id IS NULL
+              THEN t.ip_g
+              ELSE 1.0*(t.ip_g + u.ip_g)/2
+         END ip_g
+    FROM v_pit_stmr_per_g t
+         LEFT OUTER JOIN v_pit_fans_per_g u
+            ON t.fg_id = u.fg_id
+  UNION
+  SELECT u.fg_id,
+         CASE WHEN t.fg_id IS NULL
+              THEN u.g
+              ELSE 1.0*(u.g + t.g)/2
+         END g,
+         CASE WHEN t.fg_id IS NULL
+              THEN u.gs_g
+              ELSE 1.0*(u.gs_g + t.gs_g)/2
+         END gs_g,
+         CASE WHEN t.fg_id IS NULL
+              THEN u.w_g
+              ELSE 1.0*(u.w_g + t.w_g)/2
+         END w_g,
+         CASE WHEN t.fg_id IS NULL
+              THEN u.l_g
+              ELSE 1.0*(u.l_g + t.l_g)/2
+         END l_g,
+         CASE WHEN t.fg_id IS NULL
+              THEN u.sv_g
+              ELSE 1.0*(u.sv_g + t.sv_g)/2
+         END sv_g,
+         CASE WHEN t.fg_id IS NULL
+              THEN u.ip_g
+              ELSE 1.0*(u.ip_g + t.ip_g)/2
+         END ip_g
+    FROM v_pit_fans_per_g u
+         LEFT OUTER JOIN v_pit_stmr_per_g t
+            ON u.fg_id = t.fg_id
+;
+
+CREATE VIEW v_pit_stmr_per_ip AS
+  SELECT fg_id,
+         name,
+         1.0*k9/9 so_ip,
+         1.0*bb9/9 bb_ip,
+         1.0*(whip - 1.0*bb9/9) h_ip,
+         1.0*era/9 er_ip,
+         1.0*hr/ip hr_ip,
+         1.0*(fip - 3.048 - 13*hr/ip - 3*bb9/9 + 2*k9/9)/3 hbp_ip
+    FROM pit_stmr
+;
+
+CREATE VIEW v_pit_stmr_fans AS
+  SELECT t.fg_id,
+         t.name,
+         u.g,
+         u.g*u.gs_g gs,
+         u.g*u.w_g w,
+         u.g*u.l_g l,
+         u.g*u.sv_g sv,
+         u.g*u.ip_g ip,
+         u.g*u.ip_g*t.so_ip so,
+         u.g*u.ip_g*t.bb_ip bb,
+         u.g*u.ip_g*t.h_ip h,
+         u.g*u.ip_g*t.er_ip er,
+         u.g*u.ip_g*t.hr_ip hr,
+         u.g*u.ip_g*t.hbp_ip hbp
+    FROM v_pit_stmr_per_ip t,
+         v_pit_stmr_fans_per_g u
+   WHERE t.fg_id = u.fg_id
+;
