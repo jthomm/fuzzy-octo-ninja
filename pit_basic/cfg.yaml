@@ -46,10 +46,8 @@
 - header: IFH
   type: int
 - header: BU
-  name: bunts
   type: int
 - header: BUH
-  name: bunt_hits
   type: int
 - header: Pulls
   type: int
