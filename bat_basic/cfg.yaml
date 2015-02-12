@@ -9,6 +9,7 @@
   none: "- - -"
 - header: Age
   type: int
+  none: " "
 - header: G
   type: int
 - header: AB
