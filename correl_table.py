@@ -49,7 +49,7 @@ stats = (
     'hrofb',
     'gb',
     'ld',
-    #'sofb',
+    'sofb',
     'ofb',
     'ifb',
 )
@@ -133,8 +133,8 @@ def generate_all_combos(i, j):
                     row.append(1 if stat in ncomb else 0)
                 for stat in stats:
                     row.append(1 if stat in dcomb else 0)
-                #___ = cur.execute('INSERT INTO pa_cor (numer, denom, r, p, n_ubb, n_ibb, n_hbp, n_so, n_bu, n_hrofb, n_gb, n_ld, n_sofb, n_ofb, n_ifb, d_ubb, d_ibb, d_hbp, d_so, d_bu, d_hrofb, d_gb, d_ld, d_sofb, d_ofb, d_ifb) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', row)
-                ___ = cur.execute('INSERT INTO pa_cor2 (numer, denom, r, p, n_ubb, n_ibb, n_hbp, n_so, n_bu, n_hrofb, n_gb, n_ld, n_ofb, n_ifb, d_ubb, d_ibb, d_hbp, d_so, d_bu, d_hrofb, d_gb, d_ld, d_ofb, d_ifb) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', row)
+                ___ = cur.execute('INSERT INTO pa_cor (numer, denom, r, p, n_ubb, n_ibb, n_hbp, n_so, n_bu, n_hrofb, n_gb, n_ld, n_sofb, n_ofb, n_ifb, d_ubb, d_ibb, d_hbp, d_so, d_bu, d_hrofb, d_gb, d_ld, d_sofb, d_ofb, d_ifb) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', row)
+                #___ = cur.execute('INSERT INTO pa_cor2 (numer, denom, r, p, n_ubb, n_ibb, n_hbp, n_so, n_bu, n_hrofb, n_gb, n_ld, n_ofb, n_ifb, d_ubb, d_ibb, d_hbp, d_so, d_bu, d_hrofb, d_gb, d_ld, d_ofb, d_ifb) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', row)
             print 'committing for numer size {0}'.format(n)
             con.commit()
 
