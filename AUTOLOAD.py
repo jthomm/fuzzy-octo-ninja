@@ -140,13 +140,15 @@ for folder in folders:
 
 
 
+  CREATE VIEW v_pit_mrcs_stmr_zips AS
   SELECT fg_id,
          ip,
          ip*w_ip AS w,
          ip*sv_ip AS sv,
          ip*h_ip AS h,
          ip*so_ip AS so,
-         ip*bb_ip AS bb
+         ip*bb_ip AS bb,
+         ip*er_ip AS er
     FROM (
   SELECT IFNULL (t_fg_id, u_fg_id) AS fg_id,
          IFNULL (t_ip, u_ip) AS ip,
@@ -154,7 +156,8 @@ for folder in folders:
          IFNULL (t_sv_ip, u_sv_ip) AS sv_ip,
          IFNULL (t_h_ip, u_h_ip) AS h_ip,
          IFNULL (t_so_ip, u_so_ip) AS so_ip,
-         IFNULL (t_bb_ip, u_bb_ip) AS bb_ip
+         IFNULL (t_bb_ip, u_bb_ip) AS bb_ip,
+         IFNULL (t_er_ip, u_er_ip) AS er_ip
     FROM (
   SELECT t.fg_id AS t_fg_id,
          t.ip AS t_ip,
@@ -163,13 +166,15 @@ for folder in folders:
          t.h_ip AS t_h_ip,
          t.so_ip AS t_so_ip,
          t.bb_ip AS t_bb_ip,
+         t.er_ip AS t_er_ip,
          u.fg_id AS u_fg_id,
          u.ip AS u_ip,
          u.w_ip AS u_w_ip,
          u.sv_ip AS u_sv_ip,
          u.h_ip AS u_h_ip,
          u.so_ip AS u_so_ip,
-         u.bb_ip AS u_bb_ip
+         u.bb_ip AS u_bb_ip,
+         u.er_ip AS u_er_ip
     FROM v_pit_mrcs80_stmr20 t
     LEFT
    OUTER
@@ -184,13 +189,15 @@ for folder in folders:
          t.h_ip AS t_h_ip,
          t.so_ip AS t_so_ip,
          t.bb_ip AS t_bb_ip,
+         t.er_ip AS t_er_ip,
          u.fg_id AS u_fg_id,
          u.ip AS u_ip,
          u.w_ip AS u_w_ip,
          u.sv_ip AS u_sv_ip,
          u.h_ip AS u_h_ip,
          u.so_ip AS u_so_ip,
-         u.bb_ip AS u_bb_ip
+         u.bb_ip AS u_bb_ip,
+         u.er_ip AS u_er_ip
     FROM v_pit_stmr65_zips35 u
     LEFT
    OUTER
@@ -201,6 +208,7 @@ for folder in folders:
          )
 ;
 
+  CREATE VIEW v_bat_mrcs_stmr_zips AS
   SELECT fg_id,
          pa,
          pa*ab_pa AS ab,
@@ -291,4 +299,23 @@ for folder in folders:
          )
          )
 ;
+
+
+
+  SELECT t.fg_id AS fg_id,
+         u.fg_name AS fg_name,
+         u.yh_pos AS yh_pos,
+         -0.0044*t.ab + 0.0157*t.h + 0.0123*t.r + 0.0218*t.hr + 0.0093*t.rbi + 0.0165*t.sb - 2.0477 AS value
+    FROM v_bat_mrcs_stmr_zips t,
+         id_map u
+   WHERE t.fg_id = u.fg_id
+   UNION
+     ALL
+  SELECT t.fg_id AS fg_id,
+         u.fg_name AS fg_name,
+         u.yh_pos AS yh_pos,
+         0.0376*t.w + 0.0130*t.sv + 0.0036*t.so + 0.0188*t.ip - 0.0110*(t.bb + t.h) - 0.0200*t.er - 0.9874 AS value
+    FROM v_pit_mrcs_stmr_zips t,
+         id_map u
+   WHERE t.fg_id = u.fg_id
 """
