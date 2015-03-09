@@ -87,6 +87,10 @@ class FieldConfig(object):
         return self.config.get('rstrip', None)
 
     @property
+    def lstrip(self):
+        return self.config.get('lstrip', None)
+
+    @property
     def sqlite3_type(self):
         return SQLITE3_TYPES[self.type_str]
 
@@ -102,6 +106,8 @@ class FieldConfig(object):
                 value = self.default
             if self.rstrip is not None:
                 value = value.rstrip(self.rstrip)
+            if self.lstrip is not None:
+                value = value.lstrip(self.lstrip)
             return self.data_type(value)
 
 
@@ -789,68 +795,4 @@ for f in (batted_cont, batted_rpa):
     print u','.join(map(str, [c['m'], c['b'], c['r']]))
 
 print ''
-"""
-
-
-
-
-"""
-import pandas as pd
-import re
-
-from connect import connect
-from sqlite3 import OperationalError
-
-class Loader(object):
-    #
-    def __init__(self, database_name, table_name, season):
-        self.database_name = database_name
-        self.table_name = table_name
-        self.season = season
-        self.init_df()
-        self.init_db()
-    #
-    @property
-    def csv_file_name(self):
-        return './{table_name}/{season}.csv'.format(
-            table_name=self.table_name,
-            season=self.season)
-    #
-    def init_df(self):
-        df = pd.read_csv(self.csv_file_name, na_values=[' ', '- - -'])
-        df.replace(to_replace=r'\s*%$', value=r'', regex=True, inplace=True)
-        df['playerid'] = df['playerid'].astype(str)
-        df.columns = [re.sub(r'[^0-9a-z_]', r'', column.lower().replace('-', '_')) \
-                      for column in df.columns]
-        df['season'] = self.season
-        df.rename(columns={'playerid': 'fg_id'}, inplace=True)
-        self.df = df
-    #
-    def init_db(self):
-        self.connection, self.cursor = connect(self.database_name)
-    #
-    def delete_old(self):
-        sql = 'DELETE FROM {table_name} WHERE season = {season}'.format(
-            table_name=self.table_name,
-            season=self.season)
-        self.cursor.execute(sql)
-        self.connection.commit()
-    #
-    def insert_new(self):
-        try:
-            self.delete_old()
-        except OperationalError:
-            pass
-        self.df.to_sql(self.table_name, self.connection, if_exists='append', index=False)
-
-'''
-{
-    "playerid": "fg_id",
-    "F-Strike%": "fp_str",
-    "SwStr%": "sw_str",
-    "1B": "b1",
-    "2B": "b2",
-    "3B": "b3"
-}
-'''
 """
