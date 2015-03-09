@@ -302,10 +302,11 @@ for folder in folders:
 
 
 
+  CREATE VIEW v_mrcs_stmr_zips AS
   SELECT t.fg_id AS fg_id,
          u.fg_name AS fg_name,
          u.yh_pos AS yh_pos,
-         -0.0044*t.ab + 0.0157*t.h + 0.0123*t.r + 0.0218*t.hr + 0.0093*t.rbi + 0.0165*t.sb - 2.0477 AS value
+         -0.00419*t.ab + 0.01517*t.h + 0.01224*t.r + 0.02187*t.hr + 0.00929*t.rbi + 0.01701*t.sb - 2.08361 AS value
     FROM v_bat_mrcs_stmr_zips t,
          id_map u
    WHERE t.fg_id = u.fg_id
@@ -314,8 +315,30 @@ for folder in folders:
   SELECT t.fg_id AS fg_id,
          u.fg_name AS fg_name,
          u.yh_pos AS yh_pos,
-         0.0376*t.w + 0.0130*t.sv + 0.0036*t.so + 0.0188*t.ip - 0.0110*(t.bb + t.h) - 0.0200*t.er - 0.9874 AS value
+         0.03909*t.w + 0.01335*t.sv + 0.00367*t.so + 0.01993*t.ip - 0.01132*(t.bb + t.h) - 0.02011*t.er - 0.98791 AS value
     FROM v_pit_mrcs_stmr_zips t,
          id_map u
    WHERE t.fg_id = u.fg_id
+;
+
+
+
+  SELECT *
+    FROM (
+  SELECT IFNULL (v.orank, (SELECT MAX (orank) FROM (SELECT * FROM bat_yhoo UNION ALL SELECT * FROM pit_yhoo))) AS orank,
+         t.fg_name,
+         t.yh_pos,
+         ROUND (100*t.value, 0) + 225 AS val
+    FROM v_mrcs_stmr_zips t
+    LEFT
+    JOIN id_map u
+      ON t.fg_id = u.fg_id
+    LEFT
+    JOIN (SELECT * FROM bat_yhoo UNION ALL SELECT * FROM pit_yhoo) v
+      ON u.yh_id = v.yh_id
+         )
+ORDER BY orank, val DESC
+;
+
+
 """
