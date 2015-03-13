@@ -341,4 +341,234 @@ ORDER BY orank, val DESC
 ;
 
 
+
+
+
+  CREATE VIEW v_bat_stmr_pa AS
+  SELECT t.fg_id,
+         1.0*u.g/t.pa g,
+         t.pa pa,
+         1.0*t.ab/t.pa ab,
+         1.0*(t.h - t.b2 - t.b3 - t.hr)/t.pa b1,
+         1.0*t.b2/t.pa b2,
+         1.0*t.b3/t.pa b3,
+         1.0*t.hr/t.pa hr,
+         1.0*t.r/t.pa r,
+         1.0*t.rbi/t.pa rbi,
+         1.0*t.bb/t.pa bb,
+         1.0*t.so/t.pa so,
+         1.0*t.sb/t.pa sb,
+         1.0*t.cs/t.pa cs
+    FROM bat_stmr t,
+         bat_fgdc u
+   WHERE t.fg_id = u.fg_id
+     AND t.pa > 1
+;
+
+  CREATE VIEW v_bat_clay_pa AS
+  SELECT u.fg_id,
+         NULL g,
+         t.pa pa,
+         1.0*t.ab/t.pa ab,
+         1.0*(t.h - t.b2 - t.b3 - t.hr)/t.pa b1,
+         1.0*t.b2/t.pa b2,
+         1.0*t.b3/t.pa b3,
+         1.0*t.hr/t.pa hr,
+         1.0*t.r/t.pa r,
+         1.0*t.rbi/t.pa rbi,
+         1.0*t.bb/t.pa bb,
+         1.0*t.so/t.pa so,
+         1.0*t.sb/t.pa sb,
+         1.0*t.cs/t.pa cs
+    FROM bat_clay t,
+         id_map u
+   WHERE t.howe_id = u.howe_id
+;
+
+  CREATE VIEW v_bat_zips_pa AS
+  SELECT t.fg_id,
+         1.0*t.g/t.pa g,
+         t.pa pa,
+         1.0*t.ab/t.pa ab,
+         1.0*(t.h - t.b2 - t.b3 - t.hr)/t.pa b1,
+         1.0*t.b2/t.pa b2,
+         1.0*t.b3/t.pa b3,
+         1.0*t.hr/t.pa hr,
+         1.0*t.r/t.pa r,
+         1.0*t.rbi/t.pa rbi,
+         1.0*t.bb/t.pa bb,
+         1.0*t.so/t.pa so,
+         1.0*t.sb/t.pa sb,
+         1.0*t.cs/t.pa cs
+    FROM bat_zips t
+;
+
+  CREATE VIEW v_bat_cairo_pa AS
+  SELECT u.fg_id,
+         1.0*t.g/t.pa g,
+         t.pa pa,
+         1.0*t.ab/t.pa ab,
+         1.0*(t.h - t.b2 - t.b3 - t.hr)/t.pa b1,
+         1.0*t.b2/t.pa b2,
+         1.0*t.b3/t.pa b3,
+         1.0*t.hr/t.pa hr,
+         1.0*t.r/t.pa r,
+         1.0*t.rbi/t.pa rbi,
+         1.0*t.bb/t.pa bb,
+         1.0*t.so/t.pa so,
+         1.0*t.sb/t.pa sb,
+         1.0*t.cs/t.pa cs
+    FROM bat_cairo t,
+         id_map u
+   WHERE t.mlb_id = u.mlb_id
+;
+
+  CREATE VIEW v_bat_composite_pa AS
+  SELECT t.fg_id,
+         CASE WHEN v.g IS NULL AND w.g IS NULL
+              THEN 1.0*(t.g + u.g)/2
+              WHEN v.g IS NULL
+              THEN 1.0*(t.g + u.g + w.g)/3
+              WHEN w.g IS NULL
+              THEN 1.0*(t.g + u.g + v.g)/3
+              ELSE 1.0*(t.g + u.g + v.g + w.g)/4
+         END AS g,
+         CASE WHEN v.pa IS NULL AND w.pa IS NULL
+              THEN 0.9*t.pa + 0.1*u.pa
+              WHEN v.pa IS NULL
+              THEN 0.9*t.pa + 0.05*u.pa + 0.05*w.pa
+              WHEN w.pa IS NULL
+              THEN 0.6*t.pa + 0.1*u.pa + 0.3*v.pa
+              ELSE 0.6*t.pa + 0.05*u.pa + 0.3*v.pa + 0.05*w.pa
+         END AS pa,
+         CASE WHEN v.ab IS NULL AND w.ab IS NULL
+              THEN 1.0*(t.ab + u.ab)/2
+              WHEN v.ab IS NULL
+              THEN 1.0*(t.ab + u.ab + w.ab)/3
+              WHEN w.ab IS NULL
+              THEN 1.0*(t.ab + u.ab + v.ab)/3
+              ELSE 1.0*(t.ab + u.ab + v.ab + w.ab)/4
+         END AS ab,
+         CASE WHEN v.b1 IS NULL AND w.b1 IS NULL
+              THEN 1.0*(t.b1 + u.b1)/2
+              WHEN v.b1 IS NULL
+              THEN 1.0*(t.b1 + u.b1 + w.b1)/3
+              WHEN w.b1 IS NULL
+              THEN 1.0*(t.b1 + u.b1 + v.b1)/3
+              ELSE 1.0*(t.b1 + u.b1 + v.b1 + w.b1)/4
+         END AS b1,
+         CASE WHEN v.b2 IS NULL AND w.b2 IS NULL
+              THEN 1.0*(t.b2 + u.b2)/2
+              WHEN v.b2 IS NULL
+              THEN 1.0*(t.b2 + u.b2 + w.b2)/3
+              WHEN w.b2 IS NULL
+              THEN 1.0*(t.b2 + u.b2 + v.b2)/3
+              ELSE 1.0*(t.b2 + u.b2 + v.b2 + w.b2)/4
+         END AS b2,
+         CASE WHEN v.b3 IS NULL AND w.b3 IS NULL
+              THEN 1.0*(t.b3 + u.b3)/2
+              WHEN v.b3 IS NULL
+              THEN 1.0*(t.b3 + u.b3 + w.b3)/3
+              WHEN w.b3 IS NULL
+              THEN 1.0*(t.b3 + u.b3 + v.b3)/3
+              ELSE 1.0*(t.b3 + u.b3 + v.b3 + w.b3)/4
+         END AS b3,
+         CASE WHEN v.hr IS NULL AND w.hr IS NULL
+              THEN 1.0*(t.hr + u.hr)/2
+              WHEN v.hr IS NULL
+              THEN 1.0*(t.hr + u.hr + w.hr)/3
+              WHEN w.hr IS NULL
+              THEN 1.0*(t.hr + u.hr + v.hr)/3
+              ELSE 1.0*(t.hr + u.hr + v.hr + w.hr)/4
+         END AS hr,
+         CASE WHEN v.r IS NULL AND w.r IS NULL
+              THEN 1.0*(t.r + u.r)/2
+              WHEN v.r IS NULL
+              THEN 1.0*(t.r + u.r + w.r)/3
+              WHEN w.r IS NULL
+              THEN 1.0*(t.r + u.r + v.r)/3
+              ELSE 1.0*(t.r + u.r + v.r + w.r)/4
+         END AS r,
+         CASE WHEN v.rbi IS NULL AND w.rbi IS NULL
+              THEN 1.0*(t.rbi + u.rbi)/2
+              WHEN v.rbi IS NULL
+              THEN 1.0*(t.rbi + u.rbi + w.rbi)/3
+              WHEN w.rbi IS NULL
+              THEN 1.0*(t.rbi + u.rbi + v.rbi)/3
+              ELSE 1.0*(t.rbi + u.rbi + v.rbi + w.rbi)/4
+         END AS rbi,
+         CASE WHEN v.bb IS NULL AND w.bb IS NULL
+              THEN 1.0*(t.bb + u.bb)/2
+              WHEN v.bb IS NULL
+              THEN 1.0*(t.bb + u.bb + w.bb)/3
+              WHEN w.bb IS NULL
+              THEN 1.0*(t.bb + u.bb + v.bb)/3
+              ELSE 1.0*(t.bb + u.bb + v.bb + w.bb)/4
+         END AS bb,
+         CASE WHEN v.so IS NULL AND w.so IS NULL
+              THEN 1.0*(t.so + u.so)/2
+              WHEN v.so IS NULL
+              THEN 1.0*(t.so + u.so + w.so)/3
+              WHEN w.so IS NULL
+              THEN 1.0*(t.so + u.so + v.so)/3
+              ELSE 1.0*(t.so + u.so + v.so + w.so)/4
+         END AS so,
+         CASE WHEN v.sb IS NULL AND w.sb IS NULL
+              THEN 1.0*(t.sb + u.sb)/2
+              WHEN v.sb IS NULL
+              THEN 1.0*(t.sb + u.sb + w.sb)/3
+              WHEN w.sb IS NULL
+              THEN 1.0*(t.sb + u.sb + v.sb)/3
+              ELSE 1.0*(t.sb + u.sb + v.sb + w.sb)/4
+         END AS sb,
+         CASE WHEN v.cs IS NULL AND w.cs IS NULL
+              THEN 1.0*(t.cs + u.cs)/2
+              WHEN v.cs IS NULL
+              THEN 1.0*(t.cs + u.cs + w.cs)/3
+              WHEN w.cs IS NULL
+              THEN 1.0*(t.cs + u.cs + v.cs)/3
+              ELSE 1.0*(t.cs + u.cs + v.cs + w.cs)/4
+         END AS cs,
+         CASE WHEN v.ab IS NULL AND w.ab IS NULL
+              THEN 'STMR-ZIPS'
+              WHEN v.ab IS NULL
+              THEN 'STMR-ZIPS-CAIR'
+              WHEN w.ab IS NULL
+              THEN 'STMR-ZIPS-CLAY'
+              ELSE 'STMR-ZIPS-CLAY-CAIR'
+         END AS mix
+    FROM v_bat_stmr_pa t
+    LEFT
+    JOIN v_bat_zips_pa u
+      ON t.fg_id = u.fg_id
+    LEFT
+    JOIN v_bat_clay_pa v
+      ON t.fg_id = v.fg_id
+    LEFT
+    JOIN v_bat_cairo_pa w
+      ON t.fg_id = w.fg_id
+   WHERE t.fg_id IS NOT NULL --steamer is present (always true)
+     AND u.fg_id IS NOT NULL --zips is present (almost always true)
+;
+
+  CREATE VIEW v_bat_composite AS
+  SELECT t.fg_id,
+         u.fg_last,
+         u.fg_first,
+         t.pa*t.g g,
+         t.pa*t.ab ab,
+         t.pa*t.b1 b1,
+         t.pa*t.b2 b2,
+         t.pa*t.b3 b3,
+         t.pa*t.hr hr,
+         t.pa*t.r r,
+         t.pa*t.rbi rbi,
+         t.pa*t.bb bb,
+         t.pa*t.so so,
+         t.pa*t.sb sb,
+         t.pa*t.cs cs
+    FROM v_bat_composite_pa t,
+         id_map u
+   WHERE v.fg_id = u.fg_id
+;
 """
