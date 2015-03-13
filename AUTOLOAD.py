@@ -569,6 +569,235 @@ ORDER BY orank, val DESC
          t.pa*t.cs cs
     FROM v_bat_composite_pa t,
          id_map u
-   WHERE v.fg_id = u.fg_id
+   WHERE t.fg_id = u.fg_id
 ;
+
+
+
+
+
+
+
+
+  CREATE VIEW v_pit_stmr_ip AS
+  SELECT t.fg_id,
+         1.0*t.g/t.ip g,
+         1.0*t.gs/t.ip gs,
+         t.ip ip,
+         1.0*t.h/t.ip h,
+         1.0*t.er/t.ip er,
+         1.0*t.bb/t.ip bb,
+         1.0*t.so/t.ip so,
+         1.0*t.hr/t.ip hr,
+         1.0*t.w/t.ip w,
+         1.0*t.l/t.ip l,
+         1.0*t.sv/t.ip sv,
+         NULL bsv,
+         NULL hld,
+         NULL qs
+    FROM pit_stmr t
+   WHERE t.ip > 1
+;
+
+  CREATE VIEW v_pit_zips_ip AS
+  SELECT t.fg_id,
+         1.0*t.g/t.ip g,
+         1.0*t.gs/t.ip gs,
+         t.ip ip,
+         1.0*t.h/t.ip h,
+         1.0*t.er/t.ip er,
+         1.0*t.bb/t.ip bb,
+         1.0*t.so/t.ip so,
+         1.0*t.hr/t.ip hr,
+         1.0*t.w/t.ip w,
+         1.0*t.l/t.ip l,
+         NULL sv,
+         NULL bsv,
+         NULL hld,
+         NULL qs
+    FROM pit_zips t
+;
+
+  CREATE VIEW v_pit_clay_ip AS
+  SELECT u.fg_id,
+         1.0*t.g/t.ip g,
+         1.0*t.gs/t.ip gs,
+         t.ip ip,
+         1.0*t.h/t.ip h,
+         1.0*t.er/t.ip er,
+         1.0*t.bb/t.ip bb,
+         1.0*t.so/t.ip so,
+         1.0*t.hr/t.ip hr,
+         1.0*t.w/t.ip w,
+         1.0*t.l/t.ip l,
+         1.0*t.sv/t.ip sv,
+         NULL bsv,
+         NULL hld,
+         NULL qs
+    FROM pit_clay t,
+         id_map u
+   WHERE t.howe_id = u.howe_id
+;
+
+  CREATE VIEW v_pit_cairo_ip AS
+  SELECT u.fg_id,
+         1.0*t.g/t.ip g,
+         1.0*t.gs/t.ip gs,
+         t.ip ip,
+         1.0*t.h/t.ip h,
+         1.0*t.er/t.ip er,
+         1.0*t.bb/t.ip bb,
+         1.0*t.so/t.ip so,
+         1.0*t.hr/t.ip hr,
+         1.0*t.w/t.ip w,
+         1.0*t.l/t.ip l,
+         1.0*t.sv/t.ip sv,
+         NULL bsv,
+         NULL hld,
+         NULL qs
+    FROM pit_cairo t,
+         id_map u
+   WHERE t.mlb_id = u.mlb_id
+;
+
+  CREATE VIEW v_pit_composite_pa AS
+  SELECT t.fg_id,
+         CASE WHEN v.g IS NULL AND w.g IS NULL
+              THEN 1.0*(t.g + u.g)/2
+              WHEN v.g IS NULL
+              THEN 1.0*(t.g + u.g + w.g)/3
+              WHEN w.g IS NULL
+              THEN 1.0*(t.g + u.g + v.g)/3
+              ELSE 1.0*(t.g + u.g + v.g + w.g)/4
+         END AS g,
+         CASE WHEN v.gs IS NULL AND w.gs IS NULL
+              THEN 1.0*(t.gs + u.gs)/2
+              WHEN v.gs IS NULL
+              THEN 1.0*(t.gs + u.gs + w.gs)/3
+              WHEN w.gs IS NULL
+              THEN 1.0*(t.gs + u.gs + v.gs)/3
+              ELSE 1.0*(t.gs + u.gs + v.gs + w.gs)/4
+         END AS gs,
+         CASE WHEN v.ip IS NULL AND w.ip IS NULL
+              THEN 0.9*t.ip + 0.1*u.ip
+              WHEN v.ip IS NULL
+              THEN 0.9*t.ip + 0.05*u.ip + 0.05*w.ip
+              WHEN w.ip IS NULL
+              THEN 0.6*t.ip + 0.1*u.ip + 0.3*v.ip
+              ELSE 0.6*t.ip + 0.05*u.ip + 0.3*v.ip + 0.05*w.ip
+         END AS ip,
+         CASE WHEN v.h IS NULL AND w.h IS NULL
+              THEN 1.0*(t.h + u.h)/2
+              WHEN v.h IS NULL
+              THEN 1.0*(t.h + u.h + w.h)/3
+              WHEN w.h IS NULL
+              THEN 1.0*(t.h + u.h + v.h)/3
+              ELSE 1.0*(t.h + u.h + v.h + w.h)/4
+         END AS h,
+         CASE WHEN v.er IS NULL AND w.er IS NULL
+              THEN 1.0*(t.er + u.er)/2
+              WHEN v.er IS NULL
+              THEN 1.0*(t.er + u.er + w.er)/3
+              WHEN w.er IS NULL
+              THEN 1.0*(t.er + u.er + v.er)/3
+              ELSE 1.0*(t.er + u.er + v.er + w.er)/4
+         END AS er,
+         CASE WHEN v.bb IS NULL AND w.bb IS NULL
+              THEN 1.0*(t.bb + u.bb)/2
+              WHEN v.bb IS NULL
+              THEN 1.0*(t.bb + u.bb + w.bb)/3
+              WHEN w.bb IS NULL
+              THEN 1.0*(t.bb + u.bb + v.bb)/3
+              ELSE 1.0*(t.bb + u.bb + v.bb + w.bb)/4
+         END AS bb,
+         CASE WHEN v.so IS NULL AND w.so IS NULL
+              THEN 1.0*(t.so + u.so)/2
+              WHEN v.so IS NULL
+              THEN 1.0*(t.so + u.so + w.so)/3
+              WHEN w.so IS NULL
+              THEN 1.0*(t.so + u.so + v.so)/3
+              ELSE 1.0*(t.so + u.so + v.so + w.so)/4
+         END AS so,
+         CASE WHEN v.hr IS NULL AND w.hr IS NULL
+              THEN 1.0*(t.hr + u.hr)/2
+              WHEN v.hr IS NULL
+              THEN 1.0*(t.hr + u.hr + w.hr)/3
+              WHEN w.hr IS NULL
+              THEN 1.0*(t.hr + u.hr + v.hr)/3
+              ELSE 1.0*(t.hr + u.hr + v.hr + w.hr)/4
+         END AS hr,
+         CASE WHEN v.w IS NULL AND w.w IS NULL
+              THEN 1.0*(t.w + u.w)/2
+              WHEN v.w IS NULL
+              THEN 1.0*(t.w + u.w + w.w)/3
+              WHEN w.w IS NULL
+              THEN 1.0*(t.w + u.w + v.w)/3
+              ELSE 1.0*(t.w + u.w + v.w + w.w)/4
+         END AS w,
+         CASE WHEN v.l IS NULL AND w.l IS NULL
+              THEN 1.0*(t.l + u.l)/2
+              WHEN v.l IS NULL
+              THEN 1.0*(t.l + u.l + w.l)/3
+              WHEN w.l IS NULL
+              THEN 1.0*(t.l + u.l + v.l)/3
+              ELSE 1.0*(t.l + u.l + v.l + w.l)/4
+         END AS l,
+         CASE WHEN v.sv IS NULL AND w.sv IS NULL
+              THEN t.sv
+              WHEN v.sv IS NULL
+              THEN 1.0*(t.sv + w.sv)/2
+              WHEN w.sv IS NULL
+              THEN 1.0*(t.sv + v.sv)/2
+              ELSE 1.0*(t.sv + v.sv + w.sv)/3
+         END AS sv,
+         NULL bsv,
+         NULL hld,
+         NULL qs,
+         CASE WHEN v.ip IS NULL AND w.ip IS NULL
+              THEN 'STMR-ZIPS'
+              WHEN v.ip IS NULL
+              THEN 'STMR-ZIPS-CAIR'
+              WHEN w.ip IS NULL
+              THEN 'STMR-ZIPS-CLAY'
+              ELSE 'STMR-ZIPS-CLAY-CAIR'
+         END AS mix
+    FROM v_pit_stmr_ip t
+    LEFT
+    JOIN v_pit_zips_ip u
+      ON t.fg_id = u.fg_id
+    LEFT
+    JOIN v_pit_clay_ip v
+      ON t.fg_id = v.fg_id
+    LEFT
+    JOIN v_pit_cairo_ip w
+      ON t.fg_id = w.fg_id
+   WHERE t.fg_id IS NOT NULL --steamer is present (always true)
+     AND u.fg_id IS NOT NULL --zips is present (almost always true)
+;
+
+  CREATE VIEW v_pit_composite AS
+  SELECT t.fg_id,
+         u.fg_last,
+         u.fg_first,
+         t.ip*t.g g,
+         t.ip*t.gs gs,
+         t.ip ip,
+         t.ip*t.h h,
+         t.ip*t.er er,
+         t.ip*t.bb bb,
+         t.ip*t.so so,
+         t.ip*t.hr hr,
+         t.ip*t.w w,
+         t.ip*t.l l,
+         t.ip*t.sv sv,
+         NULL bsv,
+         NULL hld,
+         NULL qs
+    FROM v_pit_composite_pa t,
+         id_map u
+   WHERE t.fg_id = u.fg_id
+; 
+
+UPDATE pit_cairo SET sv = 34 WHERE first = 'Aroldis';
+UPDATE pit_cairo SET sv = 24 WHERE first = 'Dellin';
 """
