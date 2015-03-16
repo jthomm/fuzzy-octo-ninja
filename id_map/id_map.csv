@@ -2247,7 +2247,7 @@ fg_id,fg_name,role,fg_last,fg_first,bbm_id,bbm_last,bbm_first,yh_id,yh_last,yh_f
 12360,Kevin Quackenbush,pit,Quackenbush,Kevin,,,,9683,Quackenbush,Kevin,,RP,QUACKENBU19881128A,534812
 12361,Spencer Patton,pit,Patton,Spencer,,,,9826,Patton,Spencer,,RP,PATTON19880220A,607359
 12371,Tommy La Stella,bat,La Stella,Tommy,7784,La Stella,Tommy,9545,La Stella,Tommy,,2B,LASTELLA19890131A,600303
-12385,Nicholas Tropeano,pit,,,,,,9827,,,,SP,,607374
+12385,Nicholas Tropeano,pit,Tropeano,Nicholas,,,,9827,,,,SP,,607374
 12409,Ryan Rua,bat,Rua,Ryan,,,,9801,Rua,Ryan,,1B/OF,RUA19900311A,607387
 12434,Kevin Pillar,bat,Pillar,Kevin,8669,Pillar,Kevin,9490,Pillar,Kevin,,OF,PILLAR19890104A,607680
 12499,Drew Rucinski,pit,Rucinski,Drew,,,,9763,,,,RP,RUCINSKI19881230A,607968
@@ -2280,7 +2280,7 @@ fg_id,fg_name,role,fg_last,fg_first,bbm_id,bbm_last,bbm_first,yh_id,yh_last,yh_f
 12859,James Mccann,bat,Mccann,James,,,,9818,McCann,James,,C,MCCANN19900613A,543510
 12861,Anthony Rendon,bat,Rendon,Anthony,7536,Rendon,Anthony,9106,Rendon,Anthony,WAS,2B/3B,RENDON19900606A,543685
 12863,Matt Barnes,pit,Barnes,Matt,8814,Barnes,Matt,9333,Barnes,Matt,,RP,BARNES19900617A,598264
-12890,Alex Claudio,pit,,,,,,9787,Claudio,Alex,,RP,CLAUDIO19920131A,592222
+12890,Alex Claudio,pit,Claudio,Alex,,,,9787,Claudio,Alex,,RP,CLAUDIO19920131A,592222
 12907,Gregory Polanco,bat,Polanco,Gregory,7788,Polanco,Gregory,9613,Polanco,Gregory,,OF,POLANCO19910914A,570256
 12910,Ken Giles,pit,Giles,Ken,,,,9729,Giles,Ken,,RP,GILES19900920A,571704
 12917,Dylan Bundy,pit,Bundy,Dylan,7534,Bundy,Dylan,9125,Bundy,Dylan,BAL,RP,,605164
@@ -2354,7 +2354,7 @@ fg_id,fg_name,role,fg_last,fg_first,bbm_id,bbm_last,bbm_first,yh_id,yh_last,yh_f
 15777,Suk-min Yoon,pit,Yoon,Suk-min,,,,9643,Yoon,Suk-min,,SP,,493649
 15809,Erisbel Arruebarrena,bat,Arruebarrena,Erisbel,,,,9710,Arruebarrena,Erisbel,,SS,,628326
 16017,Odrisamer Despaigne,pit,,,,,,9713,Despaigne,Odrisamer,,SP,DESPAIGNEcubaO01,628333
-16208,Brandon Finnegan,pit,,,,,,9805,Finnegan,Brandon,,RP,FINNEGAN19930414A,605232
+16208,Brandon Finnegan,pit,Finnegan,Brandon,,,,9805,Finnegan,Brandon,,RP,FINNEGAN19930414A,605232
 17016,Rusney Castillo,bat,Castillo,Rusney,,,,9795,Castillo,Rusney,,OF,CASTILLOcubaR01,628329
 17171,Yasmany Tomas,bat,Tomas,Yasmany,,,,9850,Tomas,Yasmani,,3B/OF,TOMAScubaY01,630111
 17182,Jung-ho Kang,bat,Kang,Jung-ho,,,,9884,Kang,Jung-ho,,SS,KANG19870405A,628356
