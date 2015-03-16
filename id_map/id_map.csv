@@ -1430,7 +1430,7 @@ fg_id,fg_name,role,fg_last,fg_first,bbm_id,bbm_last,bbm_first,yh_id,yh_last,yh_f
 6596,Ryan Jackson,bat,Jackson,Ryan,6758,Jackson,Ryan,9264,Jackson,Ryan,STL,2B/SS,,474249
 6601,Luke Montz,bat,Montz,Luke,3366,Montz,Luke,8372,Montz,Luke,,C,,452215
 6603,Daryl Thompson,pit,Thompson,Daryl,,,,,,,,,,444354
-6605,Pat McCoy,pit,,,,,,,,,,,,519003
+6605,Pat McCoy,pit,,,,,,,9743,Patrick,McCoy,RP,,519003
 6609,Freddy Galvis,bat,Galvis,Freddy,6373,Galvis,Freddy,9132,Galvis,Freddy,PHI,3B/SS,GALVIS19891114A,520471
 6612,Marc Rzepczynski,pit,Rzepczynski,Marc,5813,Rzepczynski,Marc,8523,Rzepczynski,Marc,STL,RP,RZEPCZYNS19850829A,519240
 6616,Pedro Figueroa,pit,Figueroa,Pedro,5967,Figueroa,Pedro,9159,Figueroa,Pedro,OAK,RP,,471896
@@ -1914,7 +1914,7 @@ fg_id,fg_name,role,fg_last,fg_first,bbm_id,bbm_last,bbm_first,yh_id,yh_last,yh_f
 9373,Matt McBride,bat,McBride,Matt,,,,9260,McBride,Matt,,1B,,473724
 9385,Ryan Reid,pit,Reid,Ryan,7124,Reid,Ryan,9419,Reid,Ryan,,RP,,474256
 9388,Josh Tomlin,pit,Tomlin,Josh,6141,Tomlin,Josh,8769,Tomlin,Josh,CLE,SP,TOMLIN19841019A,458708
-9392,John Holdzkom,pit,,,,,,9836,Holdzkom,John,,RP,HOLDZKOM19871019A,458720
+9392,John Holdzkom,pit,Holdzkom,John,,,,9836,Holdzkom,John,,RP,HOLDZKOM19871019A,458720
 9393,Matt Adams,bat,Adams,Matt,7090,Adams,Matt,9100,Adams,Matt,STL,1B,ADAMS19880831A,571431
 9404,Daniel Stange,pit,Stange,Daniel,5871,Stange,Daniel,8722,Stange,Daniel,,RP,,458094
 9412,Hiram Burgos,pit,Burgos,Hiram,8502,Burgos,Hiram,9372,Burgos,Hiram,,SP,,572744
@@ -2315,7 +2315,7 @@ fg_id,fg_name,role,fg_last,fg_first,bbm_id,bbm_last,bbm_first,yh_id,yh_last,yh_f
 13442,Mike Morin,pit,Morin,Michael,,,,9687,Morin,Mike,,RP,MORIN19910503A,573046
 13453,Eddie Butler,pit,Butler,Eddie,9123,Butler,Eddie,9566,,,,SP,BUTLER19910313A,572750
 13475,Daniel Norris,pit,Norris,Daniel,,,,9636,,,,RP,NORRIS19930425A,596057
-13485,Samuel Tuivailala,pit,Tuivailala,Samuel,,,,,,,,,TUIVAILAL19921019A,
+13485,Samuel Tuivailala,pit,Tuivailala,Samuel,,,,,9839,Sam,Tuivailala,RP,TUIVAILAL19921019A,
 13510,Jose Ramirez,bat,Ramirez,Jose,8910,Ramirez,Jose,9507,Ramirez,Jose,,2B/SS,RAMIREZ19920917A,608070
 13604,Chad Smith,pit,Smith,Chad,,,,9736,,,,RP,,605477
 13611,Mookie Betts,bat,Betts,Mookie,,,,9552,Betts,Mookie,,2B/OF,BETTS19921007A,605141
@@ -3065,7 +3065,6 @@ sa389685,Randy Boone,pit,Boone,Randy,,,,,,,,,,
 sa389690,Mark Hallberg,bat,Hallberg,Mark,,,,,,,,,,
 sa389691,Bryan Henry,pit,Henry,Bryan,,,,,,,,,,
 sa389692,Tony Thomas,bat,Thomas,Tony,,,,,,,,,,
-sa389693,Patrick Mccoy,pit,Mccoy,Patrick,,,,,,,,,,
 sa389695,Bill Rhinehart,bat,Rhinehart,Bill,,,,,,,,,,
 sa389697,Eric Berger,pit,Berger,Eric,,,,,,,,,,
 sa389701,Jeff Mandel,pit,Mandel,Jeff,,,,,,,,,,
@@ -7096,7 +7095,7 @@ sa601042,Eric Haase,bat,Haase,Eric,,,,,,,,,,
 sa601043,Trevor Gretzky,bat,Gretzky,Trevor,,,,,,,,,,
 sa601044,Christian Lopes,bat,Lopes,Christian,,,,,,,,,,
 sa601045,Cody Kukuk,pit,Kukuk,Cody,,,,,,,,,,
-sa601046,Matthew Wisler,pit,Wisler,Matthew,,,,,,,,,WISLER19920912A,
+sa601046,Matthew Wisler,pit,Wisler,Matthew,,,,9619,Matt,Wisler,,SP,WISLER19920912A,
 sa601227,Jose De Sousa,pit,De Sousa,Jose,,,,,,,,,,
 sa601249,Garrett Wittels,bat,Wittels,Garrett,,,,,,,,,,
 sa601251,Carlos Harper,bat,Harper,Carlos,,,,,,,,,,

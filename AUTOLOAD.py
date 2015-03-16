@@ -800,4 +800,73 @@ ORDER BY orank, val DESC
 
 UPDATE pit_cairo SET sv = 34 WHERE first = 'Aroldis';
 UPDATE pit_cairo SET sv = 24 WHERE first = 'Dellin';
+
+
+  CREATE VIEW v_fan_value AS
+  SELECT t.fg_id,
+         t.g,
+           -2.08361
+         + -0.00419*t.ab
+         + 0.01517*(t.b1 + t.b2 + t.b3 + t.hr)
+         + 0.01224*t.r
+         + 0.00929*t.rbi
+         + 0.02187*t.hr
+         + 0.01701*t.sb AS total,
+           -2.30050
+         + -0.52934*t.ab/t.g
+         + 1.89606*(t.b1 + t.b2 + t.b3 + t.hr)/t.g
+         + 1.94821*t.r/t.g
+         + 1.37459*t.rbi/t.g
+         + 2.93426*t.hr/t.g
+         + 1.85568*t.sb/t.g AS per_g
+    FROM v_bat_composite t
+   UNION
+     ALL
+  SELECT t.fg_id,
+         t.g,
+           -0.98791
+         + 0.01993*t.ip
+         + 0.00367*t.so
+         + -0.01132*(t.h + t.bb)
+         + -0.02011*t.er
+         + 0.03909*t.w
+         + 0.01335*t.sv AS total,
+           -0.94116
+         + 0.55025*t.ip/t.g
+         + 0.10067*t.so/t.g
+         + -0.32327*(t.h + t.bb)/t.g
+         + -0.51771*t.er/t.g
+         + 1.05688*t.w/t.g
+         + 0.86711*t.sv/t.g AS per_g
+    FROM v_pit_composite t
+;
+
+
+  SELECT t.fg_id,
+         t.fg_name,
+         t.yh_pos,
+         t.owner,
+         PRINTF ("%.1f", ROUND (t.adp, 1)) AS adp,
+         PRINTF ("%.1f", ROUND (t.g, 1)) AS g,
+         PRINTF ("%.2f", ROUND (t.total, 2)) AS total,
+         PRINTF ("%.2f", ROUND (t.per_g, 2)) AS per_g
+    FROM (
+  SELECT t.fg_id,
+         u.fg_name,
+         u.yh_pos,
+         v.owner,
+         IFNULL (v.adp, (SELECT MAX (w.adp) FROM yahoo w WHERE w.adp IS NOT NULL)) AS adp,
+         t.g,
+         t.total,
+         t.per_g
+    FROM v_fan_value t
+    LEFT
+    JOIN id_map u
+      ON t.fg_id = u.fg_id
+    LEFT
+    JOIN yahoo v
+      ON u.yh_id = v.yh_id
+         ) t
+ORDER BY t.adp
+;
 """
