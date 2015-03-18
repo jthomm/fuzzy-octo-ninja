@@ -1,0 +1,20 @@
+---
+- header: Year
+  type: int
+  default: 2015
+- header: url
+  name: yh_id
+  lstrip: "http://sports.yahoo.com/mlb/players/"
+- header: name
+- header: team
+- header: pos
+- header: owner
+  none: "FA"
+- header: owned
+  type: int
+  rstrip: "%"
+- header: adp
+  type: float
+  none: "-"
+- header: depth
+  none: "-"

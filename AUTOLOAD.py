@@ -552,26 +552,29 @@ ORDER BY orank, val DESC
 ;
 
   CREATE VIEW v_bat_composite AS
-  SELECT t.fg_id,
-         u.fg_last,
-         u.fg_first,
-         t.pa*t.g g,
-         t.pa*t.ab ab,
-         t.pa*t.b1 b1,
-         t.pa*t.b2 b2,
-         t.pa*t.b3 b3,
-         t.pa*t.hr hr,
-         t.pa*t.r r,
-         t.pa*t.rbi rbi,
-         t.pa*t.bb bb,
-         t.pa*t.so so,
-         t.pa*t.sb sb,
-         t.pa*t.cs cs
+  SELECT t.fg_id fg_id,
+         u.fg_last fg_last,
+         u.fg_first fg_first,
+         IFNULL (v.pa, t.pa)*t.g g,
+         IFNULL (v.pa, t.pa) pa,
+         IFNULL (v.pa, t.pa)*t.ab ab,
+         IFNULL (v.pa, t.pa)*t.b1 b1,
+         IFNULL (v.pa, t.pa)*t.b2 b2,
+         IFNULL (v.pa, t.pa)*t.b3 b3,
+         IFNULL (v.pa, t.pa)*t.hr hr,
+         IFNULL (v.pa, t.pa)*t.r r,
+         IFNULL (v.pa, t.pa)*t.rbi rbi,
+         IFNULL (v.pa, t.pa)*t.bb bb,
+         IFNULL (v.pa, t.pa)*t.so so,
+         IFNULL (v.pa, t.pa)*t.sb sb,
+         IFNULL (v.pa, t.pa)*t.cs cs
     FROM v_bat_composite_pa t,
          id_map u
+    LEFT
+    JOIN bat_overrides v
+      ON t.fg_id = v.fg_id
    WHERE t.fg_id = u.fg_id
 ;
-
 
 
 
@@ -776,30 +779,38 @@ ORDER BY orank, val DESC
 ;
 
   CREATE VIEW v_pit_composite AS
-  SELECT t.fg_id,
-         u.fg_last,
-         u.fg_first,
-         t.ip*t.g g,
-         t.ip*t.gs gs,
-         t.ip ip,
-         t.ip*t.h h,
-         t.ip*t.er er,
-         t.ip*t.bb bb,
-         t.ip*t.so so,
-         t.ip*t.hr hr,
-         t.ip*t.w w,
-         t.ip*t.l l,
-         t.ip*t.sv sv,
+  SELECT t.fg_id fg_id,
+         u.fg_last fg_last,
+         u.fg_first fg_first,
+         IFNULL (v.ip, t.ip)*t.g g,
+         IFNULL (v.ip, t.ip)*t.gs gs,
+         IFNULL (v.ip, t.ip) ip,
+         IFNULL (v.ip, t.ip)*t.h h,
+         IFNULL (v.ip, t.ip)*t.er er,
+         IFNULL (v.ip, t.ip)*t.bb bb,
+         IFNULL (v.ip, t.ip)*t.so so,
+         IFNULL (v.ip, t.ip)*t.hr hr,
+         IFNULL (v.ip, t.ip)*t.w w,
+         IFNULL (v.ip, t.ip)*t.l l,
+         IFNULL (v.ip, t.ip)*t.sv sv,
          NULL bsv,
          NULL hld,
          NULL qs
     FROM v_pit_composite_pa t,
          id_map u
+    LEFT
+    JOIN pit_overrides v
+      ON t.fg_id = v.fg_id
    WHERE t.fg_id = u.fg_id
 ; 
 
 UPDATE pit_cairo SET sv = 34 WHERE first = 'Aroldis';
 UPDATE pit_cairo SET sv = 24 WHERE first = 'Dellin';
+
+
+
+
+
 
 
   CREATE VIEW v_fan_value AS
@@ -841,32 +852,74 @@ UPDATE pit_cairo SET sv = 24 WHERE first = 'Dellin';
     FROM v_pit_composite t
 ;
 
+CREATE TABLE yh_overrides (yh_id TEXT PRIMARY KEY, rank FLOAT);
+INSERT INTO yh_overrides (yh_id, rank) VALUES ('9095', 2000); --darvish
+INSERT INTO yh_overrides (yh_id, rank) VALUES ('7963', 65); --pence
 
-  SELECT t.fg_id,
-         t.fg_name,
-         t.yh_pos,
-         t.owner,
-         PRINTF ("%.1f", ROUND (t.adp, 1)) AS adp,
-         PRINTF ("%.1f", ROUND (t.g, 1)) AS g,
-         PRINTF ("%.2f", ROUND (t.total, 2)) AS total,
-         PRINTF ("%.2f", ROUND (t.per_g, 2)) AS per_g
+  CREATE VIEW v_yh_draft AS
+  SELECT *
     FROM (
-  SELECT t.fg_id,
-         u.fg_name,
-         u.yh_pos,
-         v.owner,
-         IFNULL (v.adp, (SELECT MAX (w.adp) FROM yahoo w WHERE w.adp IS NOT NULL)) AS adp,
-         t.g,
-         t.total,
-         t.per_g
+  SELECT t.year AS year,
+         t.yh_id AS yh_id,
+         t.name AS name,
+         t.team AS team,
+         t.pos AS pos,
+         IFNULL (v.adp, u.adp) AS adp,
+         t.owned AS owned,
+         t.orank AS orank
+    FROM yh_orank t
+    LEFT
+    JOIN yh_research u
+      ON t.yh_id = u.yh_id
+    LEFT
+    JOIN yh_overrides v
+      ON t.yh_id = v.yh_id
+         )
+ORDER BY 7*ROUND (IFNULL (adp, 2000)/7.0, 0),
+         IFNULL (orank, 2000)
+;
+
+
+CREATE TABLE yh_overrides (yh_id TEXT PRIMARY KEY, adp FLOAT);
+
+INSERT INTO yh_overrides (yh_id, adp) VALUES ('9095', 4000); --darvish
+INSERT INTO yh_overrides (yh_id, adp) VALUES ('7963', 75); --pence
+INSERT INTO yh_overrides (yh_id, adp) VALUES ('7026', 175); --lee
+INSERT INTO yh_overrides (yh_id, adp) VALUES ('9637', 4000); --stroman
+INSERT INTO yh_overrides (yh_id, adp) VALUES ('9124', 4000); --wheeler
+INSERT INTO yh_overrides (yh_id, adp) VALUES ('8167', 4000); --kuroda
+
+  CREATE TABLE t_yh_draft AS SELECT * FROM v_yh_draft WHERE owner IS NULL;
+
+
+INSERT INTO bat_overrides (fg_id, pa) VALUES ('1327', 495); --werth
+INSERT INTO bat_overrides (fg_id, pa) VALUES ('8252', 495); --pence
+INSERT INTO bat_overrides (fg_id, pa) VALUES ('sa549381', 475); --bryant
+
+INSERT INTO pit_overrides (fg_id, ip) VALUES ('1636', 52); --lee
+INSERT INTO pit_overrides (fg_id, ip) VALUES ('3096', 45); --jansen
+INSERT INTO pit_overrides (fg_id, ip) VALUES ('13074', 1); --darvish
+INSERT INTO pit_overrides (fg_id, ip) VALUES ('10310', 1); --wheeler
+INSERT INTO pit_overrides (fg_id, ip) VALUES ('13431', 1); --stroman
+
+
+  CREATE VIEW v_drafter AS
+  SELECT t.fg_id AS id,
+         u.fg_name AS name,
+         u.yh_pos AS pos,
+         v.rowid + 42 AS adp,
+         t.g AS g,
+         t.total AS total,
+         t.per_g AS per_g,
+         (t.total + t.per_g)/2.0 AS pts
     FROM v_fan_value t
     LEFT
     JOIN id_map u
       ON t.fg_id = u.fg_id
     LEFT
-    JOIN yahoo v
+    JOIN t_yh_draft v
       ON u.yh_id = v.yh_id
-         ) t
-ORDER BY t.adp
+   WHERE v.rowid IS NOT NULL
+ORDER BY v.rowid
 ;
 """
