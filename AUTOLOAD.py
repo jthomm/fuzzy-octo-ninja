@@ -745,13 +745,9 @@ ORDER BY orank, val DESC
               THEN 1.0*(t.l + u.l + v.l)/3
               ELSE 1.0*(t.l + u.l + v.l + w.l)/4
          END AS l,
-         CASE WHEN v.sv IS NULL AND w.sv IS NULL
+         CASE WHEN v.sv IS NULL
               THEN t.sv
-              WHEN v.sv IS NULL
-              THEN 1.0*(t.sv + w.sv)/2
-              WHEN w.sv IS NULL
-              THEN 1.0*(t.sv + v.sv)/2
-              ELSE 1.0*(t.sv + v.sv + w.sv)/3
+              ELSE 1.0*(t.sv + v.sv)/2
          END AS sv,
          NULL bsv,
          NULL hld,
@@ -804,8 +800,6 @@ ORDER BY orank, val DESC
    WHERE t.fg_id = u.fg_id
 ; 
 
-UPDATE pit_cairo SET sv = 34 WHERE first = 'Aroldis';
-UPDATE pit_cairo SET sv = 24 WHERE first = 'Dellin';
 
 
 
@@ -866,7 +860,8 @@ INSERT INTO yh_overrides (yh_id, rank) VALUES ('7963', 65); --pence
          t.pos AS pos,
          IFNULL (v.adp, u.adp) AS adp,
          t.owned AS owned,
-         t.orank AS orank
+         t.orank AS orank,
+         t.owner AS owner
     FROM yh_orank t
     LEFT
     JOIN yh_research u
@@ -889,7 +884,7 @@ INSERT INTO yh_overrides (yh_id, adp) VALUES ('9637', 4000); --stroman
 INSERT INTO yh_overrides (yh_id, adp) VALUES ('9124', 4000); --wheeler
 INSERT INTO yh_overrides (yh_id, adp) VALUES ('8167', 4000); --kuroda
 
-  CREATE TABLE t_yh_draft AS SELECT * FROM v_yh_draft WHERE owner IS NULL;
+CREATE TABLE t_yh_draft AS SELECT * FROM v_yh_draft WHERE owner IS NULL;
 
 
 INSERT INTO bat_overrides (fg_id, pa) VALUES ('1327', 495); --werth
