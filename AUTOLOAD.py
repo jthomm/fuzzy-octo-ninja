@@ -423,132 +423,186 @@ ORDER BY orank, val DESC
    WHERE t.mlb_id = u.mlb_id
 ;
 
-  CREATE VIEW v_bat_composite_pa AS
+  CREATE VIEW v_bat_razz_pa AS
   SELECT t.fg_id,
-         CASE WHEN v.g IS NULL AND w.g IS NULL
-              THEN 1.0*(t.g + u.g)/2
-              WHEN v.g IS NULL
-              THEN 1.0*(t.g + u.g + w.g)/3
-              WHEN w.g IS NULL
-              THEN 1.0*(t.g + u.g + v.g)/3
-              ELSE 1.0*(t.g + u.g + v.g + w.g)/4
-         END AS g,
-         CASE WHEN v.pa IS NULL AND w.pa IS NULL
-              THEN 0.9*t.pa + 0.1*u.pa
-              WHEN v.pa IS NULL
-              THEN 0.9*t.pa + 0.05*u.pa + 0.05*w.pa
-              WHEN w.pa IS NULL
-              THEN 0.6*t.pa + 0.1*u.pa + 0.3*v.pa
-              ELSE 0.6*t.pa + 0.05*u.pa + 0.3*v.pa + 0.05*w.pa
-         END AS pa,
-         CASE WHEN v.ab IS NULL AND w.ab IS NULL
-              THEN 1.0*(t.ab + u.ab)/2
-              WHEN v.ab IS NULL
-              THEN 1.0*(t.ab + u.ab + w.ab)/3
-              WHEN w.ab IS NULL
-              THEN 1.0*(t.ab + u.ab + v.ab)/3
-              ELSE 1.0*(t.ab + u.ab + v.ab + w.ab)/4
-         END AS ab,
-         CASE WHEN v.b1 IS NULL AND w.b1 IS NULL
-              THEN 1.0*(t.b1 + u.b1)/2
-              WHEN v.b1 IS NULL
-              THEN 1.0*(t.b1 + u.b1 + w.b1)/3
-              WHEN w.b1 IS NULL
-              THEN 1.0*(t.b1 + u.b1 + v.b1)/3
-              ELSE 1.0*(t.b1 + u.b1 + v.b1 + w.b1)/4
-         END AS b1,
-         CASE WHEN v.b2 IS NULL AND w.b2 IS NULL
-              THEN 1.0*(t.b2 + u.b2)/2
-              WHEN v.b2 IS NULL
-              THEN 1.0*(t.b2 + u.b2 + w.b2)/3
-              WHEN w.b2 IS NULL
-              THEN 1.0*(t.b2 + u.b2 + v.b2)/3
-              ELSE 1.0*(t.b2 + u.b2 + v.b2 + w.b2)/4
-         END AS b2,
-         CASE WHEN v.b3 IS NULL AND w.b3 IS NULL
-              THEN 1.0*(t.b3 + u.b3)/2
-              WHEN v.b3 IS NULL
-              THEN 1.0*(t.b3 + u.b3 + w.b3)/3
-              WHEN w.b3 IS NULL
-              THEN 1.0*(t.b3 + u.b3 + v.b3)/3
-              ELSE 1.0*(t.b3 + u.b3 + v.b3 + w.b3)/4
-         END AS b3,
-         CASE WHEN v.hr IS NULL AND w.hr IS NULL
-              THEN 1.0*(t.hr + u.hr)/2
-              WHEN v.hr IS NULL
-              THEN 1.0*(t.hr + u.hr + w.hr)/3
-              WHEN w.hr IS NULL
-              THEN 1.0*(t.hr + u.hr + v.hr)/3
-              ELSE 1.0*(t.hr + u.hr + v.hr + w.hr)/4
-         END AS hr,
-         CASE WHEN v.r IS NULL AND w.r IS NULL
-              THEN 1.0*(t.r + u.r)/2
-              WHEN v.r IS NULL
-              THEN 1.0*(t.r + u.r + w.r)/3
-              WHEN w.r IS NULL
-              THEN 1.0*(t.r + u.r + v.r)/3
-              ELSE 1.0*(t.r + u.r + v.r + w.r)/4
-         END AS r,
-         CASE WHEN v.rbi IS NULL AND w.rbi IS NULL
-              THEN 1.0*(t.rbi + u.rbi)/2
-              WHEN v.rbi IS NULL
-              THEN 1.0*(t.rbi + u.rbi + w.rbi)/3
-              WHEN w.rbi IS NULL
-              THEN 1.0*(t.rbi + u.rbi + v.rbi)/3
-              ELSE 1.0*(t.rbi + u.rbi + v.rbi + w.rbi)/4
-         END AS rbi,
-         CASE WHEN v.bb IS NULL AND w.bb IS NULL
-              THEN 1.0*(t.bb + u.bb)/2
-              WHEN v.bb IS NULL
-              THEN 1.0*(t.bb + u.bb + w.bb)/3
-              WHEN w.bb IS NULL
-              THEN 1.0*(t.bb + u.bb + v.bb)/3
-              ELSE 1.0*(t.bb + u.bb + v.bb + w.bb)/4
-         END AS bb,
-         CASE WHEN v.so IS NULL AND w.so IS NULL
-              THEN 1.0*(t.so + u.so)/2
-              WHEN v.so IS NULL
-              THEN 1.0*(t.so + u.so + w.so)/3
-              WHEN w.so IS NULL
-              THEN 1.0*(t.so + u.so + v.so)/3
-              ELSE 1.0*(t.so + u.so + v.so + w.so)/4
-         END AS so,
-         CASE WHEN v.sb IS NULL AND w.sb IS NULL
-              THEN 1.0*(t.sb + u.sb)/2
-              WHEN v.sb IS NULL
-              THEN 1.0*(t.sb + u.sb + w.sb)/3
-              WHEN w.sb IS NULL
-              THEN 1.0*(t.sb + u.sb + v.sb)/3
-              ELSE 1.0*(t.sb + u.sb + v.sb + w.sb)/4
-         END AS sb,
-         CASE WHEN v.cs IS NULL AND w.cs IS NULL
-              THEN 1.0*(t.cs + u.cs)/2
-              WHEN v.cs IS NULL
-              THEN 1.0*(t.cs + u.cs + w.cs)/3
-              WHEN w.cs IS NULL
-              THEN 1.0*(t.cs + u.cs + v.cs)/3
-              ELSE 1.0*(t.cs + u.cs + v.cs + w.cs)/4
-         END AS cs,
-         CASE WHEN v.ab IS NULL AND w.ab IS NULL
-              THEN 'STMR-ZIPS'
-              WHEN v.ab IS NULL
-              THEN 'STMR-ZIPS-CAIR'
-              WHEN w.ab IS NULL
-              THEN 'STMR-ZIPS-CLAY'
-              ELSE 'STMR-ZIPS-CLAY-CAIR'
-         END AS mix
+         1.0*t.g/t.pa g,
+         t.pa pa,
+         1.0*t.ab/t.pa ab,
+         1.0*(t.h - t.b2 - t.b3 - t.hr)/t.pa b1,
+         1.0*t.b2/t.pa b2,
+         1.0*t.b3/t.pa b3,
+         1.0*t.hr/t.pa hr,
+         1.0*t.r/t.pa r,
+         1.0*t.rbi/t.pa rbi,
+         1.0*t.bb/t.pa bb,
+         1.0*t.so/t.pa so,
+         1.0*t.sb/t.pa sb,
+         1.0*t.cs/t.pa cs
+    FROM bat_razz t
+;
+
+  CREATE VIEW v_bat_composite_pa AS
+  SELECT t.fg_id AS fg_id,
+         (  IFNULL (t.g, 0)
+          + IFNULL (u.g, 0)
+          + IFNULL (v.g, 0)
+          + IFNULL (w.g, 0)
+          + IFNULL (x.g, 0)) /
+         (  CASE WHEN t.g IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.g IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.g IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.g IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.g IS NULL THEN 0 ELSE 1 END) AS g,
+         (  IFNULL (t.pa, 0)
+          + 0.5*IFNULL (u.pa, 0)
+          + 1.2*IFNULL (v.pa, 0)
+          + IFNULL (w.pa, 0)
+          + 0.2*IFNULL (x.pa, 0)) /
+         (  CASE WHEN t.pa IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.pa IS NULL THEN 0 ELSE 0.5 END
+          + CASE WHEN v.pa IS NULL THEN 0 ELSE 1.2 END
+          + CASE WHEN w.pa IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.pa IS NULL THEN 0 ELSE 0.2 END) AS pa,
+         (  IFNULL (t.ab, 0)
+          + IFNULL (u.ab, 0)
+          + IFNULL (v.ab, 0)
+          + IFNULL (w.ab, 0)
+          + IFNULL (x.ab, 0)) /
+         (  CASE WHEN t.ab IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.ab IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.ab IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.ab IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.ab IS NULL THEN 0 ELSE 1 END) AS ab,
+         (  IFNULL (t.b1, 0)
+          + IFNULL (u.b1, 0)
+          + IFNULL (v.b1, 0)
+          + IFNULL (w.b1, 0)
+          + IFNULL (x.b1, 0)) /
+         (  CASE WHEN t.b1 IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.b1 IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.b1 IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.b1 IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.b1 IS NULL THEN 0 ELSE 1 END) AS b1,
+         (  IFNULL (t.b2, 0)
+          + IFNULL (u.b2, 0)
+          + IFNULL (v.b2, 0)
+          + IFNULL (w.b2, 0)
+          + IFNULL (x.b2, 0)) /
+         (  CASE WHEN t.b2 IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.b2 IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.b2 IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.b2 IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.b2 IS NULL THEN 0 ELSE 1 END) AS b2,
+         (  IFNULL (t.b3, 0)
+          + IFNULL (u.b3, 0)
+          + IFNULL (v.b3, 0)
+          + IFNULL (w.b3, 0)
+          + IFNULL (x.b3, 0)) /
+         (  CASE WHEN t.b3 IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.b3 IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.b3 IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.b3 IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.b3 IS NULL THEN 0 ELSE 1 END) AS b3,
+         (  IFNULL (t.hr, 0)
+          + IFNULL (u.hr, 0)
+          + IFNULL (v.hr, 0)
+          + IFNULL (w.hr, 0)
+          + IFNULL (x.hr, 0)) /
+         (  CASE WHEN t.hr IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.hr IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.hr IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.hr IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.hr IS NULL THEN 0 ELSE 1 END) AS hr,
+         (  IFNULL (t.r, 0)
+          + IFNULL (u.r, 0)
+          + IFNULL (v.r, 0)
+          + IFNULL (w.r, 0)
+          + IFNULL (x.r, 0)) /
+         (  CASE WHEN t.r IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.r IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.r IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.r IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.r IS NULL THEN 0 ELSE 1 END) AS r,
+         (  IFNULL (t.rbi, 0)
+          + IFNULL (u.rbi, 0)
+          + IFNULL (v.rbi, 0)
+          + IFNULL (w.rbi, 0)
+          + IFNULL (x.rbi, 0)) /
+         (  CASE WHEN t.rbi IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.rbi IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.rbi IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.rbi IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.rbi IS NULL THEN 0 ELSE 1 END) AS rbi,
+         (  IFNULL (t.bb, 0)
+          + IFNULL (u.bb, 0)
+          + IFNULL (v.bb, 0)
+          + IFNULL (w.bb, 0)
+          + IFNULL (x.bb, 0)) /
+         (  CASE WHEN t.bb IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.bb IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.bb IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.bb IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.bb IS NULL THEN 0 ELSE 1 END) AS bb,
+         (  IFNULL (t.so, 0)
+          + IFNULL (u.so, 0)
+          + IFNULL (v.so, 0)
+          + IFNULL (w.so, 0)
+          + IFNULL (x.so, 0)) /
+         (  CASE WHEN t.so IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.so IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.so IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.so IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.so IS NULL THEN 0 ELSE 1 END) AS so,
+         (  IFNULL (t.so, 0)
+          + IFNULL (u.so, 0)
+          + IFNULL (v.so, 0)
+          + IFNULL (w.so, 0)
+          + IFNULL (x.so, 0)) /
+         (  CASE WHEN t.so IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.so IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.so IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.so IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.so IS NULL THEN 0 ELSE 1 END) AS so,
+         (  IFNULL (t.sb, 0)
+          + IFNULL (u.sb, 0)
+          + IFNULL (v.sb, 0)
+          + IFNULL (w.sb, 0)
+          + IFNULL (x.sb, 0)) /
+         (  CASE WHEN t.sb IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.sb IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.sb IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.sb IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.sb IS NULL THEN 0 ELSE 1 END) AS sb,
+         (  IFNULL (t.cs, 0)
+          + IFNULL (u.cs, 0)
+          + IFNULL (v.cs, 0)
+          + IFNULL (w.cs, 0)
+          + IFNULL (x.cs, 0)) /
+         (  CASE WHEN t.cs IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.cs IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.cs IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.cs IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.cs IS NULL THEN 0 ELSE 1 END) AS cs,
+            CASE WHEN t.so IS NOT NULL THEN ',STMR' ELSE '' END
+         || CASE WHEN u.so IS NOT NULL THEN ',ZIPS' ELSE '' END
+         || CASE WHEN v.so IS NOT NULL THEN ',RAZZ' ELSE '' END
+         || CASE WHEN w.so IS NOT NULL THEN ',CLAY' ELSE '' END
+         || CASE WHEN x.so IS NOT NULL THEN ',CAIR' ELSE '' END AS mix
     FROM v_bat_stmr_pa t
     LEFT
     JOIN v_bat_zips_pa u
       ON t.fg_id = u.fg_id
     LEFT
-    JOIN v_bat_clay_pa v
+    JOIN v_bat_razz_pa v
       ON t.fg_id = v.fg_id
     LEFT
-    JOIN v_bat_cairo_pa w
+    JOIN v_bat_clay_pa w
       ON t.fg_id = w.fg_id
+    LEFT
+    JOIN v_bat_cairo_pa x
+      ON t.fg_id = x.fg_id
    WHERE t.fg_id IS NOT NULL --steamer is present (always true)
-     AND u.fg_id IS NOT NULL --zips is present (almost always true)
+     AND u.fg_id IS NOT NULL --zpas is present (almost always true)
 ;
 
   CREATE VIEW v_bat_composite AS
@@ -663,113 +717,185 @@ ORDER BY orank, val DESC
    WHERE t.mlb_id = u.mlb_id
 ;
 
-  CREATE VIEW v_pit_composite_pa AS
+  CREATE VIEW v_pit_razz_ip AS
   SELECT t.fg_id,
-         CASE WHEN v.g IS NULL AND w.g IS NULL
-              THEN 1.0*(t.g + u.g)/2
-              WHEN v.g IS NULL
-              THEN 1.0*(t.g + u.g + w.g)/3
-              WHEN w.g IS NULL
-              THEN 1.0*(t.g + u.g + v.g)/3
-              ELSE 1.0*(t.g + u.g + v.g + w.g)/4
-         END AS g,
-         CASE WHEN v.gs IS NULL AND w.gs IS NULL
-              THEN 1.0*(t.gs + u.gs)/2
-              WHEN v.gs IS NULL
-              THEN 1.0*(t.gs + u.gs + w.gs)/3
-              WHEN w.gs IS NULL
-              THEN 1.0*(t.gs + u.gs + v.gs)/3
-              ELSE 1.0*(t.gs + u.gs + v.gs + w.gs)/4
-         END AS gs,
-         CASE WHEN v.ip IS NULL AND w.ip IS NULL
-              THEN 0.9*t.ip + 0.1*u.ip
-              WHEN v.ip IS NULL
-              THEN 0.9*t.ip + 0.05*u.ip + 0.05*w.ip
-              WHEN w.ip IS NULL
-              THEN 0.6*t.ip + 0.1*u.ip + 0.3*v.ip
-              ELSE 0.6*t.ip + 0.05*u.ip + 0.3*v.ip + 0.05*w.ip
-         END AS ip,
-         CASE WHEN v.h IS NULL AND w.h IS NULL
-              THEN 1.0*(t.h + u.h)/2
-              WHEN v.h IS NULL
-              THEN 1.0*(t.h + u.h + w.h)/3
-              WHEN w.h IS NULL
-              THEN 1.0*(t.h + u.h + v.h)/3
-              ELSE 1.0*(t.h + u.h + v.h + w.h)/4
-         END AS h,
-         CASE WHEN v.er IS NULL AND w.er IS NULL
-              THEN 1.0*(t.er + u.er)/2
-              WHEN v.er IS NULL
-              THEN 1.0*(t.er + u.er + w.er)/3
-              WHEN w.er IS NULL
-              THEN 1.0*(t.er + u.er + v.er)/3
-              ELSE 1.0*(t.er + u.er + v.er + w.er)/4
-         END AS er,
-         CASE WHEN v.bb IS NULL AND w.bb IS NULL
-              THEN 1.0*(t.bb + u.bb)/2
-              WHEN v.bb IS NULL
-              THEN 1.0*(t.bb + u.bb + w.bb)/3
-              WHEN w.bb IS NULL
-              THEN 1.0*(t.bb + u.bb + v.bb)/3
-              ELSE 1.0*(t.bb + u.bb + v.bb + w.bb)/4
-         END AS bb,
-         CASE WHEN v.so IS NULL AND w.so IS NULL
-              THEN 1.0*(t.so + u.so)/2
-              WHEN v.so IS NULL
-              THEN 1.0*(t.so + u.so + w.so)/3
-              WHEN w.so IS NULL
-              THEN 1.0*(t.so + u.so + v.so)/3
-              ELSE 1.0*(t.so + u.so + v.so + w.so)/4
-         END AS so,
-         CASE WHEN v.hr IS NULL AND w.hr IS NULL
-              THEN 1.0*(t.hr + u.hr)/2
-              WHEN v.hr IS NULL
-              THEN 1.0*(t.hr + u.hr + w.hr)/3
-              WHEN w.hr IS NULL
-              THEN 1.0*(t.hr + u.hr + v.hr)/3
-              ELSE 1.0*(t.hr + u.hr + v.hr + w.hr)/4
-         END AS hr,
-         CASE WHEN v.w IS NULL AND w.w IS NULL
-              THEN 1.0*(t.w + u.w)/2
-              WHEN v.w IS NULL
-              THEN 1.0*(t.w + u.w + w.w)/3
-              WHEN w.w IS NULL
-              THEN 1.0*(t.w + u.w + v.w)/3
-              ELSE 1.0*(t.w + u.w + v.w + w.w)/4
-         END AS w,
-         CASE WHEN v.l IS NULL AND w.l IS NULL
-              THEN 1.0*(t.l + u.l)/2
-              WHEN v.l IS NULL
-              THEN 1.0*(t.l + u.l + w.l)/3
-              WHEN w.l IS NULL
-              THEN 1.0*(t.l + u.l + v.l)/3
-              ELSE 1.0*(t.l + u.l + v.l + w.l)/4
-         END AS l,
-         CASE WHEN v.sv IS NULL
-              THEN t.sv
-              ELSE 1.0*(t.sv + v.sv)/2
-         END AS sv,
+         1.0*t.g/t.ip g,
+         1.0*t.gs/t.ip gs,
+         t.ip ip,
+         1.0*t.h/t.ip h,
+         1.0*t.er/t.ip er,
+         1.0*t.bb/t.ip bb,
+         1.0*t.so/t.ip so,
+         1.0*t.hr/t.ip hr,
+         1.0*t.w/t.ip w,
+         NULL l,
+         1.0*t.sv/t.ip sv,
          NULL bsv,
          NULL hld,
-         NULL qs,
-         CASE WHEN v.ip IS NULL AND w.ip IS NULL
-              THEN 'STMR-ZIPS'
-              WHEN v.ip IS NULL
-              THEN 'STMR-ZIPS-CAIR'
-              WHEN w.ip IS NULL
-              THEN 'STMR-ZIPS-CLAY'
-              ELSE 'STMR-ZIPS-CLAY-CAIR'
-         END AS mix
+         NULL qs
+    FROM pit_razz t
+;
+
+  CREATE VIEW v_pit_composite_pa AS
+  SELECT t.fg_id,
+         (  IFNULL (t.g, 0)
+          + IFNULL (u.g, 0)
+          + IFNULL (v.g, 0)
+          + IFNULL (w.g, 0)
+          + IFNULL (x.g, 0)) /
+         (  CASE WHEN t.g IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.g IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.g IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.g IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.g IS NULL THEN 0 ELSE 1 END) AS g,
+         (  IFNULL (t.gs, 0)
+          + IFNULL (u.gs, 0)
+          + IFNULL (v.gs, 0)
+          + IFNULL (w.gs, 0)
+          + IFNULL (x.gs, 0)) /
+         (  CASE WHEN t.gs IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.gs IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.gs IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.gs IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.gs IS NULL THEN 0 ELSE 1 END) AS gs,
+         (  IFNULL (t.ip, 0)
+          + 0.5*IFNULL (u.ip, 0)
+          + 1.2*IFNULL (v.ip, 0)
+          + IFNULL (w.ip, 0)
+          + 0.2*IFNULL (x.ip, 0)) /
+         (  CASE WHEN t.ip IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.ip IS NULL THEN 0 ELSE 0.5 END
+          + CASE WHEN v.ip IS NULL THEN 0 ELSE 1.2 END
+          + CASE WHEN w.ip IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.ip IS NULL THEN 0 ELSE 0.2 END) AS ip,
+         (  IFNULL (t.h, 0)
+          + IFNULL (u.h, 0)
+          + IFNULL (v.h, 0)
+          + IFNULL (w.h, 0)
+          + IFNULL (x.h, 0)) /
+         (  CASE WHEN t.h IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.h IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.h IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.h IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.h IS NULL THEN 0 ELSE 1 END) AS h,
+         (  IFNULL (t.er, 0)
+          + IFNULL (u.er, 0)
+          + IFNULL (v.er, 0)
+          + IFNULL (w.er, 0)
+          + IFNULL (x.er, 0)) /
+         (  CASE WHEN t.er IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.er IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.er IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.er IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.er IS NULL THEN 0 ELSE 1 END) AS er,
+         (  IFNULL (t.bb, 0)
+          + IFNULL (u.bb, 0)
+          + IFNULL (v.bb, 0)
+          + IFNULL (w.bb, 0)
+          + IFNULL (x.bb, 0)) /
+         (  CASE WHEN t.bb IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.bb IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.bb IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.bb IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.bb IS NULL THEN 0 ELSE 1 END) AS bb,
+         (  IFNULL (t.so, 0)
+          + IFNULL (u.so, 0)
+          + IFNULL (v.so, 0)
+          + IFNULL (w.so, 0)
+          + IFNULL (x.so, 0)) /
+         (  CASE WHEN t.so IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.so IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.so IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.so IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.so IS NULL THEN 0 ELSE 1 END) AS so,
+         (  IFNULL (t.hr, 0)
+          + IFNULL (u.hr, 0)
+          + IFNULL (v.hr, 0)
+          + IFNULL (w.hr, 0)
+          + IFNULL (x.hr, 0)) /
+         (  CASE WHEN t.hr IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.hr IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.hr IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.hr IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.hr IS NULL THEN 0 ELSE 1 END) AS hr,
+         (  IFNULL (t.w, 0)
+          + IFNULL (u.w, 0)
+          + IFNULL (v.w, 0)
+          + IFNULL (w.w, 0)
+          + IFNULL (x.w, 0)) /
+         (  CASE WHEN t.w IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.w IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.w IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.w IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.w IS NULL THEN 0 ELSE 1 END) AS w,
+         (  IFNULL (t.l, 0)
+          + IFNULL (u.l, 0)
+          + IFNULL (v.l, 0)
+          + IFNULL (w.l, 0)
+          + IFNULL (x.l, 0)) /
+         (  CASE WHEN t.l IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.l IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.l IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.l IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.l IS NULL THEN 0 ELSE 1 END) AS l,
+         (  IFNULL (t.sv, 0)
+          + IFNULL (u.sv, 0)
+          + IFNULL (v.sv, 0)
+          + IFNULL (w.sv, 0)
+          + 0*IFNULL (x.sv, 0)) /
+         (  CASE WHEN t.sv IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.sv IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.sv IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.sv IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.sv IS NULL THEN 0 ELSE 0 END) AS sv,
+         (  IFNULL (t.bsv, 0)
+          + IFNULL (u.bsv, 0)
+          + IFNULL (v.bsv, 0)
+          + IFNULL (w.bsv, 0)
+          + IFNULL (x.bsv, 0)) /
+         (  CASE WHEN t.bsv IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.bsv IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.bsv IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.bsv IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.bsv IS NULL THEN 0 ELSE 1 END) AS bsv,
+         (  IFNULL (t.hld, 0)
+          + IFNULL (u.hld, 0)
+          + IFNULL (v.hld, 0)
+          + IFNULL (w.hld, 0)
+          + IFNULL (x.hld, 0)) /
+         (  CASE WHEN t.hld IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.hld IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.hld IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.hld IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.hld IS NULL THEN 0 ELSE 1 END) AS hld,
+         (  IFNULL (t.qs, 0)
+          + IFNULL (u.qs, 0)
+          + IFNULL (v.qs, 0)
+          + IFNULL (w.qs, 0)
+          + IFNULL (x.qs, 0)) /
+         (  CASE WHEN t.qs IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN u.qs IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN v.qs IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN w.qs IS NULL THEN 0 ELSE 1 END
+          + CASE WHEN x.qs IS NULL THEN 0 ELSE 1 END) AS qs,
+            CASE WHEN t.so IS NOT NULL THEN ',STMR' ELSE '' END
+         || CASE WHEN u.so IS NOT NULL THEN ',ZIPS' ELSE '' END
+         || CASE WHEN v.so IS NOT NULL THEN ',RAZZ' ELSE '' END
+         || CASE WHEN w.so IS NOT NULL THEN ',CLAY' ELSE '' END
+         || CASE WHEN x.so IS NOT NULL THEN ',CAIR' ELSE '' END AS mix
     FROM v_pit_stmr_ip t
     LEFT
     JOIN v_pit_zips_ip u
       ON t.fg_id = u.fg_id
     LEFT
-    JOIN v_pit_clay_ip v
+    JOIN v_pit_razz_ip v
       ON t.fg_id = v.fg_id
     LEFT
-    JOIN v_pit_cairo_ip w
+    JOIN v_pit_clay_ip w
       ON t.fg_id = w.fg_id
+    LEFT
+    JOIN v_pit_cairo_ip x
+      ON t.fg_id = x.fg_id
    WHERE t.fg_id IS NOT NULL --steamer is present (always true)
      AND u.fg_id IS NOT NULL --zips is present (almost always true)
 ;
@@ -897,16 +1023,14 @@ INSERT INTO pit_overrides (fg_id, ip) VALUES ('13074', 1); --darvish
 INSERT INTO pit_overrides (fg_id, ip) VALUES ('10310', 1); --wheeler
 INSERT INTO pit_overrides (fg_id, ip) VALUES ('13431', 1); --stroman
 
-
   CREATE VIEW v_drafter AS
   SELECT t.fg_id AS id,
          u.fg_name AS name,
          u.yh_pos AS pos,
          v.rowid + 42 AS adp,
          t.g AS g,
-         t.total AS total,
-         t.per_g AS per_g,
-         (t.total + t.per_g)/2.0 AS pts
+         ROUND (50*t.total, 0) + 110 AS total,
+         ROUND (50*t.per_g, 0) + 110 AS per_g
     FROM v_fan_value t
     LEFT
     JOIN id_map u
@@ -917,4 +1041,5 @@ INSERT INTO pit_overrides (fg_id, ip) VALUES ('13431', 1); --stroman
    WHERE v.rowid IS NOT NULL
 ORDER BY v.rowid
 ;
+
 """

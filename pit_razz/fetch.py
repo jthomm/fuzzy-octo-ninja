@@ -3,6 +3,18 @@ from bs4 import BeautifulSoup as Soup
 from collections import OrderedDict
 import csv
 
+import sqlite3
+n = sqlite3.connect('../fbb')
+c = n.cursor()
+
+fg_ids = {}
+for row in c.execute('SELECT fg_id FROM id_map'):
+    fg_ids[row[0]] = None;
+
+from collections import defaultdict
+fg_ids_by_name = defaultdict(list)
+for row in c.execute('SELECT fg_id, fg_name FROM id_map'):
+    fg_ids_by_name[row[1]].append(row[0])
 
 class PitcherTable(object):
     #
@@ -23,7 +35,7 @@ class PitcherTable(object):
 
 class Pitcher(object):
     #
-    attrs = ('bis_id', 'name', 'team', 'pos',
+    attrs = ('fg_id', 'name', 'team', 'pos',
              'g', 'gs', 'w', 'sv', 'ip', 'so',
              'bb', 'h', 'hbp', 'er', 'r', 'hr',
              'gb_pct', 'fb_pct', 'ld_pct', 'babip',)
@@ -32,9 +44,14 @@ class Pitcher(object):
         self.tds = tr.find_all('td')
     #
     @property
-    def bis_id(self):
+    def fg_id(self):
         href = self.tds[1].a.attrs[u'href']
-        return href.split('/')[2]
+        bis_id = href.split('/')[2]
+        if (bis_id in fg_ids):
+            return bis_id
+        else:
+            possible_ids = fg_ids_by_name[self.name];
+            return bis_id if len(possible_ids) != 1 else possible_ids[0]
     #
     @property
     def name(self):
