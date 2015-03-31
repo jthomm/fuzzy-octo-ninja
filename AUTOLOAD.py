@@ -344,6 +344,29 @@ ORDER BY orank, val DESC
 
 
 
+  CREATE VIEW v_bat_sreg_pa AS
+  SELECT t.fg_id,
+         1.0*u.g/t.pa g,
+         t.pa pa,
+         1.0*v.ab/v.pa ab,
+         1.0*(v.h - v.b2 - v.b3 - v.hr)/v.pa b1,
+         1.0*v.b2/v.pa b2,
+         1.0*v.b3/v.pa b3,
+         1.0*v.hr/v.pa hr,
+         1.0*v.r/v.pa r,
+         1.0*v.rbi/v.pa rbi,
+         1.0*v.bb/v.pa bb,
+         1.0*v.so/v.pa so,
+         1.0*v.sb/v.pa sb,
+         1.0*v.cs/v.pa cs
+    FROM bat_stmr t,
+         bat_fgdc u,
+         bat_sreg v
+   WHERE t.fg_id = u.fg_id
+     AND t.fg_id = v.fg_id
+     AND t.pa > 1
+;
+
   CREATE VIEW v_bat_stmr_pa AS
   SELECT t.fg_id,
          1.0*u.g/t.pa g,
@@ -588,7 +611,7 @@ ORDER BY orank, val DESC
          || CASE WHEN v.so IS NOT NULL THEN ',RAZZ' ELSE '' END
          || CASE WHEN w.so IS NOT NULL THEN ',CLAY' ELSE '' END
          || CASE WHEN x.so IS NOT NULL THEN ',CAIR' ELSE '' END AS mix
-    FROM v_bat_stmr_pa t
+    FROM v_bat_sreg_pa t
     LEFT
     JOIN v_bat_zips_pa u
       ON t.fg_id = u.fg_id
@@ -654,6 +677,28 @@ ORDER BY orank, val DESC
          NULL qs
     FROM pit_stmr t
    WHERE t.ip > 1
+;
+
+  CREATE VIEW v_pit_sreg_ip AS
+  SELECT t.fg_id,
+         1.0*t.g/t.ip g,
+         1.0*t.gs/t.ip gs,
+         t.ip ip,
+         1.0*u.h/u.ip h,
+         1.0*u.er/u.ip er,
+         1.0*u.bb/u.ip bb,
+         1.0*u.so/u.ip so,
+         1.0*u.hr/u.ip hr,
+         1.0*u.w/u.ip w,
+         1.0*u.l/u.ip l,
+         1.0*u.sv/u.ip sv,
+         NULL bsv,
+         NULL hld,
+         NULL qs
+    FROM pit_stmr t,
+         pit_sreg u
+   WHERE t.fg_id = u.fg_id
+     AND t.ip > 1
 ;
 
   CREATE VIEW v_pit_zips_ip AS
@@ -883,7 +928,7 @@ ORDER BY orank, val DESC
          || CASE WHEN v.so IS NOT NULL THEN ',RAZZ' ELSE '' END
          || CASE WHEN w.so IS NOT NULL THEN ',CLAY' ELSE '' END
          || CASE WHEN x.so IS NOT NULL THEN ',CAIR' ELSE '' END AS mix
-    FROM v_pit_stmr_ip t
+    FROM v_pit_sreg_ip t
     LEFT
     JOIN v_pit_zips_ip u
       ON t.fg_id = u.fg_id
@@ -1042,4 +1087,118 @@ INSERT INTO pit_overrides (fg_id, ip) VALUES ('13431', 1); --stroman
 ORDER BY v.rowid
 ;
 
+
+  CREATE VIEW v_bat_value AS
+  SELECT t.fg_id AS fg_id,
+
+         15.186*t.hr/t.g - 2.169 AS hrv_g,
+         7.586*t.rbi/t.g - 3.974 AS rbiv_g,
+         10.116*t.sb/t.g - 0.823 AS sbv_g,
+         10.032*t.r/t.g - 5.423 AS rv_g,
+         9.707*(t.b1 + t.b2 + t.b3 + t.hr)/t.g - 2.735*t.ab/t.g - 0.043 AS bav_g,
+
+           -2.30050
+         + -0.52934*t.ab/t.g
+         + 1.89606*(t.b1 + t.b2 + t.b3 + t.hr)/t.g
+         + 1.94821*t.r/t.g
+         + 1.37459*t.rbi/t.g
+         + 2.93426*t.hr/t.g
+         + 1.85568*t.sb/t.g AS value_g,
+
+         0.112*t.hr - 2.030 AS hrv,
+         0.049*t.rbi - 3.515 AS rbiv,
+         0.084*t.sb - 0.955 AS sbv,
+         0.066*t.r - 4.855 AS rv,
+         0.074*(t.b1 + t.b2 + t.b3 + t.hr) - 0.021*t.ab AS bav,
+
+           -2.08361
+         + -0.00419*t.ab
+         + 0.01517*(t.b1 + t.b2 + t.b3 + t.hr)
+         + 0.01224*t.r
+         + 0.00929*t.rbi
+         + 0.02187*t.hr
+         + 0.01701*t.sb AS value
+    FROM v_bat_composite t
+;
+
+  CREATE VIEW v_pit_value AS
+  SELECT t.fg_id AS fg_id,
+
+         4.750*t.w/t.g - 1.620 AS wv_g,
+         4.346*t.sv/t.g - 0.506 AS svv_g,
+         0.455*t.so/t.g - 1.931 AS sov_g,
+         0.887*t.ip/t.g - 2.687*t.er/t.g - 0.093 AS erav_g,
+         1.833*t.ip/t.g - 1.64*(t.h + t.bb)/t.g - 0.078 AS whipv_g,
+
+           -0.94116
+         + 0.55025*t.ip/t.g
+         + 0.10067*t.so/t.g
+         + -0.32327*(t.h + t.bb)/t.g
+         + -0.51771*t.er/t.g
+         + 1.05688*t.w/t.g
+         + 0.86711*t.sv/t.g AS value_g,
+
+         0.188*t.w - 1.713 AS wv,
+         0.066*t.sv - 0.592 AS svv,
+         0.017*t.so - 2.104 AS sov,
+         0.037*t.ip - 0.114*t.er AS erav,
+         0.070*t.ip - 0.063*(t.h + t.bb) AS whipv,
+
+           -0.98791
+         + 0.01993*t.ip
+         + 0.00367*t.so
+         + -0.01132*(t.h + t.bb)
+         + -0.02011*t.er
+         + 0.03909*t.w
+         + 0.01335*t.sv AS value
+    FROM v_pit_composite t
+;
+
+  CREATE VIEW v_test AS
+  SELECT IFNULL (u.yh_pos, CASE WHEN t.role = 'PIT' THEN 'P' ELSE NULL END) AS pos,
+         t.*
+    FROM (
+  SELECT u.fg_id AS fg_id,
+         u.fg_first || ' ' || u.fg_last AS name,
+         u.g AS g,
+         u.hr AS "hr/w",
+         u.rbi AS "rbi/sv",
+         u.sb AS "sb/so",
+         u.r AS "r/era",
+         (u.b1 + u.b2 + u.b3 + u.hr)/u.ab AS "ba/whip",
+         t.hrv_g AS "hr/w val",
+         t.rbiv_g AS "rbi/sv val",
+         t.sbv_g AS "sb/so val",
+         t.rv_g AS "r/era val",
+         t.bav_g AS "ba/whip val",
+         t.hrv_g + t.rbiv_g + t.sbv_g + t.rv_g + t.bav_g AS val,
+         'BAT' AS role
+    FROM v_bat_value t,
+         v_bat_composite u
+   WHERE t.fg_id = u.fg_id
+   UNION
+     ALL
+  SELECT u.fg_id AS fg_id,
+         u.fg_first || ' ' || u.fg_last AS name,
+         u.g AS g,
+         u.w AS "hr/w",
+         u.sv AS "rbi/sv",
+         u.so AS "sb/so",
+         9*u.er/u.ip AS "r/era",
+         (u.bb + u.h)/u.ip AS "ba/whip",
+         t.wv_g AS "hr/w val",
+         t.svv_g AS "rbi/sv val",
+         t.sov_g AS "sb/so val",
+         t.erav_g AS "r/era val",
+         t.whipv_g AS "ba/whip val",
+         t.wv_g + t.svv_g + t.sov_g + t.erav_g + t.whipv_g AS val,
+         'PIT' AS role
+    FROM v_pit_value t,
+         v_pit_composite u
+   WHERE t.fg_id = u.fg_id
+         ) t,
+         id_map u
+   WHERE t.fg_id = u.fg_id
+ORDER BY t.val DESC
+;
 """
