@@ -346,24 +346,22 @@ ORDER BY orank, val DESC
 
   CREATE VIEW v_bat_sreg_pa AS
   SELECT t.fg_id,
-         1.0*u.g/t.pa g,
-         t.pa pa,
-         1.0*v.ab/v.pa ab,
-         1.0*(v.h - v.b2 - v.b3 - v.hr)/v.pa b1,
-         1.0*v.b2/v.pa b2,
-         1.0*v.b3/v.pa b3,
-         1.0*v.hr/v.pa hr,
-         1.0*v.r/v.pa r,
-         1.0*v.rbi/v.pa rbi,
-         1.0*v.bb/v.pa bb,
-         1.0*v.so/v.pa so,
-         1.0*v.sb/v.pa sb,
-         1.0*v.cs/v.pa cs
-    FROM bat_stmr t,
-         bat_fgdc u,
-         bat_sreg v
+         1.0*u.g/u.pa g,
+         u.pa pa,
+         1.0*t.ab/t.pa ab,
+         1.0*(t.h - t.b2 - t.b3 - t.hr)/t.pa b1,
+         1.0*t.b2/t.pa b2,
+         1.0*t.b3/t.pa b3,
+         1.0*t.hr/t.pa hr,
+         1.0*t.r/t.pa r,
+         1.0*t.rbi/t.pa rbi,
+         1.0*t.bb/t.pa bb,
+         1.0*t.so/t.pa so,
+         1.0*t.sb/t.pa sb,
+         1.0*t.cs/t.pa cs
+    FROM bat_sreg t,
+         bat_fgdc u
    WHERE t.fg_id = u.fg_id
-     AND t.fg_id = v.fg_id
      AND t.pa > 1
 ;
 
@@ -683,22 +681,22 @@ ORDER BY orank, val DESC
   SELECT t.fg_id,
          1.0*t.g/t.ip g,
          1.0*t.gs/t.ip gs,
-         t.ip ip,
-         1.0*u.h/u.ip h,
-         1.0*u.er/u.ip er,
-         1.0*u.bb/u.ip bb,
-         1.0*u.so/u.ip so,
-         1.0*u.hr/u.ip hr,
-         1.0*u.w/u.ip w,
-         1.0*u.l/u.ip l,
-         1.0*u.sv/u.ip sv,
+         u.ip ip,
+         1.0*t.h/t.ip h,
+         1.0*t.er/t.ip er,
+         1.0*t.bb/t.ip bb,
+         1.0*t.so/t.ip so,
+         1.0*t.hr/t.ip hr,
+         1.0*t.w/t.ip w,
+         1.0*t.l/t.ip l,
+         1.0*t.sv/t.ip sv,
          NULL bsv,
          NULL hld,
          NULL qs
-    FROM pit_stmr t,
-         pit_sreg u
+    FROM pit_sreg t,
+         pit_fgdc u
    WHERE t.fg_id = u.fg_id
-     AND t.ip > 1
+     AND u.ip > 0
 ;
 
   CREATE VIEW v_pit_zips_ip AS
