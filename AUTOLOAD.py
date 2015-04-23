@@ -58,6 +58,7 @@ def create_table(folder):
     c.execute(ddl)
 
 
+"""
 folders = (
     'pit_basic',
     'pit_pfx',
@@ -68,6 +69,29 @@ folders = (
 for folder in folders:
     print 'refreshing {0} for 2014'.format(folder)
     load_data(folder, range(2014, 2015))
+"""
+
+from argparse import ArgumentParser
+argument_parser = ArgumentParser()
+argument_parser.add_argument('-c')
+argument_parser.add_argument('-f')
+argument_parser.add_argument('-y')
+
+if __name__ == '__main__':
+    args = argument_parser.parse_args()
+    if args.c is not None:
+        print "Creating table for '{0}'".format(args.c)
+        create_table(args.c)
+    else:
+        if args.f is None:
+            raise Exception("Can't load data unless '-f' argument is provided")
+        else:
+            if args.y is None:
+                print "Loading data for '{0}'".format(args.f)
+                load_data(args.f)
+            else:
+                print "Loading data for '{0}' in year {1}".format(args.f, args.y)
+                load_data(args.f, [int(args.y)])
 
 
 """
@@ -1152,25 +1176,70 @@ ORDER BY v.rowid
     FROM v_pit_composite t
 ;
 
+
+  CREATE VIEW v_yahoo AS
+  SELECT t.year,
+         t.yh_id,
+         t.name,
+         t.team,
+         t.pos,
+         t.owner,
+         t.owned,
+         t.rank,
+         t.orank,
+         u.adp,
+         u.depth
+    FROM yh_orank t,
+         yh_research u
+   WHERE t.yh_id = u.yh_id
+;
+
+
   CREATE VIEW v_test AS
-  SELECT IFNULL (u.yh_pos, CASE WHEN t.role = 'PIT' THEN 'P' ELSE NULL END) AS pos,
-         t.*
+  SELECT t.fg_id AS fg_id,
+         t.name AS name,
+         u.yh_pos,
+         v.depth,
+         v.adp,
+         v.owned,
+         v.owner,
+         (t."hr/w val" + t."sb/sv val" + t."rbi/so val" + t."r/era val" + t."ba/whip val")/5 AS val,
+         t.g AS g,
+         t."hr/w val" AS "hr/w val",
+         t."sb/sv val" AS "sb/sv val",
+         t."rbi/so val" AS "rbi/so val",
+         t."r/era val" AS "r/era val",
+         t."ba/whip val" AS "ba/whip val",
+         t.hr AS hr,
+         t.sb AS sb,
+         t.rbi AS rbi,
+         t.r AS r,
+         t.ba AS ba,
+         t.w AS w,
+         t.sv AS sv,
+         t.so AS so,
+         t.era AS era,
+         t.whip AS whip
     FROM (
   SELECT u.fg_id AS fg_id,
          u.fg_first || ' ' || u.fg_last AS name,
+         'BAT' AS role,
          u.g AS g,
-         u.hr AS "hr/w",
-         u.rbi AS "rbi/sv",
-         u.sb AS "sb/so",
-         u.r AS "r/era",
-         (u.b1 + u.b2 + u.b3 + u.hr)/u.ab AS "ba/whip",
          t.hrv_g AS "hr/w val",
-         t.rbiv_g AS "rbi/sv val",
-         t.sbv_g AS "sb/so val",
+         t.sbv_g AS "sb/sv val",
+         t.rbiv_g AS "rbi/so val",
          t.rv_g AS "r/era val",
          t.bav_g AS "ba/whip val",
-         t.hrv_g + t.rbiv_g + t.sbv_g + t.rv_g + t.bav_g AS val,
-         'BAT' AS role
+         u.hr AS hr,
+         u.sb AS sb,
+         u.rbi AS rbi,
+         u.r AS r,
+         (u.b1 + u.b2 + u.b3 + u.hr)/u.ab AS ba,
+         NULL AS w,
+         NULL AS sv,
+         NULL AS so,
+         NULL AS era,
+         NULL AS whip
     FROM v_bat_value t,
          v_bat_composite u
    WHERE t.fg_id = u.fg_id
@@ -1178,25 +1247,32 @@ ORDER BY v.rowid
      ALL
   SELECT u.fg_id AS fg_id,
          u.fg_first || ' ' || u.fg_last AS name,
+         'PIT' AS role,
          u.g AS g,
-         u.w AS "hr/w",
-         u.sv AS "rbi/sv",
-         u.so AS "sb/so",
-         9*u.er/u.ip AS "r/era",
-         (u.bb + u.h)/u.ip AS "ba/whip",
          t.wv_g AS "hr/w val",
-         t.svv_g AS "rbi/sv val",
-         t.sov_g AS "sb/so val",
+         t.svv_g AS "sb/sv val",
+         t.sov_g AS "rbi/so val",
          t.erav_g AS "r/era val",
          t.whipv_g AS "ba/whip val",
-         t.wv_g + t.svv_g + t.sov_g + t.erav_g + t.whipv_g AS val,
-         'PIT' AS role
+         NULL AS hr,
+         NULL AS sb,
+         NULL AS rbi,
+         NULL AS r,
+         NULL AS ba,
+         u.w AS w,
+         u.sv AS sv,
+         u.so AS so,
+         9*u.er/u.ip AS era,
+         (u.bb + u.h)/u.ip AS whip
     FROM v_pit_value t,
          v_pit_composite u
    WHERE t.fg_id = u.fg_id
          ) t,
          id_map u
+    LEFT
+    JOIN v_yahoo v
+      ON u.yh_id = v.yh_id
    WHERE t.fg_id = u.fg_id
-ORDER BY t.val DESC
+ORDER BY "hr/w val" + "sb/sv val" + "rbi/so val" + "r/era val" + "ba/whip val" DESC
 ;
 """
