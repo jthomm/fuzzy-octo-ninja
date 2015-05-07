@@ -1,0 +1,95 @@
+---
+- header: Year
+  type: int
+  default: 2015
+- header: playerid
+  name: fg_id
+- header: Name
+- header: Team
+  none: "- - -"
+- header: Age
+  type: int
+  none: " "
+- header: G
+  type: int
+- header: AB
+  type: int
+- header: PA
+  type: int
+- header: H
+  type: int
+- header: 1B
+  name: b1
+  type: int
+- header: 2B
+  name: b2
+  type: int
+- header: 3B
+  name: b3
+  type: int
+- header: HR
+  type: int
+- header: R
+  type: int
+- header: RBI
+  type: int
+- header: SF
+  type: int
+- header: SH
+  type: int
+- header: GDP
+  type: int
+- header: SB
+  type: int
+- header: CS
+  type: int
+- header: GB
+  type: int
+- header: LD
+  type: int
+- header: FB
+  type: int
+- header: IFFB
+  type: int
+- header: IFH
+  type: int
+- header: BU
+  type: int
+- header: BUH
+  type: int
+- header: Balls
+  type: int
+- header: Strikes
+  type: int
+- header: Pitches
+  type: int
+- header: Pull%
+  name: pull
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Cent%
+  name: cent
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Oppo%
+  name: oppo
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Hard%
+  name: hard
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Med%
+  name: med
+  type: float
+  rstrip: " %"
+  none: " "
+- header: Soft%
+  name: soft
+  type: float
+  rstrip: " %"
+  none: " "

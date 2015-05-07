@@ -1,0 +1,801 @@
+name,url,team,pos,owner,orank,rank,owned
+Mike Trout,http://sports.yahoo.com/mlb/players/8861,LAA,OF,BeAsT mOdE,1,2,99%
+Andrew McCutchen,http://sports.yahoo.com/mlb/players/7977,Pit,OF,JeRsEy FU's,2,13,99%
+Paul Goldschmidt,http://sports.yahoo.com/mlb/players/8967,Ari,1B,Stiinta Craiova,3,73,99%
+Miguel Cabrera,http://sports.yahoo.com/mlb/players/7163,Det,1B/3B,JeRsEy FU's,4,10,99%
+Giancarlo Stanton,http://sports.yahoo.com/mlb/players/8634,Mia,OF,King of Chardonnay,6,8,99%
+Jose Abreu,http://sports.yahoo.com/mlb/players/9540,CWS,1B,King of Chardonnay,7,9,99%
+Carlos Gomez,http://sports.yahoo.com/mlb/players/8023,Mil,OF,Team autodraft VIII,8,15,98%
+Jose Bautista,http://sports.yahoo.com/mlb/players/7264,Tor,1B/OF,Daddy W,9,11,99%
+Edwin Encarnacion,http://sports.yahoo.com/mlb/players/7278,Tor,1B,A-Rods Dope Supplier,10,34,99%
+Adam Jones,http://sports.yahoo.com/mlb/players/7812,Bal,OF,Stoolies,12,20,99%
+Anthony Rizzo,http://sports.yahoo.com/mlb/players/8868,ChC,1B,Stiinta Craiova,13,26,99%
+Robinson Cano,http://sports.yahoo.com/mlb/players/7497,Sea,2B,Daddy W,14,37,99%
+Hanley Ramirez,http://sports.yahoo.com/mlb/players/7488,Bos,SS/OF,Stiinta Craiova,15,119,99%
+Jose Altuve,http://sports.yahoo.com/mlb/players/8996,Hou,2B,JeRsEy FU's,16,5,99%
+Yasiel Puig,http://sports.yahoo.com/mlb/players/9341,LAD,OF,BeAsT mOdE,17,45,99%
+Adrian Beltre,http://sports.yahoo.com/mlb/players/6039,Tex,3B,The Alliance,19,38,97%
+Michael Brantley,http://sports.yahoo.com/mlb/players/8575,Cle,OF,Team autodraft VIII,20,6,98%
+Josh Donaldson,http://sports.yahoo.com/mlb/players/8723,Tor,3B,Team autodraft VIII,21,31,99%
+Troy Tulowitzki,http://sports.yahoo.com/mlb/players/7850,Col,SS,BeAsT mOdE,23,98,99%
+Ian Desmond,http://sports.yahoo.com/mlb/players/8589,Was,SS,D's Ballers,24,44,97%
+Ryan Braun,http://sports.yahoo.com/mlb/players/8034,Mil,OF,The Gladiators,25,106,97%
+Jacoby Ellsbury,http://sports.yahoo.com/mlb/players/7912,NYY,OF,Rain On 'Em,26,43,98%
+Adrian Gonzalez,http://sports.yahoo.com/mlb/players/7054,LAD,1B,Slow Rollers,28,23,99%
+Bryce Harper,http://sports.yahoo.com/mlb/players/8875,Was,OF,Slow Rollers,31,450,99%
+Justin Upton,http://sports.yahoo.com/mlb/players/8080,SD,OF,Daddy W,32,32,99%
+Freddie Freeman,http://sports.yahoo.com/mlb/players/8658,Atl,1B,A-Rods Dope Supplier,35,52,98%
+Buster Posey,http://sports.yahoo.com/mlb/players/8578,SF,C/1B,D's Ballers,36,42,99%
+Nolan Arenado,http://sports.yahoo.com/mlb/players/9105,Col,3B,Dugo's Way,37,168,98%
+George Springer,http://sports.yahoo.com/mlb/players/9339,Hou,OF,D's Ballers,38,318,96%
+Carlos Gonzalez,http://sports.yahoo.com/mlb/players/7934,Col,OF,Dugo's Way,39,663,96%
+Corey Dickerson,http://sports.yahoo.com/mlb/players/9438,Col,OF,D's Ballers,40,39,98%
+Albert Pujols,http://sports.yahoo.com/mlb/players/6619,LAA,1B,Rain On 'Em,41,22,97%
+Prince Fielder,http://sports.yahoo.com/mlb/players/7290,Tex,1B,The Alliance,42,1014,97%
+David Ortiz,http://sports.yahoo.com/mlb/players/5909,Bos,1B,Daddy W,43,55,96%
+Starling Marte,http://sports.yahoo.com/mlb/players/9118,Pit,OF,Stiinta Craiova,47,62,97%
+Ian Kinsler,http://sports.yahoo.com/mlb/players/7490,Det,2B,A-Rods Dope Supplier,48,25,98%
+Jose Reyes,http://sports.yahoo.com/mlb/players/7066,Tor,SS,Dugo's Way,49,51,94%
+Matt Kemp,http://sports.yahoo.com/mlb/players/7780,SD,OF,Stoolies,50,36,99%
+Billy Hamilton,http://sports.yahoo.com/mlb/players/9113,Cin,OF,BeAsT mOdE,51,84,97%
+Joey Votto,http://sports.yahoo.com/mlb/players/7946,Cin,1B,Team autodraft VIII,53,901,98%
+Todd Frazier,http://sports.yahoo.com/mlb/players/8629,Cin,1B/3B,A-Rods Dope Supplier,54,21,98%
+Evan Longoria,http://sports.yahoo.com/mlb/players/7914,TB,3B,The Gladiators,56,81,97%
+Mookie Betts,http://sports.yahoo.com/mlb/players/9552,Bos,2B/OF,BeAsT mOdE,58,759,97%
+Anthony Rendon,http://sports.yahoo.com/mlb/players/9106,Was,2B/3B,The Alliance,59,16,95%
+Victor Martinez,http://sports.yahoo.com/mlb/players/6853,Det,1B,Daddy W,61,7,89%
+Matt Holliday,http://sports.yahoo.com/mlb/players/7311,StL,OF,The Alliance,62,64,97%
+Jason Heyward,http://sports.yahoo.com/mlb/players/8621,StL,OF,King of Chardonnay,64,126,91%
+Dee Gordon,http://sports.yahoo.com/mlb/players/8863,Mia,2B,The Gladiators,66,24,98%
+Yoenis Cespedes,http://sports.yahoo.com/mlb/players/9128,Det,OF,The Gladiators,68,46,98%
+Jorge Soler,http://sports.yahoo.com/mlb/players/9228,ChC,OF,Rain On 'Em,69,977,91%
+Kyle Seager,http://sports.yahoo.com/mlb/players/8984,Sea,3B,JeRsEy FU's,71,56,93%
+Christian Yelich,http://sports.yahoo.com/mlb/players/9320,Mia,OF,JeRsEy FU's,72,76,79%
+Pablo Sandoval,http://sports.yahoo.com/mlb/players/8326,Bos,3B,Stoolies,74,142,95%
+Charlie Blackmon,http://sports.yahoo.com/mlb/players/8957,Col,OF,The Alliance,75,27,94%
+Kole Calhoun,http://sports.yahoo.com/mlb/players/9191,LAA,OF,D's Ballers,76,113,91%
+Brian Dozier,http://sports.yahoo.com/mlb/players/9174,Min,2B,Team autodraft VIII,77,33,93%
+Kris Bryant,http://sports.yahoo.com/mlb/players/9558,ChC,3B,King of Chardonnay,80,-,96%
+Nelson Cruz,http://sports.yahoo.com/mlb/players/7681,Sea,OF,Rain On 'Em,81,17,98%
+Jay Bruce,http://sports.yahoo.com/mlb/players/8171,Cin,OF,Stoolies,83,209,88%
+Carlos Santana,http://sports.yahoo.com/mlb/players/8619,Cle,C/1B/3B,The Alliance,84,137,98%
+David Wright,http://sports.yahoo.com/mlb/players/7382,NYM,3B,Slow Rollers,85,252,92%
+Dustin Pedroia,http://sports.yahoo.com/mlb/players/7631,Bos,2B,Slow Rollers,90,203,97%
+Marcell Ozuna,http://sports.yahoo.com/mlb/players/9385,Mia,OF,The Alliance,91,92,80%
+Alex Gordon,http://sports.yahoo.com/mlb/players/7907,KC,OF,The Gladiators,92,74,89%
+J.D. Martinez,http://sports.yahoo.com/mlb/players/9002,Det,OF,JeRsEy FU's,94,69,93%
+Kolten Wong,http://sports.yahoo.com/mlb/players/9103,StL,2B,Dugo's Way,98,266,86%
+Chris Davis,http://sports.yahoo.com/mlb/players/8285,Bal,1B/3B,Rain On 'Em,100,253,93%
+Jason Kipnis,http://sports.yahoo.com/mlb/players/8853,Cle,2B,Stiinta Craiova,102,316,87%
+Brett Gardner,http://sports.yahoo.com/mlb/players/8289,NYY,OF,D's Ballers,103,95,90%
+Jonathan Lucroy,http://sports.yahoo.com/mlb/players/8609,Mil,C/1B,Dugo's Way,105,104,82%
+Alexei Ramirez,http://sports.yahoo.com/mlb/players/8169,CWS,SS,Slow Rollers,107,58,80%
+Chris Carter,http://sports.yahoo.com/mlb/players/8640,Hou,1B/OF,The Gladiators,108,94,71%
+Evan Gattis,http://sports.yahoo.com/mlb/players/9356,Hou,C,King of Chardonnay,110,289,92%
+Manny Machado,http://sports.yahoo.com/mlb/players/9111,Bal,3B,A-Rods Dope Supplier,111,480,91%
+Matt Carpenter,http://sports.yahoo.com/mlb/players/8953,StL,3B,Rain On 'Em,112,130,95%
+Ryan Zimmerman,http://sports.yahoo.com/mlb/players/7627,Was,1B/3B/OF,Stoolies,113,824,88%
+Devin Mesoraco,http://sports.yahoo.com/mlb/players/8851,Cin,C,Slow Rollers,114,132,71%
+Brandon Belt,http://sports.yahoo.com/mlb/players/8795,SF,1B,BeAsT mOdE,115,794,49%
+Yan Gomes,http://sports.yahoo.com/mlb/players/9186,Cle,C,Rain On 'Em,119,139,70%
+Mark Trumbo,http://sports.yahoo.com/mlb/players/8824,Ari,1B/OF,BeAsT mOdE,120,405,86%
+Neil Walker,http://sports.yahoo.com/mlb/players/8571,Pit,2B,Dugo's Way,123,105,82%
+Shin-soo Choo,http://sports.yahoo.com/mlb/players/7498,Tex,OF,BeAsT mOdE,125,399,53%
+Adam LaRoche,http://sports.yahoo.com/mlb/players/7253,CWS,1B,Team autodraft VIII,126,79,65%
+Jimmy Rollins,http://sports.yahoo.com/mlb/players/6419,LAD,SS,Team autodraft VIII,127,116,79%
+Yadier Molina,http://sports.yahoo.com/mlb/players/7345,StL,C,Stoolies,128,500,90%
+A.J. Pollock,http://sports.yahoo.com/mlb/players/9157,Ari,OF,The Alliance,129,374,79%
+Salvador Perez,http://sports.yahoo.com/mlb/players/9015,KC,C,Daddy W,130,211,96%
+Matt Adams,http://sports.yahoo.com/mlb/players/9100,StL,1B,D's Ballers,131,167,75%
+Elvis Andrus,http://sports.yahoo.com/mlb/players/8401,Tex,SS,Stiinta Craiova,134,206,81%
+Howie Kendrick,http://sports.yahoo.com/mlb/players/7746,LAD,2B,Rain On 'Em,135,71,89%
+Leonys Martin,http://sports.yahoo.com/mlb/players/8922,Tex,OF,Stiinta Craiova,136,146,66%
+Eric Hosmer,http://sports.yahoo.com/mlb/players/8857,KC,1B,Dugo's Way,139,281,86%
+Brandon Moss,http://sports.yahoo.com/mlb/players/8082,Cle,1B/OF,King of Chardonnay,140,151,74%
+Starlin Castro,http://sports.yahoo.com/mlb/players/8611,ChC,SS,The Alliance,142,156,93%
+Lucas Duda,http://sports.yahoo.com/mlb/players/8796,NYM,1B,JeRsEy FU's,143,72,82%
+Daniel Murphy,http://sports.yahoo.com/mlb/players/8314,NYM,2B/3B,D's Ballers,147,117,75%
+Ben Revere,http://sports.yahoo.com/mlb/players/8687,Phi,OF,Rain On 'Em,148,70,58%
+Hunter Pence,http://sports.yahoo.com/mlb/players/7963,SF,OF,Stiinta Craiova,149,29,85%
+Justin Morneau,http://sports.yahoo.com/mlb/players/7063,Col,1B,Stoolies,150,78,63%
+Ben Zobrist,http://sports.yahoo.com/mlb/players/7829,Oak,2B/SS/OF,The Gladiators,151,153,71%
+Jayson Werth,http://sports.yahoo.com/mlb/players/6423,Was,OF,The Alliance,152,49,63%
+Joc Pederson,http://sports.yahoo.com/mlb/players/9414,LAD,OF,Slow Rollers,155,1307,88%
+Josh Harrison,http://sports.yahoo.com/mlb/players/8950,Pit,2B/3B/OF,King of Chardonnay,157,60,77%
+Melky Cabrera,http://sports.yahoo.com/mlb/players/7595,CWS,OF,Slow Rollers,158,59,68%
+Brian McCann,http://sports.yahoo.com/mlb/players/7569,NYY,C/1B,The Gladiators,160,227,90%
+Xander Bogaerts,http://sports.yahoo.com/mlb/players/9319,Bos,3B/SS,Stiinta Craiova,162,413,85%
+Alex Rios,http://sports.yahoo.com/mlb/players/7254,KC,OF,The Gladiators,163,222,65%
+Avisail Garcia,http://sports.yahoo.com/mlb/players/9281,CWS,OF,Daddy W,164,920,61%
+Chase Utley,http://sports.yahoo.com/mlb/players/7072,Phi,2B,Stoolies,166,125,55%
+Adam Eaton,http://sports.yahoo.com/mlb/players/9302,CWS,OF,The Alliance,167,182,37%
+Mike Napoli,http://sports.yahoo.com/mlb/players/7754,Bos,1B,BeAsT mOdE,169,310,46%
+Coco Crisp,http://sports.yahoo.com/mlb/players/6983,Oak,OF,Daddy W,173,225,35%
+Torii Hunter,http://sports.yahoo.com/mlb/players/5884,Min,OF,FA,174,91,46%
+Rusney Castillo,http://sports.yahoo.com/mlb/players/9795,Bos,OF,W (May 7),178,1064,43%
+Aramis Ramirez,http://sports.yahoo.com/mlb/players/6014,Mil,3B,Daddy W,180,201,47%
+Marlon Byrd,http://sports.yahoo.com/mlb/players/6863,Cin,OF,FA,181,96,35%
+Erick Aybar,http://sports.yahoo.com/mlb/players/7744,LAA,SS,FA,185,120,51%
+Wilin Rosario,http://sports.yahoo.com/mlb/players/8854,Col,C,FA,186,331,28%
+Russell Martin,http://sports.yahoo.com/mlb/players/7628,Tor,C,Team autodraft VIII,190,221,86%
+Gregory Polanco,http://sports.yahoo.com/mlb/players/9613,Pit,OF,King of Chardonnay,192,430,77%
+Jhonny Peralta,http://sports.yahoo.com/mlb/players/7156,StL,SS,Team autodraft VIII,193,150,81%
+Wil Myers,http://sports.yahoo.com/mlb/players/8859,SD,OF,Stiinta Craiova,194,875,88%
+Lorenzo Cain,http://sports.yahoo.com/mlb/players/8762,KC,OF,Slow Rollers,195,134,92%
+Oswaldo Arcia,http://sports.yahoo.com/mlb/players/9342,Min,OF,FA,197,346,29%
+Alcides Escobar,http://sports.yahoo.com/mlb/players/8344,KC,SS,Daddy W,199,114,67%
+Pedro Alvarez,http://sports.yahoo.com/mlb/players/8645,Pit,1B/3B,BeAsT mOdE,201,322,69%
+Steve Pearce,http://sports.yahoo.com/mlb/players/8117,Bal,1B/OF,Team autodraft VIII,205,179,35%
+Michael Cuddyer,http://sports.yahoo.com/mlb/players/6637,NYM,1B/OF,Dugo's Way,206,435,61%
+Rougned Odor,http://sports.yahoo.com/mlb/players/9634,Tex,2B,FA,207,464,25%
+Austin Jackson,http://sports.yahoo.com/mlb/players/8412,Sea,OF,FA,208,236,39%
+Danny Santana,http://sports.yahoo.com/mlb/players/9693,Min,SS/OF,Rain On 'Em,209,123,49%
+Billy Butler,http://sports.yahoo.com/mlb/players/7634,Oak,1B,D's Ballers,210,263,60%
+Matt Wieters,http://sports.yahoo.com/mlb/players/8395,Bal,C,Stoolies,211,971,63%
+Adam Lind,http://sports.yahoo.com/mlb/players/7859,Mil,1B,Stoolies,213,394,52%
+Khris Davis,http://sports.yahoo.com/mlb/players/9351,Mil,OF,Stiinta Craiova,214,164,33%
+Steven Souza,http://sports.yahoo.com/mlb/players/9671,TB,OF,Rain On 'Em,215,1205,57%
+Rajai Davis,http://sports.yahoo.com/mlb/players/7835,Det,OF,FA,217,111,45%
+Carl Crawford,http://sports.yahoo.com/mlb/players/6870,LAD,OF,FA,218,160,24%
+Joe Mauer,http://sports.yahoo.com/mlb/players/7062,Min,1B,Daddy W,223,294,47%
+Yasmani Tomas,http://sports.yahoo.com/mlb/players/9850,Ari,3B/OF,Dugo's Way,224,-,42%
+Denard Span,http://sports.yahoo.com/mlb/players/8213,Was,OF,Team autodraft VIII,225,54,54%
+Carlos Beltran,http://sports.yahoo.com/mlb/players/6132,NYY,OF,The Gladiators,229,429,28%
+Jean Segura,http://sports.yahoo.com/mlb/players/9247,Mil,SS,JeRsEy FU's,231,367,72%
+Brett Lawrie,http://sports.yahoo.com/mlb/players/8874,Oak,2B/3B,FA,234,781,51%
+Dexter Fowler,http://sports.yahoo.com/mlb/players/8370,ChC,OF,JeRsEy FU's,237,277,44%
+Dalton Pompey,http://sports.yahoo.com/mlb/players/9822,Tor,OF,FA,242,1152,12%
+Micah Johnson,http://sports.yahoo.com/mlb/players/9560,CWS,2B,The Alliance,244,-,12%
+Chase Headley,http://sports.yahoo.com/mlb/players/8057,NYY,1B/3B,D's Ballers,249,348,42%
+Desmond Jennings,http://sports.yahoo.com/mlb/players/8651,TB,OF,Rain On 'Em,252,317,20%
+Curtis Granderson,http://sports.yahoo.com/mlb/players/7455,NYM,OF,A-Rods Dope Supplier,253,202,34%
+J.J. Hardy,http://sports.yahoo.com/mlb/players/7283,Bal,SS,FA,255,342,35%
+Kennys Vargas,http://sports.yahoo.com/mlb/players/9592,Min,1B,FA,256,743,10%
+Mark Teixeira,http://sports.yahoo.com/mlb/players/6788,NYY,1B,The Gladiators,259,315,75%
+Asdrubal Cabrera,http://sports.yahoo.com/mlb/players/7947,TB,2B/SS,FA,261,204,31%
+Nick Markakis,http://sports.yahoo.com/mlb/players/7707,Atl,OF,Stoolies,262,157,42%
+Drew Stubbs,http://sports.yahoo.com/mlb/players/8528,Col,OF,FA,263,128,8%
+Martin Prado,http://sports.yahoo.com/mlb/players/7737,Mia,2B/3B/OF,Slow Rollers,264,194,63%
+Nick Castellanos,http://sports.yahoo.com/mlb/players/9108,Det,3B,FA,267,303,20%
+Wilson Ramos,http://sports.yahoo.com/mlb/players/8620,Was,C,BeAsT mOdE,270,523,68%
+Michael Saunders,http://sports.yahoo.com/mlb/players/8538,Tor,OF,FA,273,535,6%
+Alex Rodriguez,http://sports.yahoo.com/mlb/players/5275,NYY,3B,Daddy W,274,-,80%
+Jedd Gyorko,http://sports.yahoo.com/mlb/players/9107,SD,2B,FA,275,839,17%
+Kendrys Morales,http://sports.yahoo.com/mlb/players/7481,KC,1B,Team autodraft VIII,277,945,74%
+Arismendy Alcantara,http://sports.yahoo.com/mlb/players/9554,ChC,2B/OF,FA,278,894,5%
+Michael Morse,http://sports.yahoo.com/mlb/players/7562,Mia,1B/OF,FA,280,237,20%
+Marcus Semien,http://sports.yahoo.com/mlb/players/9517,Oak,2B/3B/SS,Dugo's Way,281,914,79%
+Angel Pagan,http://sports.yahoo.com/mlb/players/7717,SF,OF,D's Ballers,282,284,30%
+Yasmani Grandal,http://sports.yahoo.com/mlb/players/9098,LAD,C/1B,FA,283,448,25%
+Brandon Phillips,http://sports.yahoo.com/mlb/players/6857,Cin,2B,Team autodraft VIII,284,410,38%
+Scooter Gennett,http://sports.yahoo.com/mlb/players/9420,Mil,2B,D's Ballers,286,224,6%
+Travis d'Arnaud,http://sports.yahoo.com/mlb/players/9096,NYM,C,Dugo's Way,287,490,45%
+Andre Ethier,http://sports.yahoo.com/mlb/players/7710,LAD,OF,FA,288,878,21%
+Javier Baez,http://sports.yahoo.com/mlb/players/9557,ChC,2B/SS,FA,289,1003,18%
+Chris Owings,http://sports.yahoo.com/mlb/players/9526,Ari,2B/SS,FA,290,761,9%
+Odubel Herrera,http://sports.yahoo.com/mlb/players/9906,Phi,2B/SS/OF,FA,291,-,36%
+Miguel Montero,http://sports.yahoo.com/mlb/players/7865,ChC,C,Slow Rollers,292,386,37%
+Jon Singleton,http://sports.yahoo.com/mlb/players/9099,Hou,1B,FA,293,889,2%
+Brad Miller,http://sports.yahoo.com/mlb/players/9446,Sea,2B/SS,FA,295,732,13%
+Trevor Plouffe,http://sports.yahoo.com/mlb/players/8733,Min,3B,FA,304,169,23%
+Nori Aoki,http://sports.yahoo.com/mlb/players/9094,SF,OF,FA,306,234,38%
+James Loney,http://sports.yahoo.com/mlb/players/7725,TB,1B,FA,309,171,4%
+Josh Reddick,http://sports.yahoo.com/mlb/players/8544,Oak,OF,King of Chardonnay,314,305,74%
+Ryan Howard,http://sports.yahoo.com/mlb/players/7437,Phi,1B,FA,329,180,11%
+Brandon Crawford,http://sports.yahoo.com/mlb/players/8945,SF,SS,FA,336,299,28%
+Lonnie Chisenhall,http://sports.yahoo.com/mlb/players/8852,Cle,1B/3B,FA,343,191,7%
+Alejandro De Aza,http://sports.yahoo.com/mlb/players/7996,Bal,OF,W (May 8),345,314,8%
+Luis Valbuena,http://sports.yahoo.com/mlb/players/8361,Hou,2B/3B,BeAsT mOdE,347,264,24%
+Derek Norris,http://sports.yahoo.com/mlb/players/8876,SD,C,Rain On 'Em,348,344,82%
+David Freese,http://sports.yahoo.com/mlb/players/8402,LAA,3B,Slow Rollers,353,350,17%
+DJ LeMahieu,http://sports.yahoo.com/mlb/players/8949,Col,2B,The Alliance,354,330,42%
+Jed Lowrie,http://sports.yahoo.com/mlb/players/8200,Hou,SS,FA,355,461,13%
+Jon Jay,http://sports.yahoo.com/mlb/players/8717,StL,OF,FA,362,286,6%
+Justin Turner,http://sports.yahoo.com/mlb/players/8588,LAD,2B/3B/SS,FA,364,248,11%
+Colby Rasmus,http://sports.yahoo.com/mlb/players/8190,Hou,OF,FA,372,447,9%
+Juan Lagares,http://sports.yahoo.com/mlb/players/9377,NYM,OF,FA,379,319,13%
+Gerardo Parra,http://sports.yahoo.com/mlb/players/8473,Mil,OF,FA,389,300,2%
+Juan Uribe,http://sports.yahoo.com/mlb/players/6698,LAD,3B,FA,394,304,3%
+Dustin Ackley,http://sports.yahoo.com/mlb/players/8648,Sea,OF,FA,395,215,5%
+Chris Johnson,http://sports.yahoo.com/mlb/players/8585,Atl,3B,FA,397,351,3%
+Ender Inciarte,http://sports.yahoo.com/mlb/players/9355,Ari,OF,A-Rods Dope Supplier,405,325,30%
+Stephen Vogt,http://sports.yahoo.com/mlb/players/9147,Oak,C/1B/OF,A-Rods Dope Supplier,409,726,93%
+Adeiny Hechavarria,http://sports.yahoo.com/mlb/players/9259,Mia,SS,A-Rods Dope Supplier,410,456,76%
+Omar Infante,http://sports.yahoo.com/mlb/players/7016,KC,2B,FA,411,336,4%
+Seth Smith,http://sports.yahoo.com/mlb/players/8144,Sea,OF,FA,414,327,3%
+Dioner Navarro,http://sports.yahoo.com/mlb/players/7276,Tor,C,FA,415,274,4%
+Brock Holt,http://sports.yahoo.com/mlb/players/9292,Bos,1B/2B/3B/SS/OF,A-Rods Dope Supplier,425,280,32%
+Andrelton Simmons,http://sports.yahoo.com/mlb/players/9201,Atl,SS,FA,444,669,25%
+Ichiro Suzuki,http://sports.yahoo.com/mlb/players/6615,Mia,OF,FA,454,512,3%
+Domonic Brown,http://sports.yahoo.com/mlb/players/8644,Phi,OF,FA,457,387,2%
+Dayan Viciedo,http://sports.yahoo.com/mlb/players/8398,Tor,OF,FA,460,278,1%
+Casey McGehee,http://sports.yahoo.com/mlb/players/8359,SF,3B,FA,469,196,4%
+Mike Moustakas,http://sports.yahoo.com/mlb/players/8685,KC,3B,JeRsEy FU's,473,638,70%
+Jarrod Dyson,http://sports.yahoo.com/mlb/players/8817,KC,OF,FA,476,365,2%
+Chris Young,http://sports.yahoo.com/mlb/players/7738,NYY,OF,JeRsEy FU's,489,629,31%
+Conor Gillaspie,http://sports.yahoo.com/mlb/players/8378,CWS,3B,FA,495,321,1%
+Mark Reynolds,http://sports.yahoo.com/mlb/players/8030,StL,1B/3B,FA,512,470,2%
+Chris Coghlan,http://sports.yahoo.com/mlb/players/8469,ChC,OF,FA,518,312,2%
+Yangervis Solarte,http://sports.yahoo.com/mlb/players/9657,SD,1B/2B/3B,FA,520,371,15%
+Aaron Hill,http://sports.yahoo.com/mlb/players/7483,Ari,2B/3B,FA,525,372,6%
+Gregor Blanco,http://sports.yahoo.com/mlb/players/7937,SF,OF,FA,536,355,1%
+Zack Cozart,http://sports.yahoo.com/mlb/players/8628,Cin,SS,Slow Rollers,537,892,55%
+Eric Young Jr.,http://sports.yahoo.com/mlb/players/8399,Atl,OF,FA,543,487,2%
+Logan Morrison,http://sports.yahoo.com/mlb/players/8633,Sea,1B/OF,FA,549,446,5%
+Michael Bourn,http://sports.yahoo.com/mlb/players/7828,Cle,OF,FA,561,502,3%
+Josh Hamilton,http://sports.yahoo.com/mlb/players/6679,Tex,OF,Daddy W,563,421,33%
+Jordy Mercer,http://sports.yahoo.com/mlb/players/9198,Pit,SS,FA,578,307,4%
+Jason Castro,http://sports.yahoo.com/mlb/players/8635,Hou,C,FA,621,584,9%
+Mike Aviles,http://sports.yahoo.com/mlb/players/8260,Cle,2B/3B/SS/OF,FA,640,530,3%
+Garrett Jones,http://sports.yahoo.com/mlb/players/8024,NYY,1B/OF,FA,747,341,1%
+Matt Joyce,http://sports.yahoo.com/mlb/players/8239,LAA,OF,FA,749,391,1%
+Kurt Suzuki,http://sports.yahoo.com/mlb/players/8052,Min,C,FA,768,393,8%
+Ike Davis,http://sports.yahoo.com/mlb/players/8666,Oak,1B,FA,797,555,4%
+David Peralta,http://sports.yahoo.com/mlb/players/9719,Ari,OF,FA,804,404,2%
+Will Venable,http://sports.yahoo.com/mlb/players/8340,SD,OF,FA,814,679,1%
+Daniel Nava,http://sports.yahoo.com/mlb/players/8742,Bos,1B/OF,FA,815,601,1%
+Emilio Bonifacio,http://sports.yahoo.com/mlb/players/8112,CWS,2B/OF,FA,824,385,1%
+David Murphy,http://sports.yahoo.com/mlb/players/7862,Cle,OF,FA,827,411,1%
+A.J. Pierzynski,http://sports.yahoo.com/mlb/players/6109,Atl,C,FA,835,926,49%
+Yunel Escobar,http://sports.yahoo.com/mlb/players/7938,Was,3B/SS,FA,871,814,7%
+Scott Van Slyke,http://sports.yahoo.com/mlb/players/9177,LAD,1B/OF,FA,902,506,2%
+Travis Snider,http://sports.yahoo.com/mlb/players/8304,Bal,OF,FA,907,503,5%
+Sam Fuld,http://sports.yahoo.com/mlb/players/8133,Oak,OF,FA,910,485,4%
+Delmon Young,http://sports.yahoo.com/mlb/players/7467,Bal,OF,FA,946,688,1%
+Kelly Johnson,http://sports.yahoo.com/mlb/players/7558,Atl,1B/3B/OF,FA,975,962,16%
+Jake Marisnick,http://sports.yahoo.com/mlb/players/9340,Hou,OF,Dugo's Way,982,940,78%
+Eduardo Escobar,http://sports.yahoo.com/mlb/players/9054,Min,2B/3B/SS/OF,FA,983,436,1%
+Mike Zunino,http://sports.yahoo.com/mlb/players/9322,Sea,C,Stiinta Craiova,985,424,16%
+Yonder Alonso,http://sports.yahoo.com/mlb/players/8660,SD,1B,FA,991,897,10%
+Kevin Kiermaier,http://sports.yahoo.com/mlb/players/9538,TB,OF,FA,1008,561,12%
+Matt Dominguez,http://sports.yahoo.com/mlb/players/8683,Hou,3B,FA,1020,606,0%
+Alex Avila,http://sports.yahoo.com/mlb/players/8550,Det,C,FA,1023,755,12%
+Tyler Flowers,http://sports.yahoo.com/mlb/players/8572,CWS,C,FA,1031,469,4%
+Melvin Upton Jr.,http://sports.yahoo.com/mlb/players/7333,SD,OF,FA,1035,392,1%
+Allen Craig,http://sports.yahoo.com/mlb/players/8649,Bos,1B/OF,FA,1036,895,2%
+Gordon Beckham,http://sports.yahoo.com/mlb/players/8422,CWS,2B/3B,FA,1041,622,1%
+Cody Asche,http://sports.yahoo.com/mlb/players/9477,Phi,3B,FA,1052,525,2%
+Rickie Weeks,http://sports.yahoo.com/mlb/players/7213,Sea,2B/OF,FA,1054,652,1%
+Everth Cabrera,http://sports.yahoo.com/mlb/players/8430,Bal,SS,Stoolies,1055,864,2%
+Jarrod Saltalamacchia,http://sports.yahoo.com/mlb/players/7939,Mia,C,FA,1068,769,2%
+Juan Francisco,http://sports.yahoo.com/mlb/players/8598,TB,1B/3B,FA,1072,573,0%
+Jordan Schafer,http://sports.yahoo.com/mlb/players/8188,Min,OF,FA,1073,740,0%
+John Jaso,http://sports.yahoo.com/mlb/players/8368,TB,C,FA,1074,495,1%
+Josh Willingham,http://sports.yahoo.com/mlb/players/7373,KC,OF,FA,1077,538,0%
+Welington Castillo,http://sports.yahoo.com/mlb/players/8784,ChC,C,FA,1078,789,1%
+Justin Ruggiano,http://sports.yahoo.com/mlb/players/8145,Sea,OF,FA,1090,822,0%
+Jonny Gomes,http://sports.yahoo.com/mlb/players/7245,Atl,OF,FA,1092,921,1%
+Robbie Grossman,http://sports.yahoo.com/mlb/players/9378,Hou,OF,FA,1096,693,0%
+Josh Rutledge,http://sports.yahoo.com/mlb/players/9237,LAA,2B/3B/SS,FA,1100,653,0%
+Marwin Gonzalez,http://sports.yahoo.com/mlb/players/9142,Hou,2B/3B/SS,FA,1105,830,1%
+Brandon Barnes,http://sports.yahoo.com/mlb/players/9263,Col,OF,FA,1107,725,0%
+Jonathan Schoop,http://sports.yahoo.com/mlb/players/9104,Bal,2B/3B,Slow Rollers,1108,677,5%
+Anthony Gose,http://sports.yahoo.com/mlb/players/9120,Det,OF,A-Rods Dope Supplier,1112,935,15%
+Alexi Amarista,http://sports.yahoo.com/mlb/players/8914,SD,2B/3B/SS/OF,FA,1114,667,1%
+Craig Gentry,http://sports.yahoo.com/mlb/players/8574,Oak,OF,FA,1116,785,0%
+Sean Rodriguez,http://sports.yahoo.com/mlb/players/8224,Pit,1B/2B/3B/OF,FA,1117,813,1%
+Chris Denorfia,http://sports.yahoo.com/mlb/players/7665,ChC,OF,FA,1118,934,0%
+Alfonso Soriano,http://sports.yahoo.com/mlb/players/6154,NYY,OF,FA,1120,995,0%
+Carlos Ruiz,http://sports.yahoo.com/mlb/players/7757,Phi,C,FA,1121,744,2%
+Joe Panik,http://sports.yahoo.com/mlb/players/9742,SF,2B,FA,1122,896,8%
+Chris Iannetta,http://sports.yahoo.com/mlb/players/7845,LAA,C,FA,1124,571,2%
+Peter Bourjos,http://sports.yahoo.com/mlb/players/8777,StL,OF,FA,1126,908,0%
+Brandon Guyer,http://sports.yahoo.com/mlb/players/8924,TB,OF,FA,1130,803,0%
+Robinson Chirinos,http://sports.yahoo.com/mlb/players/8990,Tex,C,FA,1131,660,2%
+Eduardo Nunez,http://sports.yahoo.com/mlb/players/8789,Min,3B/SS/OF,FA,1133,893,0%
+David DeJesus,http://sports.yahoo.com/mlb/players/7232,TB,OF,FA,1134,970,1%
+Logan Forsythe,http://sports.yahoo.com/mlb/players/8921,TB,1B/2B,FA,1136,955,4%
+Eric Sogard,http://sports.yahoo.com/mlb/players/8828,Oak,2B/SS,FA,1137,925,1%
+Alberto Callaspo,http://sports.yahoo.com/mlb/players/7832,Atl,1B/2B/3B,FA,1142,949,1%
+Wilmer Flores,http://sports.yahoo.com/mlb/players/9483,NYM,2B/SS,King of Chardonnay,1144,913,9%
+James Jones,http://sports.yahoo.com/mlb/players/9674,Sea,OF,FA,1145,593,0%
+David Lough,http://sports.yahoo.com/mlb/players/8663,Bal,OF,FA,1146,905,0%
+Jonathan Villar,http://sports.yahoo.com/mlb/players/9468,Hou,SS,FA,1149,823,0%
+Nick Swisher,http://sports.yahoo.com/mlb/players/7435,Cle,1B/OF,FA,1151,943,1%
+C.J. Cron,http://sports.yahoo.com/mlb/players/9583,LAA,1B,FA,1152,757,3%
+Shane Victorino,http://sports.yahoo.com/mlb/players/7104,Bos,OF,FA,1153,1024,1%
+Ryan Flaherty,http://sports.yahoo.com/mlb/players/9144,Bal,2B/3B/SS,FA,1154,927,1%
+Justin Smoak,http://sports.yahoo.com/mlb/players/8653,Tor,1B,FA,1155,973,1%
+Kevin Pillar,http://sports.yahoo.com/mlb/players/9490,Tor,OF,A-Rods Dope Supplier,1157,1028,20%
+Didi Gregorius,http://sports.yahoo.com/mlb/players/9282,NYY,2B/SS,FA,1158,918,2%
+Mitch Moreland,http://sports.yahoo.com/mlb/players/8772,Tex,1B,FA,1159,1009,1%
+Michael McKenry,http://sports.yahoo.com/mlb/players/8819,Col,C,FA,1161,847,0%
+Nick Hundley,http://sports.yahoo.com/mlb/players/8294,Col,C,FA,1162,981,21%
+Danny Valencia,http://sports.yahoo.com/mlb/players/8665,Tor,1B/3B,FA,1164,950,0%
+Jeff Baker,http://sports.yahoo.com/mlb/players/7041,Mia,1B/2B,FA,1165,924,0%
+Nate Schierholtz,http://sports.yahoo.com/mlb/players/8054,Tex,OF,FA,1166,969,0%
+Danny Espinosa,http://sports.yahoo.com/mlb/players/8805,Was,2B/SS,FA,1167,919,2%
+Ryan Raburn,http://sports.yahoo.com/mlb/players/7454,Cle,OF,FA,1171,1053,1%
+Chris Heisey,http://sports.yahoo.com/mlb/players/8617,LAD,OF,FA,1172,885,0%
+Devon Travis,http://sports.yahoo.com/mlb/players/9572,Tor,2B,King of Chardonnay,1173,-,90%
+Gaby Sanchez,http://sports.yahoo.com/mlb/players/8385,Pit,1B,FA,1174,900,0%
+Jimmy Paredes,http://sports.yahoo.com/mlb/players/9005,Bal,3B,FA,1176,1026,24%
+Tommy Medica,http://sports.yahoo.com/mlb/players/9531,SD,1B/OF,FA,1177,848,0%
+Rene Rivera,http://sports.yahoo.com/mlb/players/7458,TB,C,FA,1178,727,1%
+Lyle Overbay,http://sports.yahoo.com/mlb/players/6639,Mil,1B,FA,1179,946,0%
+Collin Cowgill,http://sports.yahoo.com/mlb/players/8968,LAA,OF,FA,1181,884,0%
+Ryan Ludwick,http://sports.yahoo.com/mlb/players/6862,Tex,OF,FA,1182,838,0%
+Jose Ramirez,http://sports.yahoo.com/mlb/players/9507,Cle,2B/SS,FA,1183,916,2%
+Junior Lake,http://sports.yahoo.com/mlb/players/9466,ChC,OF,FA,1184,938,0%
+Chris Parmelee,http://sports.yahoo.com/mlb/players/9062,Bal,1B/OF,FA,1185,907,0%
+Andrew Romine,http://sports.yahoo.com/mlb/players/8842,Det,2B/3B/SS,FA,1187,966,0%
+Brayan Pena,http://sports.yahoo.com/mlb/players/7551,Cin,C/1B,FA,1188,957,2%
+Caleb Joseph,http://sports.yahoo.com/mlb/players/9699,Bal,C,FA,1190,982,35%
+Kyle Blanks,http://sports.yahoo.com/mlb/players/8413,Tex,1B,FA,1192,1063,5%
+Donovan Solano,http://sports.yahoo.com/mlb/players/9190,Mia,2B,FA,1193,956,0%
+Endy Chavez,http://sports.yahoo.com/mlb/players/6733,Sea,OF,FA,1194,930,0%
+Cameron Maybin,http://sports.yahoo.com/mlb/players/7684,Atl,OF,FA,1195,1019,1%
+Ryan Hanigan,http://sports.yahoo.com/mlb/players/8127,Bos,C,FA,1196,984,1%
+Derek Dietrich,http://sports.yahoo.com/mlb/players/9391,Mia,2B,FA,1198,961,0%
+John Mayberry,http://sports.yahoo.com/mlb/players/8496,NYM,1B/OF,FA,1199,1006,0%
+J.P. Arencibia,http://sports.yahoo.com/mlb/players/8655,Bal,C/1B,FA,1200,976,0%
+Stephen Drew,http://sports.yahoo.com/mlb/players/7560,NYY,2B/SS,FA,1201,1120,3%
+Will Middlebrooks,http://sports.yahoo.com/mlb/players/9109,SD,3B,W (May 7),1202,1142,9%
+Carlos Corporan,http://sports.yahoo.com/mlb/players/8462,Tex,C,FA,1203,980,0%
+Adam Rosales,http://sports.yahoo.com/mlb/players/8320,Tex,1B/2B/3B,FA,1204,959,0%
+Chris Colabello,http://sports.yahoo.com/mlb/players/9403,Tor,1B/OF,FA,1205,951,1%
+Hank Conger,http://sports.yahoo.com/mlb/players/8825,Hou,C,FA,1206,1004,0%
+Alex Presley,http://sports.yahoo.com/mlb/players/8823,Hou,OF,FA,1207,963,0%
+Eric Campbell,http://sports.yahoo.com/mlb/players/9700,NYM,1B/3B/OF,FA,1208,999,0%
+Grady Sizemore,http://sports.yahoo.com/mlb/players/7256,Phi,OF,FA,1209,915,0%
+Jose Iglesias,http://sports.yahoo.com/mlb/players/8848,Det,3B/SS,The Gladiators,1210,-,58%
+Raul Ibanez,http://sports.yahoo.com/mlb/players/5665,KC,OF,FA,1212,1065,0%
+Eugenio Suarez,http://sports.yahoo.com/mlb/players/9724,Cin,SS,FA,1213,928,0%
+Ruben Tejada,http://sports.yahoo.com/mlb/players/8672,NYM,SS,FA,1214,941,0%
+Freddy Galvis,http://sports.yahoo.com/mlb/players/9132,Phi,3B/SS,FA,1215,1094,12%
+Francisco Cervelli,http://sports.yahoo.com/mlb/players/8387,Pit,C/1B,FA,1216,985,5%
+Munenori Kawasaki,http://sports.yahoo.com/mlb/players/9134,Tor,2B/3B,FA,1217,975,0%
+Darin Ruf,http://sports.yahoo.com/mlb/players/9279,Phi,1B/OF,FA,1218,1073,0%
+Jake Lamb,http://sports.yahoo.com/mlb/players/9781,Ari,3B,FA,1219,1042,16%
+Kristopher Negron,http://sports.yahoo.com/mlb/players/9210,Cin,2B/3B,FA,1220,939,0%
+Jose Tabata,http://sports.yahoo.com/mlb/players/8647,Pit,OF,FA,1221,1017,0%
+Darwin Barney,http://sports.yahoo.com/mlb/players/8787,LAD,2B,FA,1222,986,0%
+Jake Smolinski,http://sports.yahoo.com/mlb/players/9760,Tex,OF,FA,1223,998,0%
+Daniel Robertson,http://sports.yahoo.com/mlb/players/9681,LAA,OF,FA,1224,947,0%
+Josmil Pinto,http://sports.yahoo.com/mlb/players/9505,Min,C,FA,1226,978,0%
+Ryan Sweeney,http://sports.yahoo.com/mlb/players/7858,ChC,OF,FA,1228,993,0%
+Jackie Bradley Jr.,http://sports.yahoo.com/mlb/players/9338,Bos,OF,FA,1229,968,0%
+Mark Canha,http://sports.yahoo.com/mlb/players/9898,Oak,1B/OF,FA,1230,-,24%
+Cliff Pennington,http://sports.yahoo.com/mlb/players/8324,Ari,2B/3B/SS,FA,1231,996,0%
+Cody Ross,http://sports.yahoo.com/mlb/players/7053,Oak,OF,FA,1232,1048,0%
+Jose Lobaton,http://sports.yahoo.com/mlb/players/8521,Was,C,FA,1233,1074,0%
+Steve Tolleson,http://sports.yahoo.com/mlb/players/8719,Tor,2B/3B,FA,1235,983,0%
+Justin Maxwell,http://sports.yahoo.com/mlb/players/8124,SF,OF,FA,1236,1252,4%
+Don Kelly,http://sports.yahoo.com/mlb/players/7998,Mia,1B/3B/OF,FA,1237,1015,0%
+Reed Johnson,http://sports.yahoo.com/mlb/players/7118,Was,OF,FA,1238,990,0%
+Kirk Nieuwenhuis,http://sports.yahoo.com/mlb/players/9152,NYM,OF,FA,1240,988,0%
+Tommy La Stella,http://sports.yahoo.com/mlb/players/9545,ChC,2B,FA,1241,972,0%
+Ryan Doumit,http://sports.yahoo.com/mlb/players/7564,Atl,OF,FA,1242,1077,0%
+Anthony Recker,http://sports.yahoo.com/mlb/players/9023,NYM,C,FA,1243,994,0%
+Willie Bloomquist,http://sports.yahoo.com/mlb/players/6636,Sea,1B/2B/3B/SS,FA,1244,1021,0%
+Skip Schumaker,http://sports.yahoo.com/mlb/players/7567,Cin,2B/OF,FA,1245,1011,0%
+Aaron Hicks,http://sports.yahoo.com/mlb/players/9325,Min,OF,FA,1246,1025,0%
+Joaquin Arias,http://sports.yahoo.com/mlb/players/7880,SF,1B/2B/3B/SS,FA,1247,1034,0%
+Andrew Susac,http://sports.yahoo.com/mlb/players/9131,SF,C,FA,1248,1008,0%
+Nate McLouth,http://sports.yahoo.com/mlb/players/7513,Was,OF,FA,1249,1190,0%
+Ramon Santiago,http://sports.yahoo.com/mlb/players/6933,Tor,2B/3B/SS,FA,1250,1010,0%
+Ed Lucas,http://sports.yahoo.com/mlb/players/9412,Tex,2B/SS,FA,1251,1050,0%
+Johnny Giavotella,http://sports.yahoo.com/mlb/players/9010,LAA,2B,FA,1252,1132,3%
+Kevin Frandsen,http://sports.yahoo.com/mlb/players/7749,Was,1B/2B/3B/OF,FA,1253,1030,0%
+Eric Chavez,http://sports.yahoo.com/mlb/players/6114,Ari,3B,FA,1254,1083,0%
+Mike Olt,http://sports.yahoo.com/mlb/players/9254,ChC,1B/3B,FA,1255,992,0%
+Daniel Descalso,http://sports.yahoo.com/mlb/players/8831,Col,2B/3B/SS,FA,1256,1060,0%
+Jonathan Herrera,http://sports.yahoo.com/mlb/players/8235,ChC,2B/3B/SS,FA,1257,1114,0%
+Jordan Pacheco,http://sports.yahoo.com/mlb/players/9067,Ari,C/1B,FA,1258,1080,0%
+Dan Uggla,http://sports.yahoo.com/mlb/players/7692,Was,2B,FA,1259,1222,1%
+Carlos Quentin,http://sports.yahoo.com/mlb/players/7485,Atl,OF,FA,1260,1111,0%
+Matt den Dekker,http://sports.yahoo.com/mlb/players/9504,Was,OF,FA,1261,1007,0%
+J.B. Shuck,http://sports.yahoo.com/mlb/players/9009,CWS,OF,FA,1262,1174,0%
+Nate Freiman,http://sports.yahoo.com/mlb/players/9352,Oak,1B,FA,1263,1033,0%
+Abraham Almonte,http://sports.yahoo.com/mlb/players/9506,SD,OF,FA,1264,1020,0%
+Martin Maldonado,http://sports.yahoo.com/mlb/players/9045,Mil,C,FA,1265,1029,1%
+Gregorio Petit,http://sports.yahoo.com/mlb/players/8250,NYY,2B/3B/SS,FA,1266,1039,0%
+Michael Choice,http://sports.yahoo.com/mlb/players/9510,Tex,OF,FA,1267,1001,0%
+Clint Barmes,http://sports.yahoo.com/mlb/players/7231,SD,2B/SS,FA,1268,1086,0%
+Elian Herrera,http://sports.yahoo.com/mlb/players/9184,Mil,2B/3B/SS/OF,FA,1269,1051,0%
+Moises Sierra,http://sports.yahoo.com/mlb/players/9251,KC,OF,FA,1270,1031,0%
+Roberto Perez,http://sports.yahoo.com/mlb/players/9761,Cle,C,FA,1271,1105,3%
+Nick Punto,http://sports.yahoo.com/mlb/players/6793,Ari,2B/SS,FA,1272,1061,0%
+Justin Bour,http://sports.yahoo.com/mlb/players/9723,Mia,1B,FA,1273,1068,0%
+Zach Walters,http://sports.yahoo.com/mlb/players/9525,Cle,OF,FA,1274,1013,0%
+Jordan Danks,http://sports.yahoo.com/mlb/players/8682,Phi,OF,FA,1275,1046,0%
+Alex Guerrero,http://sports.yahoo.com/mlb/players/9539,LAD,OF,BeAsT mOdE,1276,1303,38%
+Erik Kratz,http://sports.yahoo.com/mlb/players/8760,KC,C,FA,1277,1054,0%
+Shane Robinson,http://sports.yahoo.com/mlb/players/8468,Min,OF,FA,1278,1306,0%
+Chris Stewart,http://sports.yahoo.com/mlb/players/7857,Pit,C,FA,1279,1071,0%
+Tyler Moore,http://sports.yahoo.com/mlb/players/9170,Was,1B,FA,1280,1070,0%
+Donnie Murphy,http://sports.yahoo.com/mlb/players/7459,Mil,1B/2B,FA,1282,1087,0%
+Corey Hart,http://sports.yahoo.com/mlb/players/7336,Pit,OF,FA,1283,1037,0%
+Cesar Hernandez,http://sports.yahoo.com/mlb/players/9411,Phi,2B/3B,FA,1284,1112,0%
+Ryan Rua,http://sports.yahoo.com/mlb/players/9801,Tex,1B/OF,FA,1285,1018,1%
+Chris Taylor,http://sports.yahoo.com/mlb/players/9771,Sea,SS,FA,1286,1012,1%
+John Buck,http://sports.yahoo.com/mlb/players/7056,Atl,C,FA,1287,1148,0%
+Cory Spangenberg,http://sports.yahoo.com/mlb/players/9102,SD,3B,FA,1288,1044,0%
+Christian Colon,http://sports.yahoo.com/mlb/players/9752,KC,2B/SS,FA,1289,1076,0%
+A.J. Ellis,http://sports.yahoo.com/mlb/players/8373,LAD,C,FA,1290,1107,0%
+Charlie Culberson,http://sports.yahoo.com/mlb/players/9183,Col,2B/3B/SS,FA,1291,1062,0%
+Grant Green,http://sports.yahoo.com/mlb/players/8866,LAA,2B/OF,FA,1292,1078,0%
+Mark Ellis,http://sports.yahoo.com/mlb/players/6899,StL,2B,FA,1293,1162,0%
+Ezequiel Carrera,http://sports.yahoo.com/mlb/players/8673,Tor,OF,FA,1294,1059,0%
+Tim Beckham,http://sports.yahoo.com/mlb/players/8691,TB,2B/SS,FA,1295,-,6%
+Michael A. Taylor,http://sports.yahoo.com/mlb/players/9784,Was,OF,FA,1296,1170,3%
+Geovany Soto,http://sports.yahoo.com/mlb/players/7662,CWS,C,FA,1297,1100,0%
+Wil Nieves,http://sports.yahoo.com/mlb/players/6968,SD,C,FA,1298,1108,0%
+Efren Navarro,http://sports.yahoo.com/mlb/players/9051,LAA,1B/OF,FA,1299,1045,0%
+Tyler Colvin,http://sports.yahoo.com/mlb/players/8605,Mia,OF,FA,1300,1035,0%
+David Ross,http://sports.yahoo.com/mlb/players/6956,ChC,C,FA,1302,1058,0%
+Phil Gosselin,http://sports.yahoo.com/mlb/players/9492,Atl,2B/3B/SS,FA,1303,1057,0%
+Ben Paulsen,http://sports.yahoo.com/mlb/players/9770,Col,1B,FA,1304,1032,0%
+Marc Krauss,http://sports.yahoo.com/mlb/players/9437,LAA,1B/OF,FA,1305,1049,0%
+Brandon Hicks,http://sports.yahoo.com/mlb/players/8725,SF,2B,FA,1306,1027,0%
+Chris Dickerson,http://sports.yahoo.com/mlb/players/8323,Tor,OF,FA,1307,1084,0%
+Kevin Kouzmanoff,http://sports.yahoo.com/mlb/players/7864,Tex,3B,FA,1308,1040,0%
+Rafael Ynoa,http://sports.yahoo.com/mlb/players/9812,Col,3B,FA,1309,1069,0%
+Mike Carp,http://sports.yahoo.com/mlb/players/8512,Was,1B/OF,FA,1310,1188,0%
+Travis Ishikawa,http://sports.yahoo.com/mlb/players/7734,SF,1B,FA,1311,1036,0%
+Randal Grichuk,http://sports.yahoo.com/mlb/players/9689,StL,OF,FA,1312,1081,1%
+Andy Dirks,http://sports.yahoo.com/mlb/players/8927,Tor,OF,FA,1313,-,0%
+Christian Vazquez,http://sports.yahoo.com/mlb/players/9762,Bos,C,FA,1314,1047,0%
+Kike Hernandez,http://sports.yahoo.com/mlb/players/9754,LAD,OF,FA,1315,1038,0%
+Ramiro Pena,http://sports.yahoo.com/mlb/players/8441,SD,2B/3B/SS,FA,1316,1089,0%
+Luis Sardinas,http://sports.yahoo.com/mlb/players/9679,Mil,2B/SS,FA,1317,1052,0%
+Nolan Reimold,http://sports.yahoo.com/mlb/players/8191,Bal,OF,FA,1318,1082,0%
+Nyjer Morgan,http://sports.yahoo.com/mlb/players/8116,Cle,OF,FA,1320,1056,0%
+Tony Sanchez,http://sports.yahoo.com/mlb/players/9394,Pit,C,FA,1321,1097,0%
+Jason Kubel,http://sports.yahoo.com/mlb/players/7425,Min,OF,FA,1322,1103,0%
+Chris Valaika,http://sports.yahoo.com/mlb/players/8793,ChC,1B/2B/3B,FA,1323,1072,0%
+Nick Franklin,http://sports.yahoo.com/mlb/players/9115,TB,2B/SS,FA,1324,1192,1%
+Marco Scutaro,http://sports.yahoo.com/mlb/players/6966,SF,2B,FA,1325,1283,0%
+Logan Schafer,http://sports.yahoo.com/mlb/players/9046,Mil,OF,FA,1326,1163,0%
+Hector Sanchez,http://sports.yahoo.com/mlb/players/8972,SF,C,FA,1327,1079,0%
+John Ryan Murphy,http://sports.yahoo.com/mlb/players/9509,NYY,C,FA,1328,1090,0%
+Chris Herrmann,http://sports.yahoo.com/mlb/players/9309,Min,C/OF,FA,1329,1175,0%
+Matt Duffy,http://sports.yahoo.com/mlb/players/9775,SF,2B/3B/SS,FA,1330,1136,1%
+J.T. Realmuto,http://sports.yahoo.com/mlb/players/9718,Mia,C,FA,1331,1145,2%
+Steve Lombardozzi,http://sports.yahoo.com/mlb/players/9038,Pit,2B,FA,1332,1140,0%
+Jordany Valdespin,http://sports.yahoo.com/mlb/players/9161,Mia,2B/OF,FA,1333,1102,0%
+Josh Phegley,http://sports.yahoo.com/mlb/players/9452,Oak,C,FA,1334,1118,0%
+Bryan Holaday,http://sports.yahoo.com/mlb/players/9208,Det,C,FA,1335,1085,0%
+L.J. Hoes,http://sports.yahoo.com/mlb/players/9307,Hou,OF,FA,1336,1150,0%
+Pete Kozma,http://sports.yahoo.com/mlb/players/8934,StL,Util,FA,1337,1183,0%
+Jesus Guzman,http://sports.yahoo.com/mlb/players/8484,Hou,1B/OF,FA,1338,1177,0%
+Andrew Brown,http://sports.yahoo.com/mlb/players/8966,Oak,OF,FA,1339,1144,0%
+Addison Russell,http://sports.yahoo.com/mlb/players/9604,ChC,2B/SS,Dugo's Way,1340,-,55%
+Ryan Wheeler,http://sports.yahoo.com/mlb/players/9244,LAA,3B,FA,1341,1093,0%
+Rymer Liriano,http://sports.yahoo.com/mlb/players/9621,SD,OF,FA,1342,1088,0%
+Pedro Florimon,http://sports.yahoo.com/mlb/players/9069,Pit,SS,FA,1343,1291,0%
+Maicer Izturis,http://sports.yahoo.com/mlb/players/7420,Tor,2B,FA,1344,1179,0%
+Ryan Kalish,http://sports.yahoo.com/mlb/players/8626,ChC,OF,FA,1345,1092,0%
+Ryan Goins,http://sports.yahoo.com/mlb/players/9499,Tor,2B/SS,FA,1346,1173,0%
+Jake Goebbert,http://sports.yahoo.com/mlb/players/8881,SD,1B,FA,1347,1091,0%
+Scott Hairston,http://sports.yahoo.com/mlb/players/7046,Was,OF,FA,1348,1167,0%
+George Kottaras,http://sports.yahoo.com/mlb/players/7941,CWS,C,FA,1349,1123,0%
+Chris Gimenez,http://sports.yahoo.com/mlb/players/8504,Tex,C/1B,FA,1350,1096,0%
+Leury Garcia,http://sports.yahoo.com/mlb/players/9345,CWS,2B/3B/OF,FA,1351,1109,0%
+Brett Wallace,http://sports.yahoo.com/mlb/players/8416,SD,1B/3B,FA,1352,-,0%
+Pedro Ciriaco,http://sports.yahoo.com/mlb/players/8822,Atl,2B,FA,1353,1137,0%
+Paulo Orlando,http://sports.yahoo.com/mlb/players/9918,KC,OF,FA,1354,-,1%
+Billy Burns,http://sports.yahoo.com/mlb/players/9773,Oak,Util,FA,1355,1164,3%
+Tony Campana,http://sports.yahoo.com/mlb/players/8933,CWS,OF,FA,1356,1134,0%
+Juan Pierre,http://sports.yahoo.com/mlb/players/6550,Mia,OF,FA,1357,-,0%
+Cole Gillespie,http://sports.yahoo.com/mlb/players/8678,Mia,OF,FA,1358,1106,0%
+Logan Watkins,http://sports.yahoo.com/mlb/players/9481,ChC,2B,FA,1359,1101,0%
+Tony Cruz,http://sports.yahoo.com/mlb/players/8938,StL,C,FA,1360,1116,0%
+Brennan Boesch,http://sports.yahoo.com/mlb/players/8713,Cin,OF,FA,1361,1135,0%
+Chris Nelson,http://sports.yahoo.com/mlb/players/8592,Phi,3B,FA,1362,1158,0%
+Jung Ho Kang,http://sports.yahoo.com/mlb/players/9884,Pit,SS,FA,1363,-,4%
+Luke Scott,http://sports.yahoo.com/mlb/players/7521,TB,Util,FA,1364,-,0%
+Jemile Weeks,http://sports.yahoo.com/mlb/players/8956,Bos,2B,FA,1365,1110,0%
+Matt Szczur,http://sports.yahoo.com/mlb/players/9791,ChC,OF,FA,1366,1147,0%
+James McCann,http://sports.yahoo.com/mlb/players/9818,Det,C,FA,1367,1203,1%
+Jeff Keppinger,http://sports.yahoo.com/mlb/players/7414,CWS,3B,FA,1368,-,0%
+Christian Bethancourt,http://sports.yahoo.com/mlb/players/9530,Atl,C,FA,1369,1128,1%
+Yuniesky Betancourt,http://sports.yahoo.com/mlb/players/7511,Mil,1B/3B,FA,1370,-,0%
+Eric Fryer,http://sports.yahoo.com/mlb/players/8975,Min,C,FA,1371,1121,0%
+Travis Hafner,http://sports.yahoo.com/mlb/players/6980,NYY,1B,FA,1372,-,0%
+Jeff Francoeur,http://sports.yahoo.com/mlb/players/7594,Phi,OF,FA,1373,1302,0%
+Josh Wilson,http://sports.yahoo.com/mlb/players/7663,Det,2B,FA,1374,1127,0%
+Matt Tuiasosopo,http://sports.yahoo.com/mlb/players/8367,Bal,3B/OF,FA,1375,-,0%
+Franklin Gutierrez,http://sports.yahoo.com/mlb/players/7644,Sea,OF,FA,1376,-,0%
+Stefen Romero,http://sports.yahoo.com/mlb/players/9644,Sea,OF,FA,1377,1113,0%
+Hector Gomez,http://sports.yahoo.com/mlb/players/9084,Mil,2B,FA,1378,1260,0%
+Jerry Sands,http://sports.yahoo.com/mlb/players/8907,Cle,OF,FA,1379,1195,0%
+Matt McBride,http://sports.yahoo.com/mlb/players/9260,Col,1B,FA,1380,1117,0%
+Drew Butera,http://sports.yahoo.com/mlb/players/8696,LAA,C,FA,1381,1115,0%
+Dilson Herrera,http://sports.yahoo.com/mlb/players/9800,NYM,2B,FA,1382,1099,2%
+Terrance Gore,http://sports.yahoo.com/mlb/players/9804,KC,Util,FA,1383,1124,0%
+Carlos Peguero,http://sports.yahoo.com/mlb/players/8908,Tex,OF,FA,1384,1230,0%
+Chris Getz,http://sports.yahoo.com/mlb/players/8321,Tor,2B,FA,1385,1245,0%
+Kevin Plawecki,http://sports.yahoo.com/mlb/players/9596,NYM,C,Dugo's Way,1386,-,10%
+Matt Clark,http://sports.yahoo.com/mlb/players/9832,Mil,1B,FA,1387,1122,0%
+Jason Bay,http://sports.yahoo.com/mlb/players/7143,Sea,OF,FA,1388,-,0%
+Dan Johnson,http://sports.yahoo.com/mlb/players/7436,Cin,1B,FA,1389,1119,0%
+Ehire Adrianza,http://sports.yahoo.com/mlb/players/9521,SF,2B/SS,FA,1390,1138,0%
+Adrian Nieto,http://sports.yahoo.com/mlb/players/9647,CWS,C,FA,1391,1125,0%
+Jim Adduci,http://sports.yahoo.com/mlb/players/9512,Tex,OF,FA,1392,1131,0%
+Andres Torres,http://sports.yahoo.com/mlb/players/6901,Bos,OF,FA,1393,-,0%
+Nick Evans,http://sports.yahoo.com/mlb/players/8258,Ari,Util,FA,1394,1129,0%
+Roger Bernadina,http://sports.yahoo.com/mlb/players/8288,Col,OF,FA,1395,1166,0%
+Antoan Richardson,http://sports.yahoo.com/mlb/players/9056,Tex,OF,FA,1396,1133,0%
+Jurickson Profar,http://sports.yahoo.com/mlb/players/9112,Tex,2B/SS,FA,1397,-,1%
+Tomas Telis,http://sports.yahoo.com/mlb/players/9797,Tex,C,FA,1398,1130,0%
+Josh Thole,http://sports.yahoo.com/mlb/players/8569,Tor,C,FA,1399,1126,0%
+Placido Polanco,http://sports.yahoo.com/mlb/players/6049,Mia,2B/3B,FA,1400,-,0%
+Jace Peterson,http://sports.yahoo.com/mlb/players/9618,Atl,2B/3B,FA,1401,1317,2%
+Jose Pirela,http://sports.yahoo.com/mlb/players/9843,NYY,2B,FA,1402,1141,0%
+Garin Cecchini,http://sports.yahoo.com/mlb/players/9550,Bos,3B,FA,1403,1139,0%
+Brian Bogusevic,http://sports.yahoo.com/mlb/players/8797,Phi,OF,FA,1404,-,0%
+Clint Robinson,http://sports.yahoo.com/mlb/players/9211,Was,1B,FA,1405,1182,0%
+Gerald Laird,http://sports.yahoo.com/mlb/players/7129,Ari,C,FA,1406,1181,0%
+Chone Figgins,http://sports.yahoo.com/mlb/players/6986,LAD,3B,FA,1407,1143,0%
+Carlos Sanchez,http://sports.yahoo.com/mlb/players/9765,CWS,2B,FA,1408,1157,0%
+Ian Stewart,http://sports.yahoo.com/mlb/players/7993,Was,3B,FA,1409,1146,0%
+Miguel Tejada,http://sports.yahoo.com/mlb/players/5888,Mia,2B/3B,FA,1410,-,0%
+Xavier Paul,http://sports.yahoo.com/mlb/players/8467,Phi,OF,FA,1411,1294,0%
+Adam Duvall,http://sports.yahoo.com/mlb/players/9747,SF,1B,FA,1412,1151,0%
+Elliot Johnson,http://sports.yahoo.com/mlb/players/8204,LAD,OF,FA,1413,1301,0%
+Daric Barton,http://sports.yahoo.com/mlb/players/7635,Tor,1B,FA,1414,1218,0%
+Reid Brignac,http://sports.yahoo.com/mlb/players/7983,Mia,3B,FA,1415,1149,0%
+Andres Blanco,http://sports.yahoo.com/mlb/players/7313,Phi,3B,FA,1416,1153,0%
+Steve Clevenger,http://sports.yahoo.com/mlb/players/9087,Bal,C,FA,1417,1154,0%
+Carlos Pena,http://sports.yahoo.com/mlb/players/6621,Tex,1B,FA,1418,1289,0%
+Carlos Rivero,http://sports.yahoo.com/mlb/players/9796,Sea,3B,FA,1419,1156,0%
+Jeff Mathis,http://sports.yahoo.com/mlb/players/7296,Mia,C,FA,1420,1161,0%
+Cole Figueroa,http://sports.yahoo.com/mlb/players/9705,NYY,2B,FA,1421,1155,0%
+Quintin Berry,http://sports.yahoo.com/mlb/players/9194,Bos,OF,FA,1422,1194,0%
+Delino DeShields,http://sports.yahoo.com/mlb/players/9574,Tex,2B,FA,1423,-,0%
+Omar Quintanilla,http://sports.yahoo.com/mlb/players/7615,Col,SS,FA,1424,1224,0%
+Bryce Brentz,http://sports.yahoo.com/mlb/players/9845,Bos,OF,FA,1425,1160,0%
+Jake Elmore,http://sports.yahoo.com/mlb/players/9268,TB,Util,FA,1426,1277,0%
+Jason Giambi,http://sports.yahoo.com/mlb/players/5386,Cle,Util,FA,1427,1263,0%
+Max Stassi,http://sports.yahoo.com/mlb/players/9496,Hou,C,FA,1428,1169,0%
+Tyler Collins,http://sports.yahoo.com/mlb/players/9649,Det,OF,FA,1429,1168,0%
+Zelous Wheeler,http://sports.yahoo.com/mlb/players/9755,NYY,3B/OF,FA,1430,1165,0%
+Tucker Barnhart,http://sports.yahoo.com/mlb/players/9664,Cin,C,FA,1431,1267,0%
+Scott Sizemore,http://sports.yahoo.com/mlb/players/8612,Mia,Util,FA,1432,1171,0%
+Jeff Bianchi,http://sports.yahoo.com/mlb/players/9234,Bos,3B/SS,FA,1433,1269,0%
+Tyler Holt,http://sports.yahoo.com/mlb/players/9756,Cle,OF,FA,1434,1159,0%
+Miguel Olivo,http://sports.yahoo.com/mlb/players/7028,LAD,C,FA,1435,1193,0%
+Tony Abreu,http://sports.yahoo.com/mlb/players/8033,SF,Util,FA,1436,1281,0%
+Juan Perez,http://sports.yahoo.com/mlb/players/9428,SF,OF,FA,1437,1201,0%
+Ronny Cedeno,http://sports.yahoo.com/mlb/players/7527,SF,Util,FA,1438,1299,0%
+Trevor Crowe,http://sports.yahoo.com/mlb/players/7918,Det,OF,FA,1439,-,0%
+Carlos Perez,http://sports.yahoo.com/mlb/players/9956,LAA,C,W (May 7),1440,-,0%
+Rey Navarro,http://sports.yahoo.com/mlb/players/9943,Bal,2B,FA,1441,-,0%
+Sean Halton,http://sports.yahoo.com/mlb/players/9445,Bal,1B,FA,1442,-,0%
+Jesus Montero,http://sports.yahoo.com/mlb/players/8638,Sea,Util,FA,1443,1196,0%
+Xavier Nady,http://sports.yahoo.com/mlb/players/6610,Sea,OF,FA,1444,1178,0%
+Mikie Mahtook,http://sports.yahoo.com/mlb/players/9895,TB,OF,FA,1445,-,0%
+Miguel Rojas,http://sports.yahoo.com/mlb/players/9726,Mia,3B/SS,FA,1446,1176,0%
+Josh Satin,http://sports.yahoo.com/mlb/players/9044,Cin,1B,FA,1447,1313,0%
+Jason Bourgeois,http://sports.yahoo.com/mlb/players/8377,Cin,OF,FA,1448,1189,0%
+Austin Romine,http://sports.yahoo.com/mlb/players/9082,NYY,C,FA,1449,1216,0%
+Alfredo Marte,http://sports.yahoo.com/mlb/players/9354,LAA,OF,FA,1450,1180,0%
+Alexi Casilla,http://sports.yahoo.com/mlb/players/7855,TB,Util,FA,1451,1280,0%
+Joey Terdoslavich,http://sports.yahoo.com/mlb/players/9451,Atl,1B/OF,FA,1452,1204,0%
+Doug Bernier,http://sports.yahoo.com/mlb/players/8274,Min,Util,FA,1453,1214,0%
+Jorge Polanco,http://sports.yahoo.com/mlb/players/9750,Min,SS,FA,1454,1184,0%
+Shawn O'Malley,http://sports.yahoo.com/mlb/players/9814,Sea,OF,FA,1455,1185,0%
+Tyler Ladendorf,http://sports.yahoo.com/mlb/players/9905,Oak,SS,FA,1456,-,0%
+Caleb Gindl,http://sports.yahoo.com/mlb/players/9435,Tor,OF,FA,1457,1295,0%
+Taylor Featherston,http://sports.yahoo.com/mlb/players/9917,LAA,2B/SS,FA,1458,-,0%
+Zoilo Almonte,http://sports.yahoo.com/mlb/players/9436,Atl,OF,FA,1459,1231,0%
+Brad Snyder,http://sports.yahoo.com/mlb/players/8100,Tex,1B,FA,1460,1186,0%
+Brett Hayes,http://sports.yahoo.com/mlb/players/8492,Cle,C,FA,1461,1298,0%
+Jerry Hairston Jr.,http://sports.yahoo.com/mlb/players/6127,LAD,3B/OF,FA,1462,-,0%
+Matt Davidson,http://sports.yahoo.com/mlb/players/9337,CWS,3B,FA,1463,-,0%
+Humberto Quintero,http://sports.yahoo.com/mlb/players/7235,Bos,C,FA,1464,1244,0%
+Jayson Nix,http://sports.yahoo.com/mlb/players/8168,Bal,2B/3B,FA,1465,1319,0%
+Joey Butler,http://sports.yahoo.com/mlb/players/9482,TB,OF,FA,1466,1286,0%
+Jackson Williams,http://sports.yahoo.com/mlb/players/9744,SF,C,FA,1467,1191,0%
+Jamey Carroll,http://sports.yahoo.com/mlb/players/7024,Was,2B/3B,FA,1468,-,0%
+Allan Dykstra,http://sports.yahoo.com/mlb/players/9922,TB,1B,FA,1469,-,0%
+Ryan Roberts,http://sports.yahoo.com/mlb/players/7826,KC,3B,FA,1470,1300,0%
+Hernan Perez,http://sports.yahoo.com/mlb/players/9213,Det,Util,FA,1471,1241,0%
+Gary Brown,http://sports.yahoo.com/mlb/players/9117,StL,OF,FA,1472,1199,0%
+Andy Marte,http://sports.yahoo.com/mlb/players/7291,Ari,3B,FA,1473,1197,0%
+Kevin Youkilis,http://sports.yahoo.com/mlb/players/7049,NYY,1B/3B,FA,1474,-,0%
+Darin Mastroianni,http://sports.yahoo.com/mlb/players/9026,Phi,OF,FA,1475,1211,0%
+Steven Moya,http://sports.yahoo.com/mlb/players/9816,Det,OF,FA,1476,1202,0%
+Yorvit Torrealba,http://sports.yahoo.com/mlb/players/6795,ChC,C,FA,1477,-,0%
+Tyler Pastornicky,http://sports.yahoo.com/mlb/players/9090,Tex,2B,FA,1478,1227,0%
+Tuffy Gosewisch,http://sports.yahoo.com/mlb/players/9479,Ari,C,FA,1479,1187,0%
+Eury Perez,http://sports.yahoo.com/mlb/players/9290,Atl,OF,FA,1480,1213,0%
+Kelly Shoppach,http://sports.yahoo.com/mlb/players/7493,Cle,C,FA,1481,-,0%
+Dean Anna,http://sports.yahoo.com/mlb/players/9654,StL,SS,FA,1482,1200,0%
+Yorman Rodriguez,http://sports.yahoo.com/mlb/players/9819,Cin,OF,FA,1483,1212,0%
+Tony Gwynn Jr.,http://sports.yahoo.com/mlb/players/7814,Was,OF,FA,1484,1198,0%
+Alex Gonzalez,http://sports.yahoo.com/mlb/players/6077,Det,SS,FA,1485,1229,0%
+Erisbel Arruebarrena,http://sports.yahoo.com/mlb/players/9710,LAD,SS,FA,1486,1210,0%
+Danny Worth,http://sports.yahoo.com/mlb/players/8732,Ari,SS,FA,1487,1207,0%
+Jeff Kobernus,http://sports.yahoo.com/mlb/players/9406,Was,2B,FA,1488,1251,0%
+Chad Tracy,http://sports.yahoo.com/mlb/players/7047,LAA,1B/3B,FA,1489,-,0%
+Chase d'Arnaud,http://sports.yahoo.com/mlb/players/8974,Phi,SS,FA,1490,1217,0%
+Taylor Teagarden,http://sports.yahoo.com/mlb/players/8306,ChC,C,FA,1491,1219,0%
+Engel Beltre,http://sports.yahoo.com/mlb/players/9441,CWS,OF,FA,1492,-,0%
+Jason Bartlett,http://sports.yahoo.com/mlb/players/7388,Min,OF,FA,1493,1221,0%
+Dewayne Wise,http://sports.yahoo.com/mlb/players/6442,CWS,OF,FA,1494,-,0%
+Greg Dobbs,http://sports.yahoo.com/mlb/players/7439,Was,1B,FA,1495,1310,0%
+Max Muncy,http://sports.yahoo.com/mlb/players/9606,Oak,1B,FA,1496,-,0%
+David Adams,http://sports.yahoo.com/mlb/players/9395,Mia,2B/3B,FA,1497,-,0%
+Nick Noonan,http://sports.yahoo.com/mlb/players/9353,NYY,2B,FA,1498,-,0%
+Jack Hannahan,http://sports.yahoo.com/mlb/players/7774,Cin,1B,FA,1499,1270,0%
+Francisco Peguero,http://sports.yahoo.com/mlb/players/9276,Bal,OF,FA,1500,-,0%
+Ryan Brett,http://sports.yahoo.com/mlb/players/9935,TB,2B,FA,1501,-,0%
+Sandy Leon,http://sports.yahoo.com/mlb/players/9180,Bos,C,FA,1502,1235,0%
+Rob Brantly,http://sports.yahoo.com/mlb/players/9265,CWS,C,FA,1503,-,0%
+Henry Urrutia,http://sports.yahoo.com/mlb/players/9465,Bal,OF,FA,1504,-,0%
+Cody Stanley,http://sports.yahoo.com/mlb/players/9945,StL,C,FA,1505,-,0%
+Adam Moore,http://sports.yahoo.com/mlb/players/8597,Cle,C,FA,1506,1237,0%
+Curt Casali,http://sports.yahoo.com/mlb/players/9766,TB,C,FA,1507,1220,0%
+Jason Rogers,http://sports.yahoo.com/mlb/players/9831,Mil,1B,FA,1508,1287,0%
+Maikel Franco,http://sports.yahoo.com/mlb/players/9609,Phi,3B,FA,1509,1225,2%
+Carlos Triunfel,http://sports.yahoo.com/mlb/players/9303,SF,SS,FA,1510,1208,0%
+Roger Kieschnick,http://sports.yahoo.com/mlb/players/9474,LAA,OF,FA,1511,1233,0%
+Laynce Nix,http://sports.yahoo.com/mlb/players/7176,Phi,1B/OF,FA,1512,-,0%
+Danny Muno,http://sports.yahoo.com/mlb/players/9914,NYM,2B,FA,1513,-,0%
+Zach Lutz,http://sports.yahoo.com/mlb/players/9164,NYM,1B/3B,FA,1514,-,0%
+Guilder Rodriguez,http://sports.yahoo.com/mlb/players/9840,Tex,Util,FA,1515,1234,0%
+Christian Walker,http://sports.yahoo.com/mlb/players/9846,Bal,1B,FA,1516,1232,0%
+Daniel Butler,http://sports.yahoo.com/mlb/players/9778,Was,C,FA,1517,1236,0%
+Reymond Fuentes,http://sports.yahoo.com/mlb/players/9502,KC,OF,FA,1518,-,0%
+Corey Brown,http://sports.yahoo.com/mlb/players/9077,TB,OF,FA,1519,1253,0%
+Jonathan Diaz,http://sports.yahoo.com/mlb/players/9447,Tor,SS,FA,1520,1226,0%
+Cesar Izturis,http://sports.yahoo.com/mlb/players/6638,Hou,2B/SS,FA,1521,-,0%
+Jhonatan Solano,http://sports.yahoo.com/mlb/players/9197,Mia,C,FA,1522,-,0%
+Ty Wigginton,http://sports.yahoo.com/mlb/players/6930,Mia,1B/3B,FA,1523,-,0%
+Alex Castellanos,http://sports.yahoo.com/mlb/players/9203,NYM,OF,FA,1524,-,0%
+Orlando Calixte,http://sports.yahoo.com/mlb/players/9937,KC,SS,FA,1525,-,0%
+Rafael Furcal,http://sports.yahoo.com/mlb/players/6404,Mia,2B,FA,1526,1238,0%
+Todd Cunningham,http://sports.yahoo.com/mlb/players/9476,Atl,OF,FA,1527,-,0%
+Michael Taylor,http://sports.yahoo.com/mlb/players/8642,CWS,OF,FA,1528,1215,0%
+Jose Constanza,http://sports.yahoo.com/mlb/players/9001,Atl,OF,FA,1529,1258,0%
+Johnny Monell,http://sports.yahoo.com/mlb/players/9522,NYM,C,FA,1530,-,0%
+John Hester,http://sports.yahoo.com/mlb/players/8568,Phi,C,FA,1531,-,0%
+Greg Garcia,http://sports.yahoo.com/mlb/players/9688,StL,Util,FA,1532,1242,0%
+Koyie Hill,http://sports.yahoo.com/mlb/players/7059,Phi,C,FA,1533,1223,0%
+Shane Peterson,http://sports.yahoo.com/mlb/players/9361,Mil,1B,FA,1534,-,0%
+Nick Williams,http://sports.yahoo.com/mlb/players/9633,Tex,OF,FA,1535,-,0%
+Greg Bird,http://sports.yahoo.com/mlb/players/9600,NYY,1B,FA,1536,-,0%
+Bradley Zimmer,http://sports.yahoo.com/mlb/players/9862,Cle,OF,FA,1537,-,0%
+Carlos Correa,http://sports.yahoo.com/mlb/players/9573,Hou,SS,Dugo's Way,1538,-,9%
+Daniel Vogelbach,http://sports.yahoo.com/mlb/players/9556,ChC,1B,FA,1539,-,0%
+Alex Dickerson,http://sports.yahoo.com/mlb/players/9617,SD,OF,FA,1540,-,0%
+Tim Anderson,http://sports.yahoo.com/mlb/players/9897,CWS,SS,FA,1541,-,0%
+Stephen Piscotty,http://sports.yahoo.com/mlb/players/9628,StL,OF,FA,1542,-,0%
+David Dahl,http://sports.yahoo.com/mlb/players/9565,Col,OF,FA,1543,-,1%
+Christian Arroyo,http://sports.yahoo.com/mlb/players/9890,SF,SS,FA,1544,-,0%
+Forrest Wall,http://sports.yahoo.com/mlb/players/9865,Col,2B,FA,1545,-,0%
+Trevor Story,http://sports.yahoo.com/mlb/players/9571,Col,SS,FA,1546,-,0%
+Reese McGuire,http://sports.yahoo.com/mlb/players/9615,Pit,C,FA,1547,-,0%
+Brandon Nimmo,http://sports.yahoo.com/mlb/players/9876,NYM,OF,FA,1548,-,0%
+Michael Conforto,http://sports.yahoo.com/mlb/players/9875,NYM,OF,FA,1549,-,0%
+Eddie Rosario,http://sports.yahoo.com/mlb/players/9591,Min,2B,FA,1550,-,0%
+Jorge Alfaro,http://sports.yahoo.com/mlb/players/9631,Tex,C,FA,1551,-,0%
+Kaleb Cowart,http://sports.yahoo.com/mlb/players/9324,LAA,3B,FA,1552,-,0%
+Ed Easley,http://sports.yahoo.com/mlb/players/9923,StL,C,FA,1553,-,0%
+Tyler Austin,http://sports.yahoo.com/mlb/players/9603,NYY,OF,FA,1554,-,0%
+Jorge Bonifacio,http://sports.yahoo.com/mlb/players/9867,KC,OF,FA,1555,-,0%
+Jose Peraza,http://sports.yahoo.com/mlb/players/9857,Atl,SS,FA,1556,-,1%
+Willy Adames,http://sports.yahoo.com/mlb/players/9893,TB,SS,FA,1557,-,0%
+Alen Hanson,http://sports.yahoo.com/mlb/players/9611,Pit,SS,FA,1558,-,0%
+Dominic Smith,http://sports.yahoo.com/mlb/players/9595,NYM,1B,FA,1559,-,0%
+Miguel Sano,http://sports.yahoo.com/mlb/players/9110,Min,3B/SS,FA,1560,-,4%
+Hunter Dozier,http://sports.yahoo.com/mlb/players/9579,KC,3B,FA,1561,-,0%
+Austin Wates,http://sports.yahoo.com/mlb/players/9870,Mia,OF,FA,1562,-,0%
+Stryker Trahan,http://sports.yahoo.com/mlb/players/9541,Ari,C,FA,1563,-,0%
+Aaron Judge,http://sports.yahoo.com/mlb/players/9877,NYY,OF,FA,1564,-,1%
+Matt Olson,http://sports.yahoo.com/mlb/players/9605,Oak,1B,FA,1565,-,0%
+D.J. Peterson,http://sports.yahoo.com/mlb/players/9622,Sea,3B,FA,1566,-,1%
+Oscar Hernandez,http://sports.yahoo.com/mlb/players/9899,Ari,C,FA,1567,-,0%
+Gareth Morgan,http://sports.yahoo.com/mlb/players/9886,Sea,OF,FA,1568,-,0%
+Michael Gettys,http://sports.yahoo.com/mlb/players/9887,SD,OF,FA,1569,-,0%
+Hak-Ju Lee,http://sports.yahoo.com/mlb/players/9114,TB,SS,FA,1570,-,0%
+Hunter Renfroe,http://sports.yahoo.com/mlb/players/9889,SD,OF,FA,1571,-,0%
+Francisco Pena,http://sports.yahoo.com/mlb/players/9709,KC,C,FA,1572,1246,0%
+Kyle Schwarber,http://sports.yahoo.com/mlb/players/9861,ChC,C/OF,FA,1573,-,1%
+Colin Moran,http://sports.yahoo.com/mlb/players/9587,Hou,3B,FA,1574,-,0%
+Xavier Avery,http://sports.yahoo.com/mlb/players/9181,Det,OF,FA,1575,-,0%
+Jarrett Parker,http://sports.yahoo.com/mlb/players/9776,SF,OF,FA,1576,-,0%
+Hiro Nakajima,http://sports.yahoo.com/mlb/players/9318,Oak,SS,FA,1577,-,0%
+Yoan Moncada,http://sports.yahoo.com/mlb/players/9900,Bos,2B,FA,1578,-,3%
+Jesse Winker,http://sports.yahoo.com/mlb/players/9561,Cin,OF,FA,1579,-,1%
+Rafael Ortega,http://sports.yahoo.com/mlb/players/9313,StL,OF,FA,1580,-,0%
+Manuel Margot,http://sports.yahoo.com/mlb/players/9858,Bos,OF,FA,1581,-,0%
+Gary Sanchez,http://sports.yahoo.com/mlb/players/9097,NYY,C,FA,1582,-,0%
+Byron Buxton,http://sports.yahoo.com/mlb/players/9590,Min,OF,FA,1583,-,10%
+Michael Almanzar,http://sports.yahoo.com/mlb/players/9658,Bal,3B,FA,1584,-,0%
+Brian Goodwin,http://sports.yahoo.com/mlb/players/9639,Was,OF,FA,1585,-,0%
+Josh Bell,http://sports.yahoo.com/mlb/players/9883,Pit,OF,FA,1586,-,1%
+Mason Williams,http://sports.yahoo.com/mlb/players/9601,NYY,OF,FA,1587,-,0%
+Tommy Joseph,http://sports.yahoo.com/mlb/players/9101,Phi,C/1B,FA,1588,-,0%
+Francisco Lindor,http://sports.yahoo.com/mlb/players/9116,Cle,SS,FA,1589,-,5%
+Nick Gordon,http://sports.yahoo.com/mlb/players/9874,Min,SS,FA,1590,-,0%
+Joey Gallo,http://sports.yahoo.com/mlb/players/9630,Tex,3B,FA,1591,-,5%
+Josh Vitters,http://sports.yahoo.com/mlb/players/8679,Col,3B,FA,1592,-,0%
+Phillip Ervin,http://sports.yahoo.com/mlb/players/9562,Cin,OF,FA,1593,-,0%
+David Cooper,http://sports.yahoo.com/mlb/players/8917,Cle,1B,FA,1594,-,0%
+Brandon Drury,http://sports.yahoo.com/mlb/players/9853,Ari,SS,FA,1595,-,0%
+Raimel Tapia,http://sports.yahoo.com/mlb/players/9864,Col,OF,FA,1596,-,0%
+J.P. Crawford,http://sports.yahoo.com/mlb/players/9610,Phi,SS,FA,1597,-,1%
+Tom Murphy,http://sports.yahoo.com/mlb/players/9570,Col,C,FA,1598,-,0%
+Clint Frazier,http://sports.yahoo.com/mlb/players/9564,Cle,OF,FA,1599,-,0%
+Corey Seager,http://sports.yahoo.com/mlb/players/9584,LAD,SS,FA,1600,-,7%
+Miles Head,http://sports.yahoo.com/mlb/players/9607,Oak,3B,FA,1601,-,0%
+Bubba Starling,http://sports.yahoo.com/mlb/players/9119,KC,OF,FA,1602,-,0%
+Rio Ruiz,http://sports.yahoo.com/mlb/players/9578,Atl,3B,FA,1603,-,0%
+Rosell Herrera,http://sports.yahoo.com/mlb/players/9569,Col,SS,FA,1604,-,0%
+Ji-Man Choi,http://sports.yahoo.com/mlb/players/9623,Sea,1B,FA,1605,-,0%
+Cesar Puello,http://sports.yahoo.com/mlb/players/9594,NYM,OF,FA,1606,-,0%
+Albert Almora,http://sports.yahoo.com/mlb/players/9553,ChC,OF,FA,1607,-,0%
+Derek Hill,http://sports.yahoo.com/mlb/players/9866,Det,OF,FA,1608,-,0%
+Alex Jackson,http://sports.yahoo.com/mlb/players/9885,Sea,OF,FA,1609,-,1%
+Austin Meadows,http://sports.yahoo.com/mlb/players/9612,Pit,OF,FA,1610,-,0%
+Peter O'Brien,http://sports.yahoo.com/mlb/players/9901,Ari,C,FA,1611,-,0%
+Daniel Robertson,http://sports.yahoo.com/mlb/players/9880,TB,SS,FA,1612,-,0%
+Billy McKinney,http://sports.yahoo.com/mlb/players/9860,ChC,OF,FA,1613,-,0%
+Orlando Arcia,http://sports.yahoo.com/mlb/players/9871,Mil,SS,FA,1614,-,0%
+Braxton Davidson,http://sports.yahoo.com/mlb/players/9856,Atl,OF,FA,1615,-,0%
+Casey Gillaspie,http://sports.yahoo.com/mlb/players/9894,TB,1B,FA,1616,-,0%
+Jon Denney,http://sports.yahoo.com/mlb/players/9551,Bos,C,FA,1617,-,0%
+Taylor Lindsey,http://sports.yahoo.com/mlb/players/9888,SD,2B,FA,1618,-,0%
+Raul Mondesi,http://sports.yahoo.com/mlb/players/9581,KC,SS,FA,1619,-,0%
+Xavier Scruggs,http://sports.yahoo.com/mlb/players/9838,StL,1B,FA,1620,1243,0%
+Audry Perez,http://sports.yahoo.com/mlb/players/9524,Bal,C,FA,1621,1247,0%
+Tommy Field,http://sports.yahoo.com/mlb/players/9081,Tex,2B/SS,FA,1622,-,0%
+Austin Kearns,http://sports.yahoo.com/mlb/players/6851,Mia,OF,FA,1623,-,0%
+Lane Adams,http://sports.yahoo.com/mlb/players/9806,KC,OF,FA,1624,1249,0%
+Matt Diaz,http://sports.yahoo.com/mlb/players/7184,Mia,OF,FA,1625,-,0%
+Brendan Ryan,http://sports.yahoo.com/mlb/players/8042,NYY,2B/SS,FA,1626,1315,0%
+Kyle Skipworth,http://sports.yahoo.com/mlb/players/9360,Cin,C,FA,1627,-,0%
+Ryan Lavarnway,http://sports.yahoo.com/mlb/players/9020,Bal,C/1B,FA,1628,1304,0%
+Luis Cruz,http://sports.yahoo.com/mlb/players/8365,NYY,3B/SS,FA,1629,-,0%
+Austin Hedges,http://sports.yahoo.com/mlb/players/9336,SD,C,FA,1630,-,1%
+Henry Rodriguez,http://sports.yahoo.com/mlb/players/9284,Bos,2B,FA,1631,-,0%
+Brent Morel,http://sports.yahoo.com/mlb/players/8811,Pit,3B,FA,1632,1266,0%
+Danny Dorn,http://sports.yahoo.com/mlb/players/9940,Ari,1B,FA,1633,-,0%
+Wilfredo Tovar,http://sports.yahoo.com/mlb/players/9536,NYM,SS,FA,1634,1272,0%
+Ryan Jackson,http://sports.yahoo.com/mlb/players/9264,KC,2B/SS,FA,1635,-,0%
+Jason Pridie,http://sports.yahoo.com/mlb/players/7693,Oak,OF,FA,1636,1257,0%
+Matt Pagnozzi,http://sports.yahoo.com/mlb/players/8606,Ari,C,FA,1637,1248,0%
+Rafael Lopez,http://sports.yahoo.com/mlb/players/9829,ChC,C,FA,1638,1261,0%
+Vince Belnome,http://sports.yahoo.com/mlb/players/9665,TB,Util,FA,1639,1259,0%
+Alex Hassan,http://sports.yahoo.com/mlb/players/9715,Oak,OF,FA,1640,1262,0%
+Justin Sellers,http://sports.yahoo.com/mlb/players/9016,Pit,Util,FA,1641,1268,0%
+Mike Baxter,http://sports.yahoo.com/mlb/players/8820,ChC,OF,FA,1642,1293,0%
+Tommy Pham,http://sports.yahoo.com/mlb/players/9842,StL,OF,FA,1643,1264,0%
+Matt Hague,http://sports.yahoo.com/mlb/players/9137,Tor,1B,FA,1644,1265,0%
+Andy Parrino,http://sports.yahoo.com/mlb/players/9027,Oak,SS,FA,1645,1239,0%
+Luis Jimenez,http://sports.yahoo.com/mlb/players/9367,Bos,3B,FA,1646,1271,0%
+Wilson Betemit,http://sports.yahoo.com/mlb/players/6811,TB,3B,FA,1647,-,0%
+Chris McGuiness,http://sports.yahoo.com/mlb/players/9427,Phi,1B,FA,1648,-,0%
+Chris Snyder,http://sports.yahoo.com/mlb/players/7409,Tex,C,FA,1649,-,0%
+Guillermo Quiroz,http://sports.yahoo.com/mlb/players/7275,SF,C,FA,1650,1273,0%
+Nick Buss,http://sports.yahoo.com/mlb/players/9533,Ari,OF,FA,1651,-,0%
+Bryan Anderson,http://sports.yahoo.com/mlb/players/8708,Oak,C,FA,1652,1254,0%
+Brent Lillibridge,http://sports.yahoo.com/mlb/players/8187,Tex,2B/3B,FA,1653,-,0%
+Kyle Parker,http://sports.yahoo.com/mlb/players/9568,Col,OF,FA,1654,1275,0%
+Jesus Sucre,http://sports.yahoo.com/mlb/players/9404,Sea,C,FA,1655,1206,0%
+Blake Swihart,http://sports.yahoo.com/mlb/players/9549,Bos,C,JeRsEy FU's,1656,-,19%
+Donald Lutz,http://sports.yahoo.com/mlb/players/9384,Cin,1B/OF,FA,1657,1308,0%
+Jaff Decker,http://sports.yahoo.com/mlb/players/9432,Pit,OF,FA,1658,1285,0%
+Ali Solis,http://sports.yahoo.com/mlb/players/9304,LAD,C,FA,1659,1278,0%
+Brett Jackson,http://sports.yahoo.com/mlb/players/8850,SF,OF,FA,1660,1279,0%
+Chris Dominguez,http://sports.yahoo.com/mlb/players/9811,Cin,OF,FA,1661,1256,0%
+John Baker,http://sports.yahoo.com/mlb/players/8297,Sea,C,FA,1662,1240,0%
+Aaron Altherr,http://sports.yahoo.com/mlb/players/9734,Phi,OF,FA,1663,1284,0%
+Brooks Conrad,http://sports.yahoo.com/mlb/players/7959,SD,2B,FA,1664,1282,0%
+Juan Centeno,http://sports.yahoo.com/mlb/players/9529,Mil,C,FA,1665,1255,0%
+Cord Phelps,http://sports.yahoo.com/mlb/players/8959,Phi,2B,FA,1666,1274,0%
+Cameron Rupp,http://sports.yahoo.com/mlb/players/9520,Phi,C,FA,1667,1228,0%
+Nick Ahmed,http://sports.yahoo.com/mlb/players/9751,Ari,SS,FA,1668,1172,0%
+John McDonald,http://sports.yahoo.com/mlb/players/6269,LAA,3B/SS,FA,1669,1276,0%
+Jamie Romak,http://sports.yahoo.com/mlb/players/9714,Ari,OF,FA,1670,1288,0%
+Eli Whiteside,http://sports.yahoo.com/mlb/players/7591,Atl,C,FA,1671,1290,0%
+Jesus Aguilar,http://sports.yahoo.com/mlb/players/9704,Cle,1B,FA,1672,1292,0%
+Casper Wells,http://sports.yahoo.com/mlb/players/8731,Det,OF,FA,1673,-,0%
+Andrew Lambo,http://sports.yahoo.com/mlb/players/9489,Pit,OF,FA,1674,1209,0%
+Tim Federowicz,http://sports.yahoo.com/mlb/players/9075,SD,C,FA,1675,1318,0%
+Cristhian Adames,http://sports.yahoo.com/mlb/players/9774,Col,Util,FA,1676,1297,0%
+Michael Martinez,http://sports.yahoo.com/mlb/players/8887,Cle,2B,FA,1677,1309,0%
+Bobby Wilson,http://sports.yahoo.com/mlb/players/8232,TB,C,FA,1678,1250,0%

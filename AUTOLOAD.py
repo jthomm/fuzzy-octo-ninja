@@ -43,7 +43,11 @@ def load_data(folder, years=None):
             csv_file_name = u'./{0}/{1}.csv'.format(folder, year)
             reader = csv.DictReader(open(csv_file_name, 'rb'))
             for row in reader:
-                new_row = cfg(row)
+                try:
+                    new_row = cfg(row)
+                except:
+                    print row
+                    raise
                 try:
                     ___ = c.execute(insert_sql, new_row.values())
                 except sqlite3.IntegrityError:
